@@ -1,0 +1,234 @@
+name: MS365 Defender Incident Alerts
+id: 12345678-90ab-cdef-1234-567890abcdef
+version: 1
+date: '2024-07-18'
+author: Bhavin Patel, Splunk
+description: Data source object for MS365 Defender Incident Alerts
+source: ms365_defender_incident_alerts
+sourcetype: ms365:defender:incident:alerts
+supported_TA:
+- name: Splunk Add-on for Microsoft Security
+  url: https://splunkbase.splunk.com/app/6207
+  version: 2.3.0
+fields:
+- actorName
+- alertId
+- app
+- assignedTo
+- body
+- category
+- classification
+- creationTime
+- date_hour
+- date_mday
+- date_minute
+- date_month
+- date_second
+- date_wday
+- date_year
+- date_zone
+- description
+- dest
+- detectionSource
+- detectorId
+- determination
+- devices{}.aadDeviceId
+- devices{}.defenderAvStatus
+- devices{}.deviceDnsName
+- devices{}.firstSeen
+- devices{}.healthStatus
+- devices{}.loggedOnUsers{}.accountName
+- devices{}.loggedOnUsers{}.domainName
+- devices{}.mdatpDeviceId
+- devices{}.onboardingStatus
+- devices{}.osBuild
+- devices{}.osPlatform
+- devices{}.osProcessor
+- devices{}.rbacGroupName
+- devices{}.riskScore
+- devices{}.version
+- devices{}.vmMetadata
+- devices{}.vmMetadata.cloudProvider
+- devices{}.vmMetadata.resourceId
+- devices{}.vmMetadata.subscriptionId
+- devices{}.vmMetadata.vmId
+- entities{}.aadUserId
+- entities{}.accountName
+- entities{}.applicationId
+- entities{}.applicationName
+- entities{}.detectionStatus
+- entities{}.deviceId
+- entities{}.domainName
+- entities{}.entityType
+- entities{}.evidenceCreationTime
+- entities{}.fileName
+- entities{}.filePath
+- entities{}.ipAddress
+- entities{}.parentProcessCreationTime
+- entities{}.parentProcessFileName
+- entities{}.parentProcessFilePath
+- entities{}.parentProcessId
+- entities{}.processCommandLine
+- entities{}.processCreationTime
+- entities{}.processId
+- entities{}.remediationStatus
+- entities{}.remediationStatusDetails
+- entities{}.sha1
+- entities{}.sha256
+- entities{}.userPrincipalName
+- entities{}.userSid
+- entities{}.verdict
+- eventtype
+- firstActivity
+- host
+- id
+- incidentId
+- index
+- investigationId
+- investigationState
+- lastActivity
+- lastUpdatedTime
+- linecount
+- mitreTechniques{}
+- mitre_technique_id
+- providerAlertId
+- resolvedTime
+- serviceSource
+- severity
+- signature
+- signature_id
+- source
+- sourcetype
+- splunk_server
+- splunk_server_group
+- src
+- status
+- subject
+- tag
+- tag::app
+- tag::eventtype
+- threatFamilyName
+- timeendpos
+- timestartpos
+- title
+- type
+- user
+- user_name
+- _bkt
+- _cd
+- _eventtype_color
+- _indextime
+- _raw
+- _serial
+- _si
+- _sourcetype
+- _subsecond
+- _time
+example_log: |
+  {
+    "alertId": "da638001130101730338_582949328",
+    "providerAlertId": "da638001130101730338_582949328",
+    "incidentId": 486,
+    "serviceSource": "MicrosoftDefenderForEndpoint",
+    "creationTime": "2022-09-30T05:36:50.1732198Z",
+    "lastUpdatedTime": "2022-11-19T01:35:42.7033333Z",
+    "resolvedTime": "2022-10-01T01:36:00.5066667Z",
+    "firstActivity": "2022-09-30T05:06:43.8196597Z",
+    "lastActivity": "2022-09-30T05:06:43.8196597Z",
+    "title": "Suspicious URL clicked",
+    "description": "A user opened a potentially malicious URL. This alert was triggered based on a Microsoft Defender for Office 365 alert.",
+    "category": "InitialAccess",
+    "status": "Resolved",
+    "severity": "High",
+    "investigationId": null,
+    "investigationState": "UnsupportedAlertType",
+    "classification": "TruePositive",
+    "determination": "SecurityTesting",
+    "detectionSource": "MTP",
+    "detectorId": "359b36eb-337c-4f1c-b280-8c5e08f9c4a0",
+    "assignedTo": "msftadmin@metal.m365dpoc.com",
+    "actorName": null,
+    "threatFamilyName": null,
+    "mitreTechniques": [
+      "T1566.002"
+    ],
+    "devices": [
+      {
+        "mdatpDeviceId": "c7e147cb0eb3534a4dcea5acb8e61c933713b145",
+        "aadDeviceId": null,
+        "deviceDnsName": "metal-win10v.metal.m365dpoc.com",
+        "osPlatform": "Windows10",
+        "version": "1809",
+        "osProcessor": "x64",
+        "osBuild": 17763,
+        "healthStatus": "Active",
+        "riskScore": "High",
+        "rbacGroupName": "Full Auto Clients",
+        "firstSeen": "2022-08-08T08:51:02.455Z",
+        "tags": [
+          "Full auto"
+        ],
+        "defenderAvStatus": "Updated",
+        "onboardingStatus": "Onboarded",
+        "vmMetadata": {
+          "vmId": "17881b39-b03f-4a2c-9b56-078be1330bd0",
+          "cloudProvider": "Unknown",
+          "resourceId": "/subscriptions/29e73d07-8740-4164-a257-592a19a7b77c/resourceGroups/MSDXV2/providers/Microsoft.Compute/virtualMachines/MSDXV2-Win10V",
+          "subscriptionId": "29e73d07-8740-4164-a257-592a19a7b77c"
+        },
+        "loggedOnUsers": [
+          {
+            "accountName": "hetfield",
+            "domainName": "MSDXV2"
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "entityType": "Process",
+        "evidenceCreationTime": "2022-09-30T05:36:50.2133333Z",
+        "verdict": "Suspicious",
+        "remediationStatus": "None",
+        "sha1": "6cbce4a295c163791b60fc23d285e6d84f28ee4c",
+        "sha256": "de96a6e69944335375dc1ac238336066889d9ffc7d73628ef4fe1b1b160ab32c",
+        "fileName": "powershell.exe",
+        "filePath": "",
+        "processId": 7068,
+        "processCommandLine": "powershell.exe  -command \"                                                            $Process = New-Object System.Diagnostics.Process;                                                            $Process.StartInfo.FileName = 'https://nam12.safelinks.protection.outlook.com/?url=http%3A%2F%2Fgcajebahdi.corporatelogon.xyz%2Fab%2Fjnkmbkkdnlgedc&data=05%7C01%7Chetfield%40metal.m365dpoc.com%7Cca409616a82145bd6a5f08daa2a10255%7C1a49212958c8401191cd245285f5345c%7C0%7C0%7C638001109710345383%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=FyEjRS5qOd2SkJELlueibuxLFMYNjL7fz8EbuOAvFwg%3D&reserved=0';                                                            $Process.StartInfo.UseShellExecute = $true;                                                            $Process.Start() | Out-Null;                                                            \"                                                        ",
+        "processCreationTime": "2022-09-30T05:06:43.3390523Z",
+        "parentProcessId": 7116,
+        "parentProcessCreationTime": "2022-09-30T05:06:43.3100364Z",
+        "accountName": "hetfield",
+        "userSid": "S-1-5-21-2300221942-1987151257-321556088-1104"
+      },
+      {
+        "entityType": "File",
+        "evidenceCreationTime": "2022-09-30T05:36:50.2133333Z",
+        "verdict": "Suspicious",
+        "remediationStatus": "None",
+        "sha1": "6cbce4a295c163791b60fc23d285e6d84f28ee4c",
+        "sha256": "de96a6e69944335375dc1ac238336066889d9ffc7d73628ef4fe1b1b160ab32c",
+        "fileName": "powershell.exe",
+        "filePath": ""
+      },
+      {
+        "entityType": "User",
+        "evidenceCreationTime": "2022-09-30T05:36:50.2133333Z",
+        "verdict": "Suspicious",
+        "remediationStatus": "None",
+        "accountName": "hetfield",
+        "domainName": "metal.m365dpoc",
+        "userSid": "S-1-5-21-2300221942-1987151257-321556088-1104",
+        "aadUserId": "e848b07a-87af-4448-9979-09f0b809c8d4",
+        "userPrincipalName": "daftpunk"
+      },
+      {
+        "entityType": "Url",
+        "evidenceCreationTime": "2022-09-30T05:36:50.2133333Z",
+        "verdict": "Suspicious",
+        "remediationStatus": "None",
+        "url": "http://gcajebahdi.corporatelogon.xyz/ab/jnkmbkkdnlgedc"
+      }
+    ]
+  }
