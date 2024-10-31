@@ -67,4 +67,4 @@ tests:
   attack_data:
   - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/malware/amadey/access_permission/amadey_sysmon2.log
     source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-    sourcetype: xmlwineventlog
+    sourcetype: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
