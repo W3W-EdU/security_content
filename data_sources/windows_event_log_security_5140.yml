@@ -10,7 +10,7 @@ separator: EventCode
 supported_TA:
 - name: Splunk Add-on for Microsoft Windows
   url: https://splunkbase.splunk.com/app/742
-  version: 8.9.0
+  version: 9.0.0
 fields:
 - _time
 - AccessList
@@ -93,19 +93,19 @@ fields:
 - vendor
 - vendor_product
 field_mappings:
-  - data_model: ocsf
-    mapping:
-      AccessList: access_list
-      AccessMask: access_mask
-      AccessReason: access_result
-      ShareLocalPath: file
-      ObjectType: file.type
-      IpAddress: src_endpoint.ip
-      IpPort: src_endpoint.port
-      SubjectDomainName: actor.user.domain
-      SubjectUserName: actor.user.name
-      SubjectLogonId: actor.session.uid
-      SubjectUserSid: actor.user.uid
+- data_model: ocsf
+  mapping:
+    AccessList: access_list
+    AccessMask: access_mask
+    AccessReason: access_result
+    ShareLocalPath: file
+    ObjectType: file.type
+    IpAddress: src_endpoint.ip
+    IpPort: src_endpoint.port
+    SubjectDomainName: actor.user.domain
+    SubjectUserName: actor.user.name
+    SubjectLogonId: actor.session.uid
+    SubjectUserSid: actor.user.uid
 example_log: <Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider
   Name='Microsoft-Windows-Security-Auditing' Guid='{54849625-5478-4994-a5ba-3e3b0328c30d}'/><EventID>5140</EventID><Version>1</Version><Level>0</Level><Task>12808</Task><Opcode>0</Opcode><Keywords>0x8020000000000000</Keywords><TimeCreated
   SystemTime='2023-03-23T15:59:26.669364000Z'/><EventRecordID>138541</EventRecordID><Correlation/><Execution
