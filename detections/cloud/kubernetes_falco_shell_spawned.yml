@@ -54,5 +54,5 @@ tests:
 - name: True Positive Test
   attack_data:
   - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1204/kubernetes_falco_shell_spawned/kubernetes_falco_shell_spawned.log
-    sourcetype: kube:container:falco
+    sourcetype: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
     source: kubernetes
