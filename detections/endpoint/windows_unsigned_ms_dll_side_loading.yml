@@ -63,5 +63,5 @@ tests:
 - name: True Positive Test
   attack_data:
   - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1574.002/unsigned_dll_load//wineloader_dll_sideload.log
-    sourcetype: xmlwineventlog
+    sourcetype: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
     source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
