@@ -23,6 +23,8 @@ tags:
   mitre_attack_id:
   - T1562.008
   - T1562
+  - T1485.001
+  - T1485
   observable:
   - name: src
     type: IP Address
