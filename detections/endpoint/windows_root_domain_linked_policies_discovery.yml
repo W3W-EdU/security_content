@@ -57,4 +57,4 @@ tests:
   attack_data:
   - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1087.002/adsi_discovery/windows-powershell-xml1.log
     source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
-    sourcetype: xmlwineventlog
+    sourcetype: XmlWinEventLog

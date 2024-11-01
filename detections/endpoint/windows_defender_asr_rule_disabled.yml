@@ -59,4 +59,4 @@ tests:
   attack_data:
   - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059/defender/asr_disabled_registry.log
     source: WinEventLog:Microsoft-Windows-Windows Defender/Operational
-    sourcetype: xmlwineventlog
+    sourcetype: XmlWinEventLog

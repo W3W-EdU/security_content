@@ -62,4 +62,4 @@ tests:
   attack_data:
   - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1484.001/gpo_new_cse/windows-security.log
     source: XmlWinEventLog:Security
-    sourcetype: xmlwineventlog
+    sourcetype: XmlWinEventLog

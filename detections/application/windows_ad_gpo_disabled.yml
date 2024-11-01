@@ -59,7 +59,7 @@ tests:
   attack_data:
   - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1484.001/group_policy_disabled/windows-security.log
     source: XmlWinEventLog:Security
-    sourcetype: xmlwineventlog
+    sourcetype: XmlWinEventLog
   - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1484.001/group_policy_disabled/windows-admon.log
     source: ActiveDirectory
     sourcetype: ActiveDirectory
