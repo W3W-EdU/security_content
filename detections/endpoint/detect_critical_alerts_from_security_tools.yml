@@ -30,8 +30,8 @@ tags:
   - Critical Alerts
   asset_type: Endpoint
   atomic_guid: []
-  confidence: 50
-  impact: 1
+  confidence: 100
+  impact: 50
   message: $severity$ alert for $user$ from $sourcetype$ - $signature$
   mitre_attack_id: []
   observable:
