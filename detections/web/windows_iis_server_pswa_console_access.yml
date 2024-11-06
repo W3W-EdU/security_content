@@ -3,7 +3,7 @@ id: 914ab191-fa8a-48cb-83a6-0565e061f934
 version: 2
 date: '2024-10-17'
 author: Michael Haag, Splunk
-data_sources:
+data_source:
 - Windows IIS
 type: Hunting
 status: production
