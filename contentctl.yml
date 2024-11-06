@@ -40,13 +40,13 @@ apps:
   appid: Splunk_SA_CIM
   version: 5.3.2
   description: description of app
-  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/Latest/splunk-common-information-model-cim_532.tgz
+  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/splunk-common-information-model-cim_532.tgz
 - uid: 6553
   title: Splunk Add-on for Okta Identity Cloud
   appid: Splunk_TA_okta_identity_cloud
-  version: 2.2.0
+  version: 2.2.1
   description: description of app
-  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/Latest/splunk-add-on-for-okta-identity-cloud_220.tgz
+  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/splunk-add-on-for-okta-identity-cloud_221.tgz
 - uid: 6652
   title: Add-on for Linux Sysmon
   appid: Splunk_TA_linux_sysmon
@@ -77,105 +77,105 @@ apps:
 - uid: 833
   title: Splunk Add-on for Unix and Linux
   appid: Splunk_TA_nix
-  version: 9.0.0
+  version: 9.2.0
   description: description of app
-  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/Latest/splunk-add-on-for-unix-and-linux_900.tgz
+  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/splunk-add-on-for-unix-and-linux_920.tgz
 - uid: 5579
   title: Splunk Add-on for CrowdStrike FDR
   appid: Splunk_TA_CrowdStrike_FDR
-  version: 1.5.0
+  version: 2.0.2
   description: description of app
-  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/Latest/splunk-add-on-for-crowdstrike-fdr_150.tgz
+  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/splunk-add-on-for-crowdstrike-fdr_202.tgz
 - uid: 3185
   title: Splunk Add-on for Microsoft IIS
   appid: SPLUNK_TA_FOR_IIS
   version: 1.3.0
   description: description of app
-  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/Latest/splunk-add-on-for-microsoft-iis_130.tgz
+  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/splunk-add-on-for-microsoft-iis_130.tgz
 - uid: 4242
   title: TA for Suricata
   appid: SPLUNK_TA_FOR_SURICATA
   version: 2.3.4
   description: description of app
-  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/Latest/ta-for-suricata_234.tgz
+  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/ta-for-suricata_234.tgz
 - uid: 5466
   title: TA for Zeek
   appid: SPLUNK_TA_FOR_ZEEK
   version: 1.0.8
   description: description of app
-  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/Latest/ta-for-zeek_108.tgz
+  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/ta-for-zeek_108.tgz
 - uid: 3258
   title: Splunk Add-on for NGINX
   appid: SPLUNK_ADD_ON_FOR_NGINX
-  version: 3.2.2
+  version: 3.3.0
   description: description of app
-  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/Latest/splunk-add-on-for-nginx_322.tgz
+  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/splunk-add-on-for-nginx_330.tgz
 - uid: 5238
   title: Splunk Add-on for Stream Forwarders
   appid: SPLUNK_ADD_ON_FOR_STREAM_FORWARDERS
-  version: 8.1.1
+  version: 8.1.3
   description: description of app
-  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/Latest/splunk-add-on-for-stream-forwarders_811.tgz
+  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/splunk-add-on-for-stream-forwarders_813.tgz
 - uid: 5234
   title: Splunk Add-on for Stream Wire Data
   appid: SPLUNK_ADD_ON_FOR_STREAM_WIRE_DATA
-  version: 8.1.1
+  version: 8.1.3
   description: description of app
-  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/Latest/splunk-add-on-for-stream-wire-data_811.tgz
+  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/splunk-add-on-for-stream-wire-data_813.tgz
 - uid: 2757
   title: Palo Alto Networks Add-on for Splunk
   appid: PALO_ALTO_NETWORKS_ADD_ON_FOR_SPLUNK
-  version: 8.1.1
+  version: 8.1.3
   description: description of app
-  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/Latest/palo-alto-networks-add-on-for-splunk_811.tgz
+  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/palo-alto-networks-add-on-for-splunk_813.tgz
 - uid: 3865
   title: Zscaler Technical Add-On for Splunk
   appid: Zscaler_CIM
-  version: 4.0.3
+  version: 4.0.16
   description: description of app
-  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/Latest/zscaler-technical-add-on-for-splunk_403.tgz
+  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/zscaler-technical-add-on-for-splunk_4016.tgz
 - uid: 3719
   title: Splunk Add-on for Amazon Kinesis Firehose
   appid: SPLUNK_ADD_ON_FOR_AMAZON_KINESIS_FIREHOSE
   version: 1.3.2
   description: description of app
-  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/Latest/splunk-add-on-for-amazon-kinesis-firehose_132.tgz
+  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/splunk-add-on-for-amazon-kinesis-firehose_132.tgz
 - uid: 1876
   title: Splunk Add-on for AWS
-  appid: Splunk_TA_aws
-  version: 7.5.0
+  appid: Splunk_TA_aws  
+  version: 7.7.1
   description: description of app
-  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/Latest/splunk-add-on-for-amazon-web-services-aws_750.tgz
+  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/splunk-add-on-for-amazon-web-services-aws_771.tgz
 - uid: 3088
   title: Splunk Add-on for Google Cloud Platform
   appid: SPLUNK_ADD_ON_FOR_GOOGLE_CLOUD_PLATFORM
-  version: 4.5.0
+  version: 4.7.0
   description: description of app
-  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/Latest/splunk-add-on-for-google-cloud-platform_450.tgz
+  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/splunk-add-on-for-google-cloud-platform_470.tgz
 - uid: 5556
   title: Splunk Add-on for Google Workspace
   appid: SPLUNK_ADD_ON_FOR_GOOGLE_WORKSPACE
-  version: 2.7.0
+  version: 3.0.0
   description: description of app
-  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/Latest/splunk-add-on-for-google-workspace_270.tgz
+  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/splunk-add-on-for-google-workspace_300.tgz
 - uid: 3110
   title: Splunk Add-on for Microsoft Cloud Services
   appid: SPLUNK_TA_MICROSOFT_CLOUD_SERVICES
-  version: 5.2.2
+  version: 5.4.1
   description: description of app
-  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/Latest/splunk-add-on-for-microsoft-cloud-services_522.tgz
+  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/splunk-add-on-for-microsoft-cloud-services_541.tgz
 - uid: 4055
   title: Splunk Add-on for Microsoft Office 365
   appid: SPLUNK_ADD_ON_FOR_MICROSOFT_OFFICE_365
-  version: 4.5.1
+  version: 4.5.2
   description: description of app
-  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/Latest/splunk-add-on-for-microsoft-office-365_451.tgz
+  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/splunk-add-on-for-microsoft-office-365_452.tgz
 - uid: 2890
   title: Splunk Machine Learning Toolkit
   appid: SPLUNK_MACHINE_LEARNING_TOOLKIT
-  version: 5.4.1
+  version: 5.5.0
   description: description of app
-  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/Latest/splunk-machine-learning-toolkit_541.tgz
+  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/splunk-machine-learning-toolkit_550.tgz
 - uid: 5518
   title: Splunk add on for Microsoft Defender Advanced Hunting
   appid: SPLUNK_ADD_ON_FOR_MICROSOFT_DEFENDER_ADVANCED_HUNTING
@@ -191,20 +191,20 @@ apps:
 - uid: 2734
   title: URL Toolbox
   appid: URL_TOOLBOX
-  version: 1.9.2
+  version: 1.9.4
   description: description of app
-  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/Latest/url-toolbox_192.tgz
+  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/url-toolbox_194.tgz
 - uid: 6853
   title: Splunk Add-on for Admon Enrichment
   appid: SA-admon
-  version: 1.1.0
+  version: 1.1.2
   description: description of app
-  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/Latest/splunk-add-on-for-admon-enrichment_112.tgz
+  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/splunk-add-on-for-admon-enrichment_112.tgz
 - uid: 5082
   title: CrowdStrike Falcon Event Streams Technical Add-On
   appid: TA-crowdstrike-falcon-event-streams
   version: 3.2.1
   description: description of app
-  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/Latest/crowdstrike-falcon-event-streams-technical-add-on_321.tgz
+  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/crowdstrike-falcon-event-streams-technical-add-on_321.tgz
 
 githash: d6fac80e6d50ae06b40f91519a98489d4ce3a3fd
