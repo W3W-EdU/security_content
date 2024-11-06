@@ -12,6 +12,13 @@ supported_TA:
 - name: Splunk Add-on for Sysmon
   url: https://splunkbase.splunk.com/app/5709
   version: 4.0.2
+field_mappings:
+- data_model: cim
+  data_set: DNS
+  mapping:
+    QueryResults: DNS.answer
+    QueryName: DNS.query
+    Computer: DNS.src
 fields:
 - _time
 - Channel

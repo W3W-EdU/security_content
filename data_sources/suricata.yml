@@ -6,7 +6,21 @@ author: Patrick Bareiss, Splunk
 description: Data source object for Suricata
 source: suricata
 sourcetype: suricata
-supported_TA: []
+supported_TA:
+- name: Splunk TA for Suricata
+  url: https://splunkbase.splunk.com/app/2760
+  version: 2.3.3
+field_mappings:
+- data_model: cim
+  data_set: Web
+  mapping:
+    http.hostname: Web.dest
+    http.http_method: Web.http_method
+    http.http_user_agent: Web.http_user_agent
+    http.status: Web.status
+    http.url: Web.url
+    http.length: Web.url_length
+    src_ip: Web.src
 fields:
 - _time
 - app_proto

@@ -10,6 +10,16 @@ supported_TA:
 - name: Palo Alto Networks Add-on
   url: https://splunkbase.splunk.com/app/2757
   version: 8.1.3
+field_mappings:
+- data_model: cim
+  data_set: Web
+  mapping:
+    dest: Web.dest
+    http_method: Web.http_method
+    http_user_agent: Web.http_user_agent
+    url: Web.url
+    url_length: Web.url_length
+    src: Web.src
 fields:
 - _time
 - date_hour

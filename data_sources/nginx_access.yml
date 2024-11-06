@@ -6,7 +6,21 @@ author: Patrick Bareiss, Splunk
 description: Data source object for Nginx Access
 source: /var/log/nginx/access.log
 sourcetype: nginx:plus:kv
-supported_TA: []
+supported_TA:
+- name: Splunk Add-on for NGINX
+  url: https://splunkbase.splunk.com/app/3258
+  version: 3.3.0
+field_mappings:
+- data_model: cim
+  data_set: Web
+  mapping:
+    server: Web.dest
+    http_method: Web.http_method
+    http_user_agent: Web.http_user_agent
+    status: Web.status
+    uri_path: Web.url
+    url_length: Web.url_length
+    src_ip: Web.src
 fields:
 - _time
 - action
