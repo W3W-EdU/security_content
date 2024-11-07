@@ -42,4 +42,3 @@ tests:
   - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1068/drivers/driver_inventory.log
     source: PwSh:DriverInventory
     sourcetype: PwSh:DriverInventory
-    update_timestamp: true

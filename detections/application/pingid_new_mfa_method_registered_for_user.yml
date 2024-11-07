@@ -67,4 +67,3 @@ tests:
   - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1621/pingid/pingid.log
     source: PINGID
     sourcetype: _json
-    update_timestamp: true

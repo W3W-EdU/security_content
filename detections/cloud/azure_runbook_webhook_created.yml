@@ -63,4 +63,3 @@ tests:
   - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1078.004/azure_runbook_webhook/azure-activity.log
     source: mscs:azure:audit
     sourcetype: mscs:azure:audit
-    update_timestamp: true

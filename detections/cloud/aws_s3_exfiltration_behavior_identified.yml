@@ -56,4 +56,3 @@ tests:
   - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1537/aws_exfil_risk_events/aws_risk.log
     sourcetype: stash
     source: aws_exfil
-    update_timestamp: true

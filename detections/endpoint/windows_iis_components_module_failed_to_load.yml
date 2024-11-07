@@ -60,4 +60,3 @@ tests:
   - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1505.004/2282_windows-application.log
     source: XmlWinEventLog:Application
     sourcetype: XmlWinEventLog
-    update_timestamp: true

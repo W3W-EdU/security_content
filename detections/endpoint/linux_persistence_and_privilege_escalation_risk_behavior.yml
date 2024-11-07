@@ -54,4 +54,3 @@ tests:
   - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1548/linux_risk/linuxrisk.log
     source: linuxrisk
     sourcetype: stash
-    update_timestamp: true

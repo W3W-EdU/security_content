@@ -62,4 +62,3 @@ tests:
   - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1556/gcp_disable_mfa/gws_admin.log
     source: gws:reports:admin
     sourcetype: gws:reports:admin
-    update_timestamp: true

@@ -61,4 +61,3 @@ tests:
   - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.008/delete_cloudwatch_log_group/aws_cloudtrail_events.json
     source: aws_cloudtrail
     sourcetype: aws:cloudtrail
-    update_timestamp: true

@@ -51,4 +51,3 @@ tests:
   - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1649/atomic_red_team/capi2-operational.log
     source: XmlWinEventLog:Microsoft-Windows-CAPI2/Operational
     sourcetype: XmlWinEventLog
-    update_timestamp: true

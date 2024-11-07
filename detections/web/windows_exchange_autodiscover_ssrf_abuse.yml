@@ -72,4 +72,3 @@ tests:
   - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/proxyshell/proxyshell.log
     source: ms:iis:splunk
     sourcetype: ms:iis:splunk
-    update_timestamp: true

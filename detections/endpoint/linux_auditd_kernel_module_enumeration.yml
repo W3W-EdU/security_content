@@ -57,4 +57,3 @@ tests:
   - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1082/linux_auditd_lsmod/linux_auditd_lsmod.log
     source: /var/log/audit/audit.log
     sourcetype: linux:audit
-    update_timestamp: true

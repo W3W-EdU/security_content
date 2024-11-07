@@ -62,4 +62,3 @@ tests:
   - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1621/gcp_failed_mfa/gws_login.log
     source: gws:reports:login
     sourcetype: gws:reports:login
-    update_timestamp: true

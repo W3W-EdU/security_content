@@ -53,4 +53,3 @@ tests:
   - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1200/linux_auditd_swapoff/linux_auditd_swapoff.log
     source: /var/log/audit/audit.log
     sourcetype: linux:audit
-    update_timestamp: true
