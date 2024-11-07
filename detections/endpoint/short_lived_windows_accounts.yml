@@ -50,7 +50,6 @@ tags:
   - All_Changes.result_id
   - All_Changes.user
   - All_Changes.dest
-  risk_score: 63
   security_domain: access
 tests:
 - name: True Positive Test

@@ -42,5 +42,4 @@ tags:
   - All_Changes.status
   - All_Changes.object_category
   - All_Changes.user
-  risk_score: 25
   security_domain: threat

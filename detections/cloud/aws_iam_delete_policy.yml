@@ -42,7 +42,6 @@ tags:
   - userAgent
   - errorCode
   - requestParameters.policyArn
-  risk_score: 10
   security_domain: access
 tests:
 - name: True Positive Test

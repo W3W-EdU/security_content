@@ -60,7 +60,6 @@ tags:
   - user_name
   - userIdentity.arn
   - _time
-  risk_score: 64
   security_domain: identity
 tests:
 - name: True Positive Test

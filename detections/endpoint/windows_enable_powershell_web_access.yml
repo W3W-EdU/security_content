@@ -48,7 +48,6 @@ tags:
   - ScriptBlockText
   - dest
   - UserID
-  risk_score: 72
   security_domain: endpoint
   cve: []
 tests:

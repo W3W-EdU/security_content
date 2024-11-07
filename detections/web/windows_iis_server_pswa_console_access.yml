@@ -43,7 +43,6 @@ tags:
   - Web.dest
   - Web.http_method
   - Web.uri_query
-  risk_score: 32
   security_domain: network
   cve: []
 tests:

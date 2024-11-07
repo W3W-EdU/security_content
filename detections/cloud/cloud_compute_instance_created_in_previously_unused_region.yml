@@ -40,7 +40,6 @@ tags:
   - All_Changes.action
   - All_Changes.vendor_region
   - All_Changes.user
-  risk_score: 42
   security_domain: threat
 tests:
 - name: True Positive Test

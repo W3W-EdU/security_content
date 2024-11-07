@@ -51,7 +51,6 @@ tags:
   - Registry.registry_value_data
   - Registry.action
   - Registry.dest
-  risk_score: 40
   security_domain: endpoint
 tests:
 - name: True Positive Test

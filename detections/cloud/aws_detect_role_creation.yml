@@ -48,5 +48,4 @@ tags:
   - requestParameters.description
   - responseElements.role.arn
   - responseElements.role.createDate
-  risk_score: 25
   security_domain: threat

@@ -52,7 +52,6 @@ tags:
   - userIdentity.principalId
   - userAgent
   - bucketName
-  risk_score: 48
   security_domain: threat
 tests:
 - name: True Positive Test

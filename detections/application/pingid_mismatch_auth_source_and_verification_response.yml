@@ -61,7 +61,6 @@ tags:
   - resources{}.devicemodel
   - result.status
   - resources{}.websession
-  risk_score: 25
   security_domain: access
 tests:
 - name: True Positive Test

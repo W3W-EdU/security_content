@@ -65,7 +65,6 @@ tags:
   - Web.dest
   - Web.http_method
   - Web.uri_query
-  risk_score: 72
   security_domain: network
 tests:
 - name: True Positive Test

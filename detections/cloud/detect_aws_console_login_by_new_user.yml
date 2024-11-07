@@ -37,7 +37,6 @@ tags:
   - _time
   - Authentication.signature
   - Authentication.user
-  risk_score: 30
   security_domain: threat
 tests:
 - name: True Positive Test

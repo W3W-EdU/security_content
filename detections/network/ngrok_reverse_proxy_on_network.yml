@@ -48,7 +48,6 @@ tags:
   - DNS.src
   - DNS.query
   - DNS.answer
-  risk_score: 50
   security_domain: network
 tests:
 - name: True Positive Test

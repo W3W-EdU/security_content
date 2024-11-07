@@ -48,7 +48,6 @@ tags:
   - ModifiedProperties{}.Name
   - UserId
   - Workload
-  risk_score: 75
   security_domain: threat
 tests:
 - name: True Positive Test

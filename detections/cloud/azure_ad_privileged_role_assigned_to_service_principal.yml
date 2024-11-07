@@ -42,7 +42,6 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  risk_score: 35
   required_fields:
   - _time
   - properties.targetResources{}.type

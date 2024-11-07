@@ -64,7 +64,6 @@ tags:
   - parent_process_name
   - parent_process_guid
   - IntegrityLevel
-  risk_score: 80
   security_domain: endpoint
 tests:
 - attack_data:

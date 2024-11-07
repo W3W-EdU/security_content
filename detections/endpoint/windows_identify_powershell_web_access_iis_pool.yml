@@ -40,7 +40,6 @@ tags:
   - dest
   - TargetServerName
   - ProcessName
-  risk_score: 64
   security_domain: endpoint
   cve: []
 tests:

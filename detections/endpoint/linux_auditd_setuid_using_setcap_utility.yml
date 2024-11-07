@@ -47,7 +47,6 @@ tags:
   - _time
   - argc
   - process_exec
-  risk_score: 81
   security_domain: endpoint
 tests:
 - name: True Positive Test

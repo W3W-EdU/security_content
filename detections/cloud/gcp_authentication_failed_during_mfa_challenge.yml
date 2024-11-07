@@ -55,7 +55,6 @@ tags:
   - src_ip
   - login_challenge_method
   - event.parameters{}.multiValue{}
-  risk_score: 54
   security_domain: identity
 tests:
 - name: True Positive Test

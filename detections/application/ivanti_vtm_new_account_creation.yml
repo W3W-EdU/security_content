@@ -48,7 +48,6 @@ tags:
   - OPERATION
   - MODGROUP
   - AUTH
-  risk_score: 72
   security_domain: access
   cve:
   - CVE-2024-7593

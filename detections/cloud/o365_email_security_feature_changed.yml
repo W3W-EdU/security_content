@@ -50,7 +50,6 @@ tags:
   - UserId
   - Operation
   - Workload
-  risk_score: 25
   security_domain: threat
 tests:
 - name: True Positive Test

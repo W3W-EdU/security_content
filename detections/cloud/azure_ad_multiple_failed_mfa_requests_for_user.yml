@@ -57,7 +57,6 @@ tags:
   - user
   - user_agent
   - operationName
-  risk_score: 54
   security_domain: identity
 tests:
 - name: True Positive Test

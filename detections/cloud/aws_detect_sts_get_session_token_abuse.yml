@@ -41,5 +41,4 @@ tags:
   - user_type
   - status
   - region
-  risk_score: 25
   security_domain: threat

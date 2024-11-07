@@ -50,7 +50,6 @@ tags:
   - TargetUserName
   - Computer
   - IpAddress
-  risk_score: 49
   security_domain: endpoint
 tests:
 - attack_data:

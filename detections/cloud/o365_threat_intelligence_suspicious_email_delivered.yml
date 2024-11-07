@@ -60,7 +60,6 @@ tags:
   - DeliveryAction
   - Operation
   - Workload
-  risk_score: 20
   security_domain: threat
 tests:
 - name: True Positive Test

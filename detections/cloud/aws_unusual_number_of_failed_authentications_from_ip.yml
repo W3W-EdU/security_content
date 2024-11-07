@@ -56,7 +56,6 @@ tags:
   - action
   - eventName
   - src_ip
-  risk_score: 54
   security_domain: threat
 tests:
 - name: True Positive Test

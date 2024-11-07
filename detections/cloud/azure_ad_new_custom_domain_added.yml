@@ -53,7 +53,6 @@ tags:
   - src_ip
   - properties.targetResources{}.displayName
   - user
-  risk_score: 54
   security_domain: threat
 tests:
 - name: True Positive Test

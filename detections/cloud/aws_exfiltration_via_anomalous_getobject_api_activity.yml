@@ -58,7 +58,6 @@ tags:
   - aws_account_id
   - userAgent
   - userIdentity.principalId
-  risk_score: 64
   security_domain: threat
 tests:
 - name: True Positive Test

@@ -52,7 +52,6 @@ tags:
   - userAgent
   - src_ip
   - user_arn
-  risk_score: 72
   security_domain: threat
 tests:
 - name: True Positive Test

@@ -48,7 +48,6 @@ tags:
   - Filesystem.file_create_time
   - Filesystem.file_name
   - Filesystem.file_path
-  risk_score: 28
   security_domain: endpoint
 tests:
 - name: True Positive Test

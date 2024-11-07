@@ -51,7 +51,6 @@ tags:
   - awsRegion
   - requestParameters.policy
   - userIdentity.principalId
-  risk_score: 25
   security_domain: threat
 tests:
 - name: True Positive Test

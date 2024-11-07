@@ -47,7 +47,6 @@ tags:
   - Requester
   - action
   - Attributes
-  risk_score: 8
   security_domain: endpoint
 tests:
 - name: True Positive Test

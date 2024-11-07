@@ -55,7 +55,6 @@ tags:
   - AlertId
   - trc
   - ot
-  risk_score: 40
   security_domain: threat
 tests:
 - name: True Positive Test

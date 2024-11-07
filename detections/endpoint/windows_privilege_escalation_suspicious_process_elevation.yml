@@ -73,7 +73,6 @@ tags:
   - Processes.process_guid
   - Processes.process_integrity_level
   - Processes.process_current_directory
-  risk_score: 40
   security_domain: endpoint
 tests:
 - attack_data:

@@ -38,5 +38,4 @@ tags:
   - EventCode
   - Message
   - dest
-  risk_score: 25
   security_domain: endpoint

@@ -56,7 +56,6 @@ tags:
   - properties.targetResources{}.type
   - properties.initiatedBy.user.userPrincipalName
   - properties.result
-  risk_score: 72
   security_domain: threat
 tests:
 - name: True Positive Test

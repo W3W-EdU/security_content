@@ -38,7 +38,6 @@ tags:
   - All_Changes.action
   - All_Changes.Instance_Changes.instance_type
   - All_Changes.user
-  risk_score: 30
   security_domain: threat
 tests:
 - name: True Positive Test

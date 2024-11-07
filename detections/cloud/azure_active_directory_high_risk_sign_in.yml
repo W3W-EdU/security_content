@@ -59,7 +59,6 @@ tags:
   - properties.activity
   - properties.riskEventType
   - properties.additionalInfo
-  risk_score: 54
   security_domain: identity
 tests:
 - name: True Positive Test

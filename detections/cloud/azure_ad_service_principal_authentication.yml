@@ -55,7 +55,6 @@ tags:
   - user
   - src_ip
   - user_id
-  risk_score: 25
   security_domain: identity
 tests:
 - name: True Positive Test

@@ -59,7 +59,6 @@ tags:
   - Processes.parent_process_id
   - Processes.parent_process_guid
   - Processes.process_guid
-  risk_score: 4
   security_domain: endpoint
 tests:
 - name: True Positive Test

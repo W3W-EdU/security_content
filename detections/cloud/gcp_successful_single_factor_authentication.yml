@@ -56,7 +56,6 @@ tags:
   - user
   - src_ip
   - login_challenge_method
-  risk_score: 45
   security_domain: identity
 tests:
 - name: True Positive Test

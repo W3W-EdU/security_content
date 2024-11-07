@@ -49,7 +49,6 @@ tags:
   - TargetProcessId
   - FilePath
   - FullFilePath
-  risk_score: 16
   security_domain: endpoint
   cve: []
 tests:

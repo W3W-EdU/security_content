@@ -48,7 +48,6 @@ tags:
   - properties.initiatedBy.user.id
   - targetResources{}.displayName
   - src_user
-  risk_score: 42
   security_domain: identity
 tests:
 - name: True Positive Test

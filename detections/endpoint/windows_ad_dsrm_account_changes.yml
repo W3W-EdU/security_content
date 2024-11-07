@@ -53,7 +53,6 @@ tags:
   - Registry.registry_path
   - Registry.dest
   - Registry.user
-  risk_score: 100
   security_domain: endpoint
 tests:
 - name: True Positive Test

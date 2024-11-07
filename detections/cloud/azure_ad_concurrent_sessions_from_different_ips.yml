@@ -54,7 +54,6 @@ tags:
   - properties.authenticationDetails
   - user
   - src_ip
-  risk_score: 42
   security_domain: threat
 tests:
 - name: True Positive Test

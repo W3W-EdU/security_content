@@ -51,7 +51,6 @@ tags:
   - userAgent
   - user
   - userIdentity.arn
-  risk_score: 18
   security_domain: network
 tests:
 - name: True Positive Test

@@ -51,7 +51,6 @@ tags:
   - user_arn
   - aws_account_id
   - src_ip
-  risk_score: 35
   security_domain: threat
 tests:
 - name: True Positive Test

@@ -56,7 +56,6 @@ tags:
   - claims.ipaddr
   - resourceGroupName
   - object_path
-  risk_score: 63
   security_domain: threat
 tests:
 - name: True Positive Test

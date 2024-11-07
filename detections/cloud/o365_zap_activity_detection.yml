@@ -62,7 +62,6 @@ tags:
   - Name
   - Data
   - AlertId
-  risk_score: 10
   security_domain: threat
 tests:
 - name: True Positive Test

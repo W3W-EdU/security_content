@@ -49,7 +49,6 @@ tags:
   - All_Risk.annotations.mitre_attack.mitre_tactic
   - All_Risk.calculated_risk_score
   - source
-  risk_score: 81
   security_domain: threat
 tests:
 - name: True Positive Test

@@ -60,7 +60,6 @@ tags:
   - Alerts.id
   - Alerts.vendor
   - sourcetype
-  risk_score: 50
   security_domain: endpoint
 tests:
 - name: True Positive Test

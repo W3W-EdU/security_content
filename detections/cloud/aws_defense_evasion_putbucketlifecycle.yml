@@ -49,7 +49,6 @@ tags:
   - region
   - requestParameters{}.LifecycleConfiguration{}.Rule{}.Expiration{}.Days
   - requestParameters{}.bucketName
-  risk_score: 20
   security_domain: threat
 tests:
 - name: True Positive Test

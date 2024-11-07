@@ -58,7 +58,6 @@ tags:
   - properties.authenticationDetails
   - properties.userPrincipalName
   - properties.ipAddress
-  risk_score: 54
   security_domain: access
 tests:
 - name: True Positive Test

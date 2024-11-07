@@ -55,7 +55,6 @@ tags:
   - PolicyDetails{}.Rules{}.ConditionsMatched.SensitiveInformation{}.SensitiveInformationTypeName
   - PolicyDetails{}.Rules{}.Actions{}
   - PolicyDetails{}.Rules{}.ConditionsMatched.SensitiveInformation{}.Location
-  risk_score: 20
   security_domain: threat
 tests:
 - name: True Positive Test

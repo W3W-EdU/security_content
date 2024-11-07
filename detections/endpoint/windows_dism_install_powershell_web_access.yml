@@ -52,7 +52,6 @@ tags:
   - process
   - process_id
   - parent_process_id
-  risk_score: 72
   security_domain: endpoint
   cve: []
 tests:

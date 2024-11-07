@@ -31,5 +31,4 @@ tags:
   - _time
   - Web.url
   - Web.src
-  risk_score: 25
   security_domain: network

@@ -55,7 +55,6 @@ tags:
   - src_endpoint.ip
   - src_endpoint.domain
   - cloud.region
-  risk_score: 42
   security_domain: threat
   manual_test: Can't be tested automatically because of time span.
 tests:

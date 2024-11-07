@@ -49,7 +49,6 @@ tags:
   - Operation
   - Name
   - Data
-  risk_score: 48
   security_domain: identity
 tests:
 - name: True Positive Test

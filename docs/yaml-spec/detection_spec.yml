@@ -115,7 +115,7 @@ tags:
       description: List of products that are related to the detection
       enum: [Splunk Enterprise Security, Splunk Enterprise, Splunk Cloud]
       required: true
-    risk_score: 
+
       type: int
       description: A number between 1-100 that represents the risk score of the detection. The risk score will be calculated based on the confidence and impact.
       required: true

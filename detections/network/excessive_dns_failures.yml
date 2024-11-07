@@ -36,5 +36,4 @@ tags:
   - DNS.query
   - DNS.reply_code
   - DNS.src
-  risk_score: 25
   security_domain: network

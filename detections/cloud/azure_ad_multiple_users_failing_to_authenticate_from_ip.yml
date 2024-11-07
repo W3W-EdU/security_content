@@ -58,7 +58,6 @@ tags:
   - properties.authenticationDetails
   - user
   - user_agent
-  risk_score: 63
   security_domain: identity
 tests:
 - name: True Positive Test

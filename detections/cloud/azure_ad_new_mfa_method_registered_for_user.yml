@@ -58,7 +58,6 @@ tags:
   - resultDescription
   - result
   - src_ip
-  risk_score: 64
   security_domain: identity
 tests:
 - name: True Positive Test

@@ -56,7 +56,6 @@ tags:
   - Id
   - Operation
   - UserId
-  risk_score: 50
   security_domain: threat
 tests:
 - name: True Positive Test

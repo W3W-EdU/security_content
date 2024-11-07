@@ -61,7 +61,6 @@ tags:
   - AlertEntityId
   - tsd
   - etps
-  risk_score: 75
   security_domain: threat
 tests:
 - name: True Positive Test

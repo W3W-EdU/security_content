@@ -50,7 +50,6 @@ tags:
   - operationName
   - targetResources{}.modifiedProperties{}.newValue
   - targetResources{}.id
-  risk_score: 54
   security_domain: identity
 tests:
 - name: True Positive Test
