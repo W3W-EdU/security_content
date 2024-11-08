@@ -100,6 +100,25 @@ fields:
 - timestartpos
 - user
 - vendor_product
+field_mappings:
+- data_model: cim
+  data_set: Endpoint.Processes
+  mapping:
+    ProcessGuid: Processes.process_guid
+    ProcessId: Processes.process_id
+    Image: Processes.process_path
+    Image|endswith: Processes.process_name
+    CommandLine: Processes.process
+    CurrentDirectory: Processes.process_current_directory
+    User: Processes.user
+    IntegrityLevel: Processes.process_integrity_level
+    Hashes: Processes.process_hash
+    ParentProcessGuid: Processes.parent_process_guid
+    ParentProcessId: Processes.parent_process_id
+    ParentImage: Processes.parent_process_name
+    ParentCommandLine: Processes.parent_process
+    Computer: Processes.dest
+    OriginalFileName: Processes.original_file_name
 example_log: <Event><System><Provider Name="Linux-Sysmon" Guid="{ff032593-a8d3-4f13-b0d6-01fc615a0f97}"/><EventID>1</EventID><Version>5</Version><Level>4</Level><Task>1</Task><Opcode>0</Opcode><Keywords>0x8000000000000000</Keywords><TimeCreated
   SystemTime="2022-08-09T10:42:47.749450000Z"/><EventRecordID>1926574</EventRecordID><Correlation/><Execution
   ProcessID="1465" ThreadID="1465"/><Channel>Linux-Sysmon/Operational</Channel><Computer>ar-linux</Computer><Security
