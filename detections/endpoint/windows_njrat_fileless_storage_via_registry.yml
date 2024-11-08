@@ -6,7 +6,6 @@ author: Teoderick Contreras, Splunk
 status: production
 type: TTP
 data_source:
-- Sysmon EventID 12
 - Sysmon EventID 13
 description: The following analytic detects suspicious registry modifications indicative of NjRat's fileless storage technique. It leverages the Endpoint.Registry data model to identify specific registry paths and values commonly used by NjRat for keylogging and executing DLL plugins. This activity is significant as it helps evade traditional file-based detection systems, making it crucial for SOC analysts to monitor. If confirmed malicious, this behavior could allow attackers to persist on the host, execute arbitrary code, and capture sensitive keystrokes, leading to potential data breaches and further system compromise.
 search: '| tstats `security_content_summariesonly` count min(_time) as firstTime max(_time) as lastTime from datamodel=Endpoint.Registry where Registry.registry_path="*\\[kl]" OR  Registry.registry_value_data IN ("*[ENTER]*", "*[TAP]*", "*[Back]*") by Registry.dest Registry.user Registry.registry_path Registry.registry_value_data Registry.registry_key_name Registry.registry_value_name | `drop_dm_object_name(Registry)` | `security_content_ctime(lastTime)` | `security_content_ctime(firstTime)` | `windows_njrat_fileless_storage_via_registry_filter`'

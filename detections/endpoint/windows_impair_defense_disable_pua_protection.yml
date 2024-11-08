@@ -6,7 +6,6 @@ author: Teoderick Contreras, Splunk
 status: production
 type: TTP
 data_source:
-- Sysmon EventID 12
 - Sysmon EventID 13
 description: The following analytic detects a modification in the Windows registry to disable Windows Defender PUA protection by setting PUAProtection to 0. This detection leverages data from the Endpoint.Registry datamodel, focusing on registry path changes related to Windows Defender. Disabling PUA protection is significant as it reduces defenses against Potentially Unwanted Applications (PUAs), which, while not always malicious, can negatively impact user experience and security. If confirmed malicious, this activity could allow an attacker to introduce adware, browser toolbars, or other unwanted software, potentially compromising system integrity and user productivity.
 search: '| tstats `security_content_summariesonly` count min(_time) as firstTime max(_time) as lastTime FROM datamodel=Endpoint.Registry where Registry.registry_path= "*\\Windows Defender\\PUAProtection" Registry.registry_value_data="0x00000000" by Registry.registry_key_name Registry.user Registry.registry_path Registry.registry_value_data Registry.action Registry.dest | `drop_dm_object_name(Registry)` | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)` | `windows_impair_defense_disable_pua_protection_filter`'

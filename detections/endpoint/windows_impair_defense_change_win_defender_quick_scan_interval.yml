@@ -6,7 +6,6 @@ author: Teoderick Contreras, Splunk
 status: production
 type: TTP
 data_source:
-- Sysmon EventID 12
 - Sysmon EventID 13
 description: The following analytic detects modifications to the Windows registry that change the Windows Defender Quick Scan Interval. It leverages data from the Endpoint.Registry data model, focusing on changes to the "QuickScanInterval" registry path. This activity is significant because altering the scan interval can impair Windows Defender's ability to detect malware promptly, potentially allowing threats to persist undetected. If confirmed malicious, this modification could enable attackers to bypass security measures, maintain persistence, and execute further malicious activities without being detected by quick scans.
 search: '| tstats `security_content_summariesonly` count min(_time) as firstTime max(_time) as lastTime FROM datamodel=Endpoint.Registry where Registry.registry_path= "*\\Windows Defender\\Scan\\QuickScanInterval" by Registry.registry_key_name Registry.user Registry.registry_path Registry.registry_value_data Registry.action Registry.dest | `drop_dm_object_name(Registry)` | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)` | `windows_impair_defense_change_win_defender_quick_scan_interval_filter`'

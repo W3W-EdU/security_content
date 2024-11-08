@@ -6,7 +6,6 @@ author: Teoderick Contreras, Splunk
 status: production
 type: TTP
 data_source:
-- Sysmon EventID 12
 - Sysmon EventID 13
 description: The following analytic detects modifications to the Windows registry that disable the Windows Defender protocol recognition feature. It leverages data from the Endpoint.Registry data model, specifically looking for changes to the "DisableProtocolRecognition" setting. This activity is significant because disabling protocol recognition can hinder Windows Defender's ability to detect and respond to malware or suspicious software. If confirmed malicious, this action could allow an attacker to bypass antivirus defenses, facilitating further malicious activities such as data exfiltration or system compromise.
 search: '| tstats `security_content_summariesonly` count min(_time) as firstTime max(_time) as lastTime FROM datamodel=Endpoint.Registry where Registry.registry_path= "*\\Windows Defender\\NIS\\DisableProtocolRecognition" Registry.registry_value_data="0x00000001" by Registry.registry_key_name Registry.user Registry.registry_path Registry.registry_value_data Registry.action Registry.dest | `drop_dm_object_name(Registry)` | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)` | `windows_impair_defense_disable_defender_protocol_recognition_filter`'

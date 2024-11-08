@@ -6,7 +6,6 @@ author: Teoderick Contreras, Splunk
 status: production
 type: TTP
 data_source:
-- Sysmon EventID 12
 - Sysmon EventID 13
 description: The following analytic detects modifications to the Windows registry that disable Windows Defender Network Protection. It leverages data from the Endpoint.Registry data model, specifically monitoring changes to the EnableNetworkProtection registry entry. This activity is significant because disabling Network Protection can leave the system vulnerable to network-based threats by preventing Windows Defender from analyzing and blocking malicious network activity. If confirmed malicious, this action could allow attackers to bypass security measures, potentially leading to unauthorized access, data exfiltration, or further compromise of the network.
 search: '| tstats `security_content_summariesonly` count min(_time) as firstTime max(_time) as lastTime FROM datamodel=Endpoint.Registry where Registry.registry_path= "*\\Windows Defender\\Windows Defender Exploit Guard\\Network Protection\\EnableNetworkProtection" Registry.registry_value_data="0x00000000" by Registry.registry_key_name Registry.user Registry.registry_path Registry.registry_value_data Registry.action Registry.dest | `drop_dm_object_name(Registry)` | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)` | `windows_impair_defense_disable_win_defender_network_protection_filter`'

@@ -6,7 +6,6 @@ author: Teoderick Contreras, Splunk
 status: production
 type: TTP
 data_source:
-- Sysmon EventID 12
 - Sysmon EventID 13
 description: The following analytic detects modifications to the Windows registry that disable Windows Defender Signature Retirement. It leverages data from the Endpoint.Registry data model, specifically monitoring changes to the DisableSignatureRetirement registry setting. This activity is significant because disabling signature retirement can prevent Windows Defender from removing outdated antivirus signatures, potentially reducing its effectiveness in detecting threats. If confirmed malicious, this action could allow an attacker to evade detection by using older, less relevant signatures, thereby compromising the system's security posture.
 search: '| tstats `security_content_summariesonly` count min(_time) as firstTime max(_time) as lastTime FROM datamodel=Endpoint.Registry where Registry.registry_path= "*\\Windows Defender\\NIS\\Consumers\\IPS\\DisableSignatureRetirement" Registry.registry_value_data="0x00000001" by Registry.registry_key_name Registry.user Registry.registry_path Registry.registry_value_data Registry.action Registry.dest | `drop_dm_object_name(Registry)` | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)` | `windows_impair_defense_disable_win_defender_signature_retirement_filter`'
