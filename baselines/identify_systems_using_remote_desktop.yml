@@ -4,8 +4,6 @@ version: 1
 date: '2019-04-01'
 author: David Dorsey, Splunk
 type: Baseline
-datamodel:
-- Endpoint
 description: This search counts the numbers of times the remote desktop process, mstsc.exe,
   has run on each system.
 search: '| tstats `security_content_summariesonly` count from datamodel=Endpoint.Processes

@@ -4,7 +4,6 @@ version: 1
 date: '2018-01-08'
 author: Bhavin Patel, Splunk
 type: Baseline
-datamodel: []
 description: This search looks for CloudTrail events where an AWS instance is started
   and creates a baseline of most recent time (latest) and the first time (earliest)
   we've seen this region in our dataset grouped by the value awsRegion for the last

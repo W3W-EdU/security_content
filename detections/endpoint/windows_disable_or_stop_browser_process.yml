@@ -3,8 +3,8 @@ id: 220d34b7-b6c7-45fe-8dbb-c35cdd9fe6d5
 version: 1
 date: '2024-09-24'
 author: Teoderick Contreras, Splunk
-data_sources:
-- Sysmon Event ID 1
+data_source:
+- Sysmon EventID 1
 type: TTP
 status: production
 description: The following analytic detects the use of the taskkill command in a process command line to terminate several known browser processes, a technique commonly employed by the Braodo stealer malware to steal credentials. By forcefully closing browsers like Chrome, Edge, and Firefox, the malware can unlock files that store sensitive information, such as passwords and login data. This detection focuses on identifying taskkill commands targeting these browsers, signaling malicious intent. Early detection allows security teams to investigate and prevent further credential theft and system compromise.

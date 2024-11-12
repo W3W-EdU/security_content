@@ -4,7 +4,6 @@ version: 1
 date: '2017-10-20'
 author: Bhavin Patel, Splunk
 type: Investigation
-datamodel: []
 description: This search helps an analyst investigate a notable event related to a
   potential Apache Struts exploitation. To investigate, we will want to isolate and
   analyze the "payload" or the commands that were passed to the vulnerable hosts by

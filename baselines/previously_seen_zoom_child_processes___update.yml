@@ -4,8 +4,6 @@ version: 1
 date: '2020-05-20'
 author: David Dorsey, Splunk
 type: Baseline
-datamodel:
-- Endpoint
 description: This search returns the first and last time a process was seen per endpoint
   with a parent process of zoom.exe (Windows) or zoom.us (macOS) within the last hour.
   It then updates this information with historical data and filters out proces_name

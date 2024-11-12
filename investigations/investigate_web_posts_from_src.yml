@@ -4,8 +4,6 @@ version: 2
 date: '2024-09-24'
 author: Jose Hernandez, Splunk
 type: Investigation
-datamodel:
-- Web
 description: 'This investigative search retrieves POST requests from a specified source
   IP or hostname. Identifying the POST requests, as well as their associated destination
   URLs and user agent(s), may help you scope and characterize the suspicious traffic.'

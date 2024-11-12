@@ -4,7 +4,6 @@ version: 1
 date: '2018-06-26'
 author: Bhavin Patel, Splunk
 type: Investigation
-datamodel: []
 description: This search queries AWS configuration logs and returns the information
   about a specific S3 bucket. The information returned includes the time the S3 bucket
   was created, the resource ID, the region it belongs to, the value of action performed,

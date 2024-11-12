@@ -4,7 +4,6 @@ version: 1
 date: '2018-03-15'
 author: David Dorsey, Splunk
 type: Baseline
-datamodel: []
 description: This search builds a table of previously seen ARNs that have launched
   a EC2 instance.
 search: '`cloudtrail` eventName=RunInstances errorCode=success | rename userIdentity.arn

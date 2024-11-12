@@ -4,8 +4,6 @@ version: 2
 date: '2024-09-24'
 author: Jose Hernandez, Splunk
 type: Investigation
-datamodel:
-- Authentication
 description: 'This search returns the source, destination, and user for all successful
   remote-desktop authentications. A successful authentication after a brute-force
   attack on a destination machine is suspicious behavior.'

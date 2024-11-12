@@ -4,7 +4,6 @@ version: 1
 date: '2018-03-16'
 author: David Dorsey, Splunk
 type: Baseline
-datamodel: []
 description: This search builds a table of the first and last times seen for every
   IP address (along with its physical location) previously associated with cloud-provisioning
   activity. This is broadly defined as any event that runs or creates something.

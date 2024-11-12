@@ -4,7 +4,6 @@ version: 1
 date: '2017-01-22'
 author: Bhavin Patel, Splunk
 type: Investigation
-datamodel: []
 description: This search queries AWS description logs and returns all the information
   about a specific network ACL via network ACL ID
 search: '`aws_description` | rename id as networkAclId | search  networkAclId=$networkAclId$

@@ -4,7 +4,6 @@ version: 2
 date: '2024-09-24'
 author: Matthew Moore, Splunk
 type: Baseline
-datamodel: []
 description: This baseline rule calculates the average ratio of inbound to outbound network IO for each Kubernetes container. 
   It uses metrics from the Kubernetes API and the Splunk Infrastructure Monitoring Add-on. 
   The rule generates a lookup table with the average and standard deviation of the network IO ratio for each container. 

@@ -4,7 +4,6 @@ version: 2
 date: '2024-09-24'
 author: Patrick Bareiss, Splunk
 type: Investigation
-datamodel: []
 description: This search hunts for dumped kerberos ticket from LSASS memory.
 search: '`wineventlog_security` EventCode=4768 OR EventCode=4769 | rex field=user
   "(?<new_user>[^\@]+)" | stats count BY new_user, dest, EventCode | stats max(count)

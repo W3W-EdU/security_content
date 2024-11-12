@@ -4,7 +4,6 @@ version: 1
 date: '2019-11-14'
 author: Jason Brewer, Splunk
 type: Baseline
-datamodel: []
 description: This search is used to build a Machine Learning Toolkit (MLTK) model
   for how many RunInstances users do in the environment. By default, the search uses
   the last 90 days of data to build the model. The model created by this search is

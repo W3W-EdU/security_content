@@ -4,7 +4,6 @@ version: 1
 date: '2017-09-15'
 author: David Dorsey, Splunk
 type: Baseline
-datamodel: []
 description: This search takes the existing interesting process table from ES, filters
   out any existing additions added by ESCU and then updates the table with processes
   identified by ESCU that should be prohibited on your endpoints.

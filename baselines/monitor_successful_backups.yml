@@ -4,7 +4,6 @@ version: 1
 date: '2017-09-12'
 author: David Dorsey, Splunk
 type: Baseline
-datamodel: []
 description: This search is intended to give you a feel for how often successful backups
   are conducted in your environment. Fluctuations in these numbers will allow you
   to determine when you should investigate.

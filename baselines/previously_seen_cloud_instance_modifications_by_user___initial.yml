@@ -4,8 +4,6 @@ version: 1
 date: '2020-07-29'
 author: Rico Valdez, Splunk
 type: Baseline
-datamodel:
-- Change
 description: This search builds a table of previously seen users that have modified
   a cloud instance.
 search: '| tstats earliest(_time) as firstTimeSeen, latest(_time) as lastTimeSeen

@@ -4,8 +4,6 @@ version: 2
 date: '2024-09-24'
 author: Bhavin Patel, Splunk
 type: Investigation
-datamodel:
-- Network_Traffic
 description: 'This search calculates the ratio of DNS traffic originating and coming
   from a host to a list of DNS servers over the last 24 hours. A high value of this
   ratio could be very useful to quickly understand if a src_ip (host) is sending a

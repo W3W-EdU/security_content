@@ -4,7 +4,6 @@ version: 1
 date: '2018-02-12'
 author: Bhavin Patel, Splunk
 type: Investigation
-datamodel: []
 description: This search queries AWS description logs and returns all the information
   about a specific instance via the instanceId field
 search: '`aws_description` | dedup id sortby -_time |rename id as instanceId|  search

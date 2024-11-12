@@ -4,7 +4,6 @@ version: 1
 date: '2017-09-12'
 author: Rico Valdez, Splunk
 type: Investigation
-datamodel: []
 description: Retrieve the backup logs for the last 2 weeks for a specific host in
   order to investigate why backups are not completing successfully.
 search: '| search `netbackup` dest=$dest$'

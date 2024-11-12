@@ -5,7 +5,6 @@ date: '2024-09-30'
 author: Michael Haag, Splunk
 status: production
 type: TTP
-datamodel: []
 description: The following analytic detects the creation of scheduled tasks within user-writable paths using Windows Security EventCode 4698. It identifies tasks registered via schtasks.exe or TaskService that execute commands from directories like Public, ProgramData, Temp, and AppData. This behavior is significant as it may indicate an attempt to establish persistence or execute unauthorized commands. If confirmed malicious, an attacker could maintain long-term access, escalate privileges, or execute arbitrary code, posing a severe threat to system integrity and security.
 data_source:
 - Windows Event Log Security 4698

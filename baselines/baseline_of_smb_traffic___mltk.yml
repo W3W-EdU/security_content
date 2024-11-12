@@ -4,8 +4,6 @@ version: 1
 date: '2019-05-08'
 author: Rico Valdez, Splunk
 type: Baseline
-datamodel:
-- Network_Traffic
 description: This search is used to build a Machine Learning Toolkit (MLTK) model
   to characterize the number of SMB connections observed each hour for every day of
   week. By default, the search uses the last 30 days of data to build the model. The

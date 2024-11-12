@@ -4,7 +4,6 @@ version: 2
 date: '2019-02-27'
 author: David Dorsey, Splunk
 type: Investigation
-datamodel: []
 description: This search allows you to retrieve any modifications to logon rights
   for a specific user account.
 search: '`wineventlog_security` (signature_id=4718 OR signature_id=4717) user=$user$

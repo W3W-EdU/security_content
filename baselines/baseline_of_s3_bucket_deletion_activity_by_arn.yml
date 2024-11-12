@@ -4,7 +4,6 @@ version: 1
 date: '2018-07-17'
 author: Bhavin Patel, Splunk
 type: Baseline
-datamodel: []
 description: This search establishes, on a per-hour basis, the average and standard
   deviation for the number of API calls related to deleting an S3 bucket by each user.
   Also recorded is the number of data points for each user. This table is then outputted

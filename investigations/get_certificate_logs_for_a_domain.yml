@@ -4,7 +4,6 @@ version: 2
 date: '2019-04-29'
 author: Bhavin Patel, Splunk
 type: Investigation
-datamodel: []
 description: This search queries the Certificates datamodel and give you all the information
   for a specific domain. Please note that the certificates issued by "Let's Encrypt"
   are widely used by attackers.

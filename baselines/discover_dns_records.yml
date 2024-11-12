@@ -4,8 +4,6 @@ version: 1
 date: '2019-02-14'
 author: Jose Hernandez, Splunk
 type: Baseline
-datamodel:
-- Network_Resolution
 description: The search takes corporate and common cloud provider domains configured
   under `cim_corporate_email_domains.csv`, `cim_corporate_web_domains.csv`, and `cloud_domains.csv`
   finds their responses across the last 30 days from data in the `Network_Resolution

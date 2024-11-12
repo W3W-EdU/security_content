@@ -4,7 +4,6 @@ version: 2
 date: '2024-09-24'
 author: Bhavin Patel, Splunk
 type: Investigation
-datamodel: []
 description: This search lists all the logged CloudTrail activities by a specific
   user and will create a table containing the source of the user, the region of the
   activity, the name and type of the event, the action taken, and the user's identity

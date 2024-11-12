@@ -4,7 +4,6 @@ version: 2
 date: '2017-09-20'
 author: Bhavin Patel, Splunk
 type: Investigation
-datamodel: []
 description: This search queries the notable index and returns all the Notable Events
   for the particular destination host, giving the analyst an overview of the incidents
   that may have occurred with the host under investigation.

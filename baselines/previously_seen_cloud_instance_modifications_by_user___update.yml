@@ -4,8 +4,6 @@ version: 1
 date: '2020-07-29'
 author: Rico Valdez, Splunk
 type: Baseline
-datamodel:
-- Change
 description: This search updates a table of previously seen Cloud Instance modifications
   that have been made by a user
 search: '| tstats earliest(_time) as firstTimeSeen, latest(_time) as lastTimeSeen

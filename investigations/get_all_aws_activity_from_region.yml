@@ -4,7 +4,6 @@ version: 1
 date: '2018-03-19'
 author: David Dorsey, Splunk
 type: Investigation
-datamodel: []
 description: This search retrieves all the activity from a specific geographic region
   and will create a table containing the time, geographic region, ARN, username, the
   type of user, the source IP address, the AWS region the activity was in, the API

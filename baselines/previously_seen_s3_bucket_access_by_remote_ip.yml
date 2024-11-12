@@ -4,7 +4,6 @@ version: 1
 date: '2018-06-28'
 author: Bhavin Patel, Splunk
 type: Baseline
-datamodel: []
 description: This search looks for successful access to S3 buckets from remote IP
   addresses, then creates a baseline of the earliest and latest times we have encountered
   this remote IP within the last 30 days. In this support search, we are only looking

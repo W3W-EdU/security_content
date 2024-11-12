@@ -4,8 +4,6 @@ version: 2
 date: '2019-04-01'
 author: Bhavin Patel, Splunk
 type: Investigation
-datamodel:
-- Endpoint
 description: This search queries the Endpoint data model to give you details about
   the process running on a host which is under investigation. To gather the process
   info, enter the values for the process name in question and the destination IP address.

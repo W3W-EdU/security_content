@@ -4,7 +4,6 @@ version: 1
 date: '2018-10-23'
 author: Rico Valdez, Splunk
 type: Investigation
-datamodel: []
 description: This search queries Sysmon WMI events for the host of interest.
 search: '`sysmon` EventCode>18 EventCode<22 | rename host as dest | search dest=$dest$|
   table _time, dest, user, Name, Operation, EventType, Type, Query, Consumer, Filter'

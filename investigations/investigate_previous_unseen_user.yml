@@ -4,8 +4,6 @@ version: 1
 date: '2019-12-10'
 author: Patrick Bareiss, Splunk
 type: Investigation
-datamodel:
-- Authentication
 description: This search returns previous unseen user, which didn't log in for 30
   days.
 search: '| tstats count `security_content_summariesonly` earliest(_time) as first_login

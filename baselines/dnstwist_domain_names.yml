@@ -4,7 +4,6 @@ version: 2
 date: '2018-10-08'
 author: David Dorsey, Splunk
 type: Baseline
-datamodel: []
 description: This search creates permutations of your existing domains, removes the
   valid domain names and stores them in a specified lookup file so they can be checked
   for in the associated detection searches.

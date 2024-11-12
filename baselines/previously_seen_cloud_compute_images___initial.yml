@@ -4,8 +4,6 @@ version: 1
 date: '2020-10-08'
 author: David Dorsey, Splunk
 type: Baseline
-datamodel:
-- Change
 description: This search builds a table of previously seen images used to launch cloud
   compute instances
 search: '| tstats earliest(_time) as firstTimeSeen, latest(_time) as lastTimeSeen

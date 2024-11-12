@@ -4,7 +4,6 @@ version: 1
 date: '2018-06-08'
 author: David Dorsey, Splunk
 type: Investigation
-datamodel: []
 description: This search retrieves the times, ARN, source IPs, AWS regions, event
   names, and the result of the event for specific credentials.
 search: '`cloudtrail` | rename userIdentity.accessKeyId as accessKeyId| search accessKeyId=$accessKeyId$

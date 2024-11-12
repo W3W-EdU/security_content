@@ -4,7 +4,6 @@ version: 1
 date: '2019-12-10'
 author: Patrick Bareiss, Splunk
 type: Investigation
-datamodel: []
 description: This search hunts for dumped NTLM hashes used for pass the hash.
 search: '`wineventlog_security` EventCode=4624 Logon_Type=9 AuthenticationPackageName=Negotiate
   | stats count earliest(_time) as first_login latest(_time) as last_login by src_user

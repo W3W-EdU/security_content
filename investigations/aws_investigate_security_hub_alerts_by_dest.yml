@@ -4,7 +4,6 @@ version: 1
 date: '2020-06-08'
 author: Bhavin Patel, Splunk
 type: Investigation
-datamodel: []
 description: This search retrieves the all the alerts created by AWS Security Hub
   for a specific dest(instance_id).
 search: '`aws_securityhub_firehose` "findings{}.Resources{}.Type"=AWSEC2Instance |

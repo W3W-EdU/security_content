@@ -4,8 +4,6 @@ version: 1
 date: '2020-08-14'
 author: David Dorsey, Splunk
 type: Baseline
-datamodel:
-- Change
 description: This search is used to build a Machine Learning Toolkit (MLTK) model
   for how many instances are created in the environment. By default, the search uses
   the last 90 days of data to build the model and the model is rebuilt weekly. The

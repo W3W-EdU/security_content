@@ -4,7 +4,6 @@ version: 1
 date: '2018-03-08'
 author: David Dorsey, Splunk
 type: Baseline
-datamodel: []
 description: This search builds a table of previously seen EC2 instance types
 search: '`cloudtrail` eventName=RunInstances errorCode=success | rename requestParameters.instanceType
   as instanceType | fillnull value="m1.small" instanceType | stats earliest(_time)

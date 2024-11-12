@@ -4,8 +4,6 @@ version: 2
 date: '2019-11-06'
 author: David Dorsey, Splunk
 type: Investigation
-datamodel:
-- Endpoint
 description: This search returns the file activity for a specific process on a specific
   endpoint
 search: '| tstats `security_content_summariesonly` values(Filesystem.file_name) as

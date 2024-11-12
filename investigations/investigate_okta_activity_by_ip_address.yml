@@ -4,7 +4,6 @@ version: 1
 date: '2020-04-02'
 author: Rico Valdez, Splunk
 type: Investigation
-datamodel: []
 description: This search returns all okta events from a specific IP address.
 search: '`okta` src_ip={src_ip} | rename client.geographicalContext.country as country,
   client.geographicalContext.state as state, client.geographicalContext.city as city

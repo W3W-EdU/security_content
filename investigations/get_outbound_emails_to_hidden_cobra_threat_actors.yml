@@ -4,8 +4,6 @@ version: 1
 date: '2018-06-14'
 author: Bhavin Patel, Splunk
 type: Investigation
-datamodel:
-- Email
 description: 'This search returns the information of the users that sent emails to
   the accounts controlled by the Hidden Cobra Threat Actors: specifically to `misswang8107@gmail.com`,
   and from `redhat@gmail.com`.'

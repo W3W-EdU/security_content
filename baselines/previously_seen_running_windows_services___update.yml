@@ -4,7 +4,6 @@ version: 3
 date: '2020-06-23'
 author: David Dorsey, Splunk
 type: Baseline
-datamodel: []
 description: This search returns the first and last time a Windows service was seen
   across your enterprise within the last hour. It then updates this information with
   historical data and filters out Windows services pairs that have not been seen within

@@ -4,7 +4,6 @@ version: 1
 date: '2018-03-19'
 author: David Dorsey, Splunk
 type: Investigation
-datamodel: []
 description: This search retrieves all the activity from a specific IP address and
   will create a table containing the time, ARN, username, the type of user, the IP
   address, the AWS region the activity was in, the API called, and whether or not

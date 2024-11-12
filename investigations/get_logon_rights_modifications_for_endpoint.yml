@@ -4,7 +4,6 @@ version: 2
 date: '2017-09-12'
 author: David Dorsey, Splunk
 type: Investigation
-datamodel: []
 description: This search allows you to retrieve any modifications to logon rights
   associated with a specific host.
 search: '`wineventlog_security` (signature_id=4718 OR signature_id=4717) dest=$dest$

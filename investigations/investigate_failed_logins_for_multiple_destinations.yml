@@ -4,8 +4,6 @@ version: 1
 date: '2019-12-10'
 author: Patrick Bareiss, Splunk
 type: Investigation
-datamodel:
-- Authentication
 description: This search returns failed logins to multiple destinations by user.
 search: '| tstats count `security_content_summariesonly` earliest(_time) as first_login
   latest(_time) as last_login dc(Authentication.dest) AS distinct_count_dest values(Authentication.dest)

@@ -4,7 +4,6 @@ version: 1
 date: '2018-05-07'
 author: Bhavin Patel, Splunk
 type: Investigation
-datamodel: []
 description: This search queries AWS configuration logs and returns the information
   about a specific network interface via network interface ID. The information will
   include the ARN of the network interface, its relationships with other AWS resources,

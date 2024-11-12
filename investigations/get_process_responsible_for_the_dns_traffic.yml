@@ -4,8 +4,6 @@ version: 2
 date: '2019-04-01'
 author: Bhavin Patel, Splunk
 type: Investigation
-datamodel:
-- Endpoint
 description: While investigating, an analyst will want to know what process and parent_process
   is responsible for generating suspicious DNS traffic. Use the following search and
   enter the value of `dest` in the search to get specific details on the process responsible

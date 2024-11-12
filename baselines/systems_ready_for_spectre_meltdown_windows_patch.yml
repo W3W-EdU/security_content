@@ -4,8 +4,6 @@ version: 1
 date: '2018-01-08'
 author: David Dorsey, Splunk
 type: Baseline
-datamodel:
-- Change
 description: Some AV applications can cause the Spectre/Meltdown patch for Windows
   not to install successfully. This registry key is supposed to be created by the
   AV engine when it has been patched to be able to handle the Windows patch. If this

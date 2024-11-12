@@ -4,7 +4,6 @@ version: 1
 date: '2020-04-02'
 author: Rico Valdez, Splunk
 type: Investigation
-datamodel: []
 description: This search returns all okta events associated with a specific app
 search: '`okta` app=$app$ | rename client.geographicalContext.country as country,
   client.geographicalContext.state as state, client.geographicalContext.city as city

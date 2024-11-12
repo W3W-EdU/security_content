@@ -4,8 +4,6 @@ version: 1
 date: '2020-05-28'
 author: Rico Valdez, Splunk
 type: Baseline
-datamodel:
-- Authentication
 description: This search looks for CloudTrail events where a user logs into the console,
   then creates a baseline of the latest and earliest times, City, Region, and Country
   we have encountered this user in our dataset, grouped by username, within the last

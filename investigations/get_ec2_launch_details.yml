@@ -4,7 +4,6 @@ version: 1
 date: '2018-03-12'
 author: Bhavin Patel, Splunk
 type: Investigation
-datamodel: []
 description: This search returns some of the launch details for a EC2 instance.
 search: '`cloudtrail` dest=$dest$ |rename userIdentity.arn as arn, responseElements.instancesSet.items{}.instanceId
   as dest, responseElements.instancesSet.items{}.privateIpAddress as privateIpAddress,
