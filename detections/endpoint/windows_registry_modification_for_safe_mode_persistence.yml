@@ -1,7 +1,7 @@
 name: Windows Registry Modification for Safe Mode Persistence
 id: c6149154-c9d8-11eb-9da7-acde48001122
 version: 6
-date: '2024-09-30'
+date: '2024-10-04'
 author: Teoderick Contreras, Michael Haag, Splunk
 status: production
 type: TTP
@@ -9,9 +9,20 @@ description: The following analytic identifies modifications to the SafeBoot reg
 data_source:
 - Sysmon EventID 12
 - Sysmon EventID 13
-search: '| tstats `security_content_summariesonly` count from datamodel=Endpoint.Registry where Registry.registry_path IN ("*SYSTEM\\CurrentControlSet\\Control\\SafeBoot\\Minimal\\*","*SYSTEM\\CurrentControlSet\\Control\\SafeBoot\\Network\\*") by _time span=1h Registry.dest Registry.user Registry.registry_path Registry.registry_value_name Registry.process_guid Registry.registry_key_name Registry.registry_value_data | `drop_dm_object_name(Registry)` | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)` | `windows_registry_modification_for_safe_mode_persistence_filter`'
-how_to_implement: To successfully implement this search, you must be ingesting data that records registry activity from your hosts to populate the endpoint data model in the registry node. This is typically populated via endpoint detection-and-response product, such as Carbon Black or endpoint data sources, such as Sysmon. The data used for this search is typically generated via logs that report reads and writes to the registry.
-known_false_positives: updated windows application needed in safe boot may used this registry
+search: '| tstats `security_content_summariesonly` count min(_time) as firstTime max(_time) as lastTime FROM datamodel=Endpoint.Registry 
+  where Registry.registry_path IN ("*SYSTEM\\CurrentControlSet\\Control\\SafeBoot\\Minimal\\*","*SYSTEM\\CurrentControlSet\\Control\\SafeBoot\\Network\\*")
+  by Registry.dest Registry.user Registry.registry_path Registry.registry_value_name
+  Registry.process_guid Registry.registry_key_name Registry.registry_value_data |
+  `drop_dm_object_name(Registry)` | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)`
+  | `windows_registry_modification_for_safe_mode_persistence_filter`'
+how_to_implement: To successfully implement this search, you must be ingesting data
+  that records registry activity from your hosts to populate the endpoint data model
+  in the registry node. This is typically populated via endpoint detection-and-response
+  product, such as Carbon Black or endpoint data sources, such as Sysmon. The data
+  used for this search is typically generated via logs that report reads and writes
+  to the registry.
+known_false_positives: updated windows application needed in safe boot may used this
+  registry
 references:
 - https://malware.news/t/threat-analysis-unit-tau-threat-intelligence-notification-snatch-ransomware/36365
 - https://redcanary.com/blog/tracking-driver-inventory-to-expose-rootkits/

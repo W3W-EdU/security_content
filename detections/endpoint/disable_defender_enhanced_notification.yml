@@ -1,8 +1,8 @@
 name: Disable Defender Enhanced Notification
 id: dc65678c-301f-11ec-8e30-acde48001122
 version: 5
-date: '2024-09-30'
-author: Steven Dick, Teoderick Contreras, Splunk
+date: '2024-11-13'
+author: Teoderick Contreras, Splunk, Steven Dick
 status: production
 type: TTP
 description: The following analytic detects the modification of the registry to disable Windows Defender's Enhanced Notification feature. It leverages data from Endpoint Detection and Response (EDR) agents, specifically monitoring changes to the registry path associated with Windows Defender reporting. This activity is significant because disabling Enhanced Notifications can prevent users and administrators from receiving critical security alerts, potentially allowing malicious activities to go unnoticed. If confirmed malicious, this action could enable an attacker to bypass detection mechanisms, maintain persistence, and escalate their activities without triggering alerts.
