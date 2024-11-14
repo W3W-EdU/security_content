@@ -38,9 +38,9 @@ apps:
 - uid: 1621
   title: Splunk Common Information Model (CIM)
   appid: Splunk_SA_CIM
-  version: 5.3.2
+  version: 6.0.0
   description: description of app
-  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/splunk-common-information-model-cim_532.tgz
+  hardcoded_path: https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/splunk-common-information-model-cim_600.tgz
 - uid: 6553
   title: Splunk Add-on for Okta Identity Cloud
   appid: Splunk_TA_okta_identity_cloud
