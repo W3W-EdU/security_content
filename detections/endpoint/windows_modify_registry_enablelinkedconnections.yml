@@ -1,7 +1,7 @@
 name: Windows Modify Registry EnableLinkedConnections
 id: 93048164-3358-4af0-8680-aa5f38440516
-version: 3
-date: '2024-09-30'
+version: 4
+date: '2024-11-14'
 author: Teoderick Contreras, Splunk
 status: production
 type: TTP

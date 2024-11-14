@@ -1,7 +1,7 @@
 name: Active Setup Registry Autostart
 id: f64579c0-203f-11ec-abcc-acde48001122
-version: 6
-date: '2024-09-30'
+version: 7
+date: '2024-11-14'
 author: Steven Dick, Teoderick Contreras, Splunk
 status: production
 type: TTP

@@ -1,7 +1,7 @@
 name: Disable AMSI Through Registry
 id: 9c27ec42-d338-11eb-9044-acde48001122
-version: 6
-date: '2024-10-04'
+version: 7
+date: '2024-11-14'
 author: Teoderick Contreras, Splunk, Steven Dick
 status: production
 type: TTP

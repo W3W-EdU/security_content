@@ -1,7 +1,7 @@
 name: Windows Registry Modification for Safe Mode Persistence
 id: c6149154-c9d8-11eb-9da7-acde48001122
-version: 6
-date: '2024-10-04'
+version: 7
+date: '2024-11-14'
 author: Teoderick Contreras, Michael Haag, Splunk
 status: production
 type: TTP
