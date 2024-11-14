@@ -1,7 +1,7 @@
 name: Windows Registry Certificate Added
 id: 5ee98b2f-8b9e-457a-8bdc-dd41aaba9e87
-version: 4
-date: '2024-10-04'
+version: 5
+date: '2024-11-14'
 author: Michael Haag, Teodeerick Contreras, Splunk
 status: production
 type: Anomaly

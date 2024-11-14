@@ -1,7 +1,7 @@
 name: Registry Keys Used For Privilege Escalation
 id: c9f4b923-f8af-4155-b697-1354f5bcbc5e
-version: 9
-date: '2024-10-04'
+version: 10
+date: '2024-11-14'
 author: David Dorsey, Teoderick Contreras, Splunk, Steven Dick
 status: production
 type: TTP

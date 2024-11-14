@@ -1,7 +1,7 @@
 name: Allow Inbound Traffic By Firewall Rule Registry
 id: 0a46537c-be02-11eb-92ca-acde48001122
-version: 7
-date: '2024-10-04'
+version: 8
+date: '2024-11-14'
 author: Teoderick Contreras, Splunk, Steven Dick
 status: production
 type: TTP

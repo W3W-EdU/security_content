@@ -1,7 +1,7 @@
 name: Hide User Account From Sign-In Screen
 id: 834ba832-ad89-11eb-937d-acde48001122
-version: 6
-date: '2024-10-04'
+version: 7
+date: '2024-11-14'
 author: Teoderick Contreras, Splunk, Steven Dick
 status: production
 type: TTP

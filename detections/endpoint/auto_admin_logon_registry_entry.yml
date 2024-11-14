@@ -1,7 +1,7 @@
 name: Auto Admin Logon Registry Entry
 id: 1379d2b8-0f18-11ec-8ca3-acde48001122
-version: 6
-date: '2024-10-04'
+version: 7
+date: '2024-11-14'
 author: Teoderick Contreras, Splunk, Steven Dick
 status: production
 type: TTP

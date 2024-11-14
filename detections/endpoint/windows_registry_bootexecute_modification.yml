@@ -1,7 +1,7 @@
 name: Windows Registry BootExecute Modification
 id: eabbac3a-45aa-4659-920f-6b8cff383fb8
-version: 3
-date: '2024-10-04'
+version: 4
+date: '2024-11-14'
 author: Michael Haag, Teoderick Contreras, Splunk
 status: production
 type: TTP
