@@ -1,7 +1,7 @@
 name: Disabling ControlPanel
 id: 6ae0148e-9215-11eb-a94a-acde48001122
-version: 7
-date: '2024-10-04'
+version: 8
+date: '2024-11-14'
 author: Teoderick Contreras, Splunk, Steven Dick
 status: production
 type: TTP
