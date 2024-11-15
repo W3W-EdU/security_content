@@ -32,15 +32,4 @@ tags:
   - Command And Control
   product:
   - Splunk Phantom
-  required_fields:
-  - _time
-  - user
-  - userIdentity.type
-  - userIdentity.userName
-  - userIdentity.arn
-  - aws_account_id
-  - src
-  - awsRegion
-  - eventName
-  - eventType
   security_domain: network

@@ -14,8 +14,8 @@ search: '`kubernetes_azure` category=kube-audit | spath input=properties.log| se
   | dedup user.username user.groups{} |`kubernetes_azure_detect_sensitive_role_access_filter`'
 how_to_implement: You must install the Add-on for Microsoft Cloud Services and Configure
   Kube-Audit data diagnostics
-known_false_positives: 'Sensitive role resource access is necessary for cluster operation,
-  however source IP, namespace and user group may indicate possible malicious use.'
+known_false_positives: Sensitive role resource access is necessary for cluster operation,
+  however source IP, namespace and user group may indicate possible malicious use.
 references: []
 tags:
   analytic_story:
@@ -33,6 +33,4 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
   security_domain: threat

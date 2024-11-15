@@ -19,15 +19,4 @@ tags:
   - Suspicious WMI Use
   product:
   - Splunk Phantom
-  required_fields:
-  - _time
-  - EventCode
-  - user
-  - Name
-  - Operation
-  - EventType
-  - Type
-  - Query
-  - Consumer
-  - Filter
   security_domain: endpoint

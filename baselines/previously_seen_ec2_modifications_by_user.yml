@@ -23,8 +23,4 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - userIdentity.arn
-  - errorCode
   security_domain: network

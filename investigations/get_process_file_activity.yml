@@ -22,11 +22,4 @@ tags:
   - Suspicious Zoom Child Processes
   product:
   - Splunk Phantom
-  required_fields:
-  - _time
-  - Filesystem.file_name
-  - Filesystem.dest
-  - Filesystem.process_name
-  - Filesystem.file_path
-  - Filesystem.action
   security_domain: endpoint

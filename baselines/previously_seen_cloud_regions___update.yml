@@ -29,8 +29,4 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - All_Changes.action
-  - All_Changes.vendor_region
   security_domain: network

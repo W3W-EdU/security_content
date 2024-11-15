@@ -49,10 +49,4 @@ tags:
   - Command And Control
   product:
   - Splunk Phantom
-  required_fields:
-  - _time
-  - Processes.user
-  - Processes.parent_process_name
-  - Processes.process_name
-  - Processes.dest
   security_domain: endpoint

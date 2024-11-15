@@ -11,25 +11,21 @@ search: '| tstats `security_content_summariesonly` count values(Web.url) as url 
   as firstTime from datamodel=Web where Web.status=200 by Web.src Web.dest Web.status
   | `drop_dm_object_name("Web")` | `security_content_ctime(firstTime)` | `dynamic_dns_web_traffic`
   | `detect_web_traffic_to_dynamic_domain_providers_filter`'
-how_to_implement: 'This search requires you to be ingesting web-traffic logs. You
+how_to_implement: "This search requires you to be ingesting web-traffic logs. You
   can obtain these logs from indexing data from a web proxy or by using a network-traffic-analysis
   tool, such as Bro or Splunk Stream. The web data model must contain the URL being
   requested, the IP address of the host initiating the request, and the destination
   IP. This search also leverages a lookup file, `dynamic_dns_providers_default.csv`,
   which contains a non-exhaustive list of dynamic DNS providers. Consider periodically
-  updating this local lookup file with new domains.
-
-  This search produces fields (`isDynDNS`) that are not yet supported by ES Incident
-  Review and therefore cannot be viewed when a notable event is raised. These fields
-  contribute additional context to the notable. To see the additional metadata, add
-  the following fields, if not already present, to Incident Review - Event Attributes
-  (Configure > Incident Management > Incident Review Settings > Add New Entry):
-  
-  * **Label:** IsDynamicDNS, **Field:** isDynDNS
-
-  Detailed documentation on how to create a new field within Incident Review may be
-  found here: `https://docs.splunk.com/Documentation/ES/5.3.0/Admin/Customizenotables#Add_a_field_to_the_notable_event_details`
-  Deprecated because duplicate.'
+  updating this local lookup file with new domains.\nThis search produces fields (`isDynDNS`)
+  that are not yet supported by ES Incident Review and therefore cannot be viewed
+  when a notable event is raised. These fields contribute additional context to the
+  notable. To see the additional metadata, add the following fields, if not already
+  present, to Incident Review - Event Attributes (Configure > Incident Management
+  > Incident Review Settings > Add New Entry):\n* **Label:** IsDynamicDNS, **Field:**
+  isDynDNS\nDetailed documentation on how to create a new field within Incident Review
+  may be found here: `https://docs.splunk.com/Documentation/ES/5.3.0/Admin/Customizenotables#Add_a_field_to_the_notable_event_details`
+  Deprecated because duplicate."
 known_false_positives: It is possible that list of dynamic DNS providers is outdated
   and/or that the URL being requested is legitimate.
 references: []
@@ -51,10 +47,4 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - Web.url
-  - Web.status
-  - Web.src
-  - Web.dest
   security_domain: network

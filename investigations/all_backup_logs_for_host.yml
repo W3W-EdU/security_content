@@ -16,7 +16,4 @@ tags:
   - Monitor Backup Solution
   product:
   - Splunk Phantom
-  required_fields:
-  - _time
-  - dest
   security_domain: endpoint

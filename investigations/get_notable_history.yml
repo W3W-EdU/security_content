@@ -83,6 +83,4 @@ tags:
   - Command And Control
   product:
   - Splunk Phantom
-  required_fields:
-  - _time
   security_domain: endpoint

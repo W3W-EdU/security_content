@@ -21,10 +21,4 @@ tags:
   - Hidden Cobra Malware
   product:
   - Splunk Phantom
-  required_fields:
-  - _time
-  - recipient
-  - src_user
-  - dest
-  - sec
   security_domain: network

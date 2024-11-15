@@ -14,8 +14,8 @@ search: '`aws_cloudwatchlogs_eks` objectRef.resource=clusterroles OR clusterrole
   user.groups{} |`kubernetes_aws_detect_sensitive_role_access_filter`'
 how_to_implement: You must install splunk AWS add on and Splunk App for AWS. This
   search works with cloudwatch logs.
-known_false_positives: 'Sensitive role resource access is necessary for cluster operation,
-  however source IP, namespace and user group may indicate possible malicious use.'
+known_false_positives: Sensitive role resource access is necessary for cluster operation,
+  however source IP, namespace and user group may indicate possible malicious use.
 references: []
 tags:
   analytic_story:
@@ -33,6 +33,4 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
   security_domain: threat

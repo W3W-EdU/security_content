@@ -5,10 +5,9 @@ date: '2024-10-17'
 author: Patrick Bareiss, Splunk
 status: deprecated
 type: Anomaly
-description: 
-  '**DEPRECATION NOTE** - This search has been deprecated and replaced with `O365 Mailbox Email Forwarding Enabled`.
-  This search detects when an admin configured a forwarding rule for multiple
-  mailboxes to the same destination.'
+description: '**DEPRECATION NOTE** - This search has been deprecated and replaced
+  with `O365 Mailbox Email Forwarding Enabled`. This search detects when an admin
+  configured a forwarding rule for multiple mailboxes to the same destination.'
 data_source: []
 search: '`o365_management_activity` Operation=Set-Mailbox | spath input=Parameters
   | rename Identity AS src_user | search ForwardingAddress=* | stats dc(src_user)
@@ -40,14 +39,11 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - Operation
-  - Parameters
   security_domain: threat
 tests:
 - name: True Positive Test
   attack_data:
-  - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1114.003/o365_mailbox_forwarding_enabled/o365_mailbox_forwarding_enabled.json
+  - data: 
+      https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1114.003/o365_mailbox_forwarding_enabled/o365_mailbox_forwarding_enabled.json
     sourcetype: o365:management:activity
     source: o365

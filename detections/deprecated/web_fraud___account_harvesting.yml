@@ -53,9 +53,4 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - http_content_type
-  - uri
-  - cookie
   security_domain: threat

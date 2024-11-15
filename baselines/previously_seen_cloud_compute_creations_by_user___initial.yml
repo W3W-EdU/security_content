@@ -23,11 +23,6 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - All_Changes.action
-  - All_Changes.object_category
-  - All_Changes.user
   security_domain: network
 deployment:
   scheduling:

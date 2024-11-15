@@ -17,29 +17,21 @@ search: '`cloudtrail` errorCode=success | rename userName as identity | search N
   min(_time) as firstTime max(_time) as lastTime values(eventName) as eventName by
   user | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)`
   | `detect_aws_api_activities_from_unapproved_accounts_filter`'
-how_to_implement: 'You must install the AWS App for Splunk (version 5.1.0 or later)
+how_to_implement: "You must install the AWS App for Splunk (version 5.1.0 or later)
   and Splunk Add-on for AWS (version 4.4.0 or later), then configure your AWS CloudTrail
   inputs. You must also populate the `identity_lookup_expanded` lookup shipped with
   the Asset and Identity framework to be able to look up users in your identity table
-  in Enterprise Security (ES). Leverage the support search called "Create a list of
-  approved AWS service accounts": run it once every 30 days to create and validate
-  a list of service accounts.
-
-  This search produces fields (`eventName`,`firstTime`,`lastTime`) that are not yet
-  supported by ES Incident Review and therefore cannot be viewed when a notable event
-  is raised. These fields contribute additional context to the notable. To see the
-  additional metadata, add the following fields, if not already present, to Incident
-  Review - Event Attributes (Configure > Incident Management > Incident Review Settings
-  > Add New Entry):
-  
-  * **Label:** AWS Event Name, **Field:** eventName
-
-  * **Label:** First Time, **Field:** firstTime
-
-  * **Label:** Last Time, **Field:** lastTime
-
-  Detailed documentation on how to create a new field within Incident Review may be
-  found here: `https://docs.splunk.com/Documentation/ES/5.3.0/Admin/Customizenotables#Add_a_field_to_the_notable_event_details`'
+  in Enterprise Security (ES). Leverage the support search called \"Create a list
+  of approved AWS service accounts\": run it once every 30 days to create and validate
+  a list of service accounts.\nThis search produces fields (`eventName`,`firstTime`,`lastTime`)
+  that are not yet supported by ES Incident Review and therefore cannot be viewed
+  when a notable event is raised. These fields contribute additional context to the
+  notable. To see the additional metadata, add the following fields, if not already
+  present, to Incident Review - Event Attributes (Configure > Incident Management
+  > Incident Review Settings > Add New Entry):\n* **Label:** AWS Event Name, **Field:**
+  eventName\n* **Label:** First Time, **Field:** firstTime\n* **Label:** Last Time,
+  **Field:** lastTime\nDetailed documentation on how to create a new field within
+  Incident Review may be found here: `https://docs.splunk.com/Documentation/ES/5.3.0/Admin/Customizenotables#Add_a_field_to_the_notable_event_details`"
 known_false_positives: It's likely that you'll find activity detected by users/service
   accounts that are not listed in the `identity_lookup_expanded` or ` aws_service_accounts.csv`
   file. If the user is a legitimate service account, update the `aws_service_accounts.csv`
@@ -63,10 +55,4 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - errorCode
-  - userName
-  - eventName
-  - user
   security_domain: access

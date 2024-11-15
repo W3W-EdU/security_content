@@ -27,7 +27,8 @@ search: '| tstats `security_content_summariesonly` count min(_time) as firstTime
   Processes.user Processes.parent_process_name Processes.process_name Processes.process_path
   | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)` | `drop_dm_object_name(Processes)`
   | lookup hijacklibs library AS process_name OUTPUT islibrary | search islibrary
-  = True | rename parent_process_name as process_name , process_name AS ImageLoaded, process_path AS Module_Path | `windows_dll_search_order_hijacking_hunt_filter`'
+  = True | rename parent_process_name as process_name , process_name AS ImageLoaded,
+  process_path AS Module_Path | `windows_dll_search_order_hijacking_hunt_filter`'
 how_to_implement: The detection is based on data that originates from Endpoint Detection
   and Response (EDR) agents. These agents are designed to provide security-related
   telemetry from the endpoints where the agent is installed. To implement this search,
@@ -65,17 +66,11 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - Processes.dest
-  - Processes.user
-  - Processes.parent_process_name
-  - Processes.process_name
-  - Processes.process_path
   security_domain: endpoint
 tests:
 - name: True Positive Test
   attack_data:
-  - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1574.001/atomic_red_team/windows-sysmon.log
+  - data: 
+      https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1574.001/atomic_red_team/windows-sysmon.log
     source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
     sourcetype: XmlWinEventLog

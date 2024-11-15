@@ -22,11 +22,4 @@ tags:
   - Credential Dumping
   product:
   - Splunk Phantom
-  required_fields:
-  - _time
-  - EventCode
-  - Logon_Type
-  - AuthenticationPackageName
-  - src_user
-  - dest
   security_domain: endpoint

@@ -24,8 +24,4 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - Identity_Management.All_Assets
-  - category
   security_domain: endpoint

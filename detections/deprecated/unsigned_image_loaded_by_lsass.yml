@@ -10,9 +10,8 @@ description: This search detects loading of unsigned images by LSASS. Deprecated
 data_source:
 - Sysmon EventID 7
 search: '`sysmon` EventID=7 Image=*lsass.exe Signed=false | stats count min(_time)
-  as firstTime max(_time) as lastTime by dest, Image, ImageLoaded, Signed, SHA1
-   | `security_content_ctime(firstTime)`| `security_content_ctime(lastTime)`
-  | `unsigned_image_loaded_by_lsass_filter`'
+  as firstTime max(_time) as lastTime by dest, Image, ImageLoaded, Signed, SHA1 |
+  `security_content_ctime(firstTime)`| `security_content_ctime(lastTime)` | `unsigned_image_loaded_by_lsass_filter`'
 how_to_implement: This search needs Sysmon Logs with a sysmon configuration, which
   includes EventCode 7 with lsass.exe. This search uses an input macro named `sysmon`.
   We strongly recommend that you specify your environment-specific configurations
@@ -41,6 +40,4 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
   security_domain: endpoint

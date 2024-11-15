@@ -7,10 +7,24 @@ type: Anomaly
 status: production
 data_source:
 - Windows Event Log Security 4769
-description: The following analytic detects a high volume of Kerberos service ticket requests, specifically more than 30, from a single source within a 5-minute window. It leverages Event ID 4769, which logs when a Kerberos service ticket is requested, focusing on requests with computer names as the Service Name. This behavior is significant as it may indicate malicious activities such as lateral movement, malware staging, or reconnaissance. If confirmed malicious, an attacker could gain unauthorized access to multiple endpoints, potentially compromising the entire network.
-search: '`wineventlog_security` EventCode=4769 ServiceName="*$" TargetUserName!="*$" | bucket span=5m _time | stats dc(ServiceName) AS unique_targets values(ServiceName) as host_targets by _time, IpAddress, TargetUserName | where unique_targets > 30 | `windows_large_number_of_computer_service_tickets_requested_filter`'
-how_to_implement: To successfully implement this search, you need to be ingesting Domain Controller and Kerberos events. The Advanced Security Audit policy setting `Audit Kerberos Authentication Service` within `Account Logon` needs to be enabled.
-known_false_positives: An single endpoint requesting a large number of kerberos service tickets is not common behavior. Possible false positive scenarios include but are not limited to vulnerability scanners, administration systems and missconfigured systems.
+description: The following analytic detects a high volume of Kerberos service ticket
+  requests, specifically more than 30, from a single source within a 5-minute window.
+  It leverages Event ID 4769, which logs when a Kerberos service ticket is requested,
+  focusing on requests with computer names as the Service Name. This behavior is significant
+  as it may indicate malicious activities such as lateral movement, malware staging,
+  or reconnaissance. If confirmed malicious, an attacker could gain unauthorized access
+  to multiple endpoints, potentially compromising the entire network.
+search: '`wineventlog_security` EventCode=4769 ServiceName="*$" TargetUserName!="*$"
+  | bucket span=5m _time | stats dc(ServiceName) AS unique_targets values(ServiceName)
+  as host_targets by _time, IpAddress, TargetUserName | where unique_targets > 30
+  | `windows_large_number_of_computer_service_tickets_requested_filter`'
+how_to_implement: To successfully implement this search, you need to be ingesting
+  Domain Controller and Kerberos events. The Advanced Security Audit policy setting
+  `Audit Kerberos Authentication Service` within `Account Logon` needs to be enabled.
+known_false_positives: An single endpoint requesting a large number of kerberos service
+  tickets is not common behavior. Possible false positive scenarios include but are
+  not limited to vulnerability scanners, administration systems and missconfigured
+  systems.
 references:
 - https://thedfirreport.com/2023/01/23/sharefinder-how-threat-actors-discover-file-shares/
 - https://attack.mitre.org/techniques/T1135/
@@ -21,7 +35,12 @@ drilldown_searches:
   earliest_offset: $info_min_time$
   latest_offset: $info_max_time$
 - name: View risk events for the last 7 days for - "$IpAddress$"
-  search: '| from datamodel Risk.All_Risk | search normalized_risk_object IN ("$IpAddress$") starthoursago=168  | stats count min(_time) as firstTime max(_time) as lastTime values(search_name) as "Search Name" values(risk_message) as "Risk Message" values(analyticstories) as "Analytic Stories" values(annotations._all) as "Annotations" values(annotations.mitre_attack.mitre_tactic) as "ATT&CK Tactics" by normalized_risk_object | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)`'
+  search: '| from datamodel Risk.All_Risk | search normalized_risk_object IN ("$IpAddress$")
+    starthoursago=168  | stats count min(_time) as firstTime max(_time) as lastTime
+    values(search_name) as "Search Name" values(risk_message) as "Risk Message" values(analyticstories)
+    as "Analytic Stories" values(annotations._all) as "Annotations" values(annotations.mitre_attack.mitre_tactic)
+    as "ATT&CK Tactics" by normalized_risk_object | `security_content_ctime(firstTime)`
+    | `security_content_ctime(lastTime)`'
   earliest_offset: $info_min_time$
   latest_offset: $info_max_time$
 tags:
@@ -31,7 +50,8 @@ tags:
   asset_type: Endpoint
   confidence: 50
   impact: 60
-  message: A large number of kerberos computer service tickets were requested by $IpAddress$ within 5 minutes.
+  message: A large number of kerberos computer service tickets were requested by $IpAddress$
+    within 5 minutes.
   mitre_attack_id:
   - T1135
   - T1078
@@ -44,16 +64,11 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - EventCode
-  - ServiceName
-  - TargetUserName
-  - IpAddress
   security_domain: endpoint
 tests:
 - name: True Positive Test
   attack_data:
-  - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1135/large_number_computer_service_tickets/windows-security.log
+  - data: 
+      https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1135/large_number_computer_service_tickets/windows-security.log
     source: XmlWinEventLog:Security
     sourcetype: XmlWinEventLog

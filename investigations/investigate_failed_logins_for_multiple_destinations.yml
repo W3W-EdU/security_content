@@ -20,10 +20,4 @@ tags:
   - Credential Dumping
   product:
   - Splunk Phantom
-  required_fields:
-  - _time
-  - Authentication.dest
-  - Authentication.app
-  - Authentication.action
-  - Authentication.user
   security_domain: endpoint

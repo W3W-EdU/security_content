@@ -27,7 +27,8 @@ how_to_implement: You must be ingesting network traffic and populating the Netwo
   You can modify the search window to build the model over a longer period of time,
   which may give you better results. You may also want to periodically re-run this
   search to rebuild the model with the latest data. More information on the algorithm
-  used in the search can be found at `https://docs.splunk.com/Documentation/MLApp/4.2.0/User/Algorithms#DensityFunction`.
+  used in the search can be found at 
+  `https://docs.splunk.com/Documentation/MLApp/4.2.0/User/Algorithms#DensityFunction`.
 known_false_positives: none
 references: []
 tags:
@@ -44,9 +45,4 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - All_Traffic.dest_port
-  - All_Traffic.app
-  - All_Traffic.src
   security_domain: network

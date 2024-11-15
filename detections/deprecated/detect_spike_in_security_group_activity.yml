@@ -55,7 +55,4 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - serIdentity.arn
   security_domain: network

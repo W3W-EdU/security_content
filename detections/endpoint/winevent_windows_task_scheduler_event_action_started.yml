@@ -5,7 +5,14 @@ date: '2024-10-24'
 author: Michael Haag, Splunk
 status: production
 type: Hunting
-description: The following analytic detects the execution of tasks registered in Windows Task Scheduler by monitoring EventID 200 (action run) and 201 (action completed) from the Task Scheduler logs. This detection leverages Task Scheduler logs to identify potentially suspicious or unauthorized task executions. Monitoring these events is significant for a SOC as it helps uncover evasive techniques used for persistence, unauthorized code execution, or other malicious activities. If confirmed malicious, this activity could lead to unauthorized access, data exfiltration, or the execution of harmful payloads, posing a significant threat to the environment.
+description: The following analytic detects the execution of tasks registered in Windows
+  Task Scheduler by monitoring EventID 200 (action run) and 201 (action completed)
+  from the Task Scheduler logs. This detection leverages Task Scheduler logs to identify
+  potentially suspicious or unauthorized task executions. Monitoring these events
+  is significant for a SOC as it helps uncover evasive techniques used for persistence,
+  unauthorized code execution, or other malicious activities. If confirmed malicious,
+  this activity could lead to unauthorized access, data exfiltration, or the execution
+  of harmful payloads, posing a significant threat to the environment.
 data_source:
 - Windows Event Log TaskScheduler 200
 - Windows Event Log TaskScheduler 201
@@ -55,17 +62,11 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - TaskName
-  - ActionName
-  - EventID
-  - dvc
-  - ProcessID
   security_domain: endpoint
 tests:
 - name: True Positive Test
   attack_data:
-  - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/winevent_windows_task_scheduler_event_action_started/windows-xml.log
+  - data: 
+      https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/winevent_windows_task_scheduler_event_action_started/windows-xml.log
     source: XmlWinEventLog:Microsoft-Windows-TaskScheduler/Operational
     sourcetype: XmlWinEventLog

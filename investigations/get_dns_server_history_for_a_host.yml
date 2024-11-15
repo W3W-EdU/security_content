@@ -29,9 +29,4 @@ tags:
   - Command And Control
   product:
   - Splunk Phantom
-  required_fields:
-  - _time
-  - src_ip
-  - dest_port
-  - dest_ip
   security_domain: network

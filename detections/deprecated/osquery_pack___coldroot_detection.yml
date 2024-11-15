@@ -11,7 +11,8 @@ search: '| from datamodel Alerts.Alerts | search app=osquery:results (name=pack_
   OR name=pack_osx-attacks_OSX_ColdRoot_RAT_Files) | rename columns.path as path |
   bucket _time span=30s | stats count(path) by _time, host, user, path | `osquery_pack___coldroot_detection_filter`'
 how_to_implement: In order to properly run this search, Splunk needs to ingest data
-  from your osquery deployed agents with the [osx-attacks.conf](https://github.com/facebook/osquery/blob/experimental/packs/osx-attacks.conf#L599)
+  from your osquery deployed agents with the 
+  [osx-attacks.conf](https://github.com/facebook/osquery/blob/experimental/packs/osx-attacks.conf#L599)
   pack enabled. Also the [TA-OSquery](https://github.com/d1vious/TA-osquery) must
   be deployed across your indexers and universal forwarders in order to have the osquery
   data populate the Alerts data model
@@ -37,6 +38,4 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
   security_domain: threat

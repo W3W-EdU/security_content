@@ -22,13 +22,4 @@ tags:
   - AWS Suspicious Provisioning Activities
   product:
   - Splunk Phantom
-  required_fields:
-  - _time
-  - sourceIPAddress
-  - userIdentity.arn
-  - userIdentity.userName
-  - userIdentity.type
-  - awsRegion
-  - eventName
-  - errorCode
   security_domain: network

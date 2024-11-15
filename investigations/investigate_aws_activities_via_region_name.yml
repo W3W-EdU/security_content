@@ -22,10 +22,4 @@ tags:
   - Suspicious AWS S3 Activities
   product:
   - Splunk Phantom
-  required_fields:
-  - _time
-  - vendor_region
-  - requestParameters.instancesSet.items{}.instanceId
-  - eventName
-  - user
   security_domain: network

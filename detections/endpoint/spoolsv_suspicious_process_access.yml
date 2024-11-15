@@ -5,11 +5,25 @@ date: '2024-09-30'
 author: Mauricio Velazco, Michael Haag, Teoderick Contreras, Splunk
 status: production
 type: TTP
-description: The following analytic detects suspicious process access by spoolsv.exe, potentially indicating exploitation of the PrintNightmare vulnerability (CVE-2021-34527). It leverages Sysmon EventCode 10 to identify when spoolsv.exe accesses critical system files or processes like rundll32.exe with elevated privileges. This activity is significant as it may signal an attempt to gain unauthorized privilege escalation on a vulnerable machine. If confirmed malicious, an attacker could achieve elevated privileges, leading to further system compromise, persistent access, or unauthorized control over the affected environment.
+description: The following analytic detects suspicious process access by spoolsv.exe,
+  potentially indicating exploitation of the PrintNightmare vulnerability (CVE-2021-34527).
+  It leverages Sysmon EventCode 10 to identify when spoolsv.exe accesses critical
+  system files or processes like rundll32.exe with elevated privileges. This activity
+  is significant as it may signal an attempt to gain unauthorized privilege escalation
+  on a vulnerable machine. If confirmed malicious, an attacker could achieve elevated
+  privileges, leading to further system compromise, persistent access, or unauthorized
+  control over the affected environment.
 data_source:
 - Sysmon EventID 10
-search: '`sysmon` EventCode=10 SourceImage = "*\\spoolsv.exe" CallTrace = "*\\Windows\\system32\\spool\\DRIVERS\\x64\\*" TargetImage IN ("*\\rundll32.exe", "*\\spoolsv.exe") GrantedAccess = 0x1fffff | stats  count min(_time) as firstTime max(_time) as lastTime by dest SourceImage TargetImage GrantedAccess CallTrace  EventCode ProcessID| `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)` | `spoolsv_suspicious_process_access_filter`'
-how_to_implement: To successfully implement this search, you need to be ingesting logs with process access event where SourceImage, TargetImage, GrantedAccess and CallTrace executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA. Tune and filter known instances of spoolsv.exe.
+search: '`sysmon` EventCode=10 SourceImage = "*\\spoolsv.exe" CallTrace = "*\\Windows\\system32\\spool\\DRIVERS\\x64\\*"
+  TargetImage IN ("*\\rundll32.exe", "*\\spoolsv.exe") GrantedAccess = 0x1fffff |
+  stats  count min(_time) as firstTime max(_time) as lastTime by dest SourceImage
+  TargetImage GrantedAccess CallTrace  EventCode ProcessID| `security_content_ctime(firstTime)`
+  | `security_content_ctime(lastTime)` | `spoolsv_suspicious_process_access_filter`'
+how_to_implement: To successfully implement this search, you need to be ingesting
+  logs with process access event where SourceImage, TargetImage, GrantedAccess and
+  CallTrace executions from your endpoints. If you are using Sysmon, you must have
+  at least version 6.0.4 of the Sysmon TA. Tune and filter known instances of spoolsv.exe.
 known_false_positives: Unknown. Filter as needed.
 references:
 - https://github.com/cube0x0/impacket/commit/73b9466c17761384ece11e1028ec6689abad6818
@@ -22,7 +36,12 @@ drilldown_searches:
   earliest_offset: $info_min_time$
   latest_offset: $info_max_time$
 - name: View risk events for the last 7 days for - "$dest$"
-  search: '| from datamodel Risk.All_Risk | search normalized_risk_object IN ("$dest$") starthoursago=168  | stats count min(_time) as firstTime max(_time) as lastTime values(search_name) as "Search Name" values(risk_message) as "Risk Message" values(analyticstories) as "Analytic Stories" values(annotations._all) as "Annotations" values(annotations.mitre_attack.mitre_tactic) as "ATT&CK Tactics" by normalized_risk_object | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)`'
+  search: '| from datamodel Risk.All_Risk | search normalized_risk_object IN ("$dest$")
+    starthoursago=168  | stats count min(_time) as firstTime max(_time) as lastTime
+    values(search_name) as "Search Name" values(risk_message) as "Risk Message" values(analyticstories)
+    as "Analytic Stories" values(annotations._all) as "Annotations" values(annotations.mitre_attack.mitre_tactic)
+    as "ATT&CK Tactics" by normalized_risk_object | `security_content_ctime(firstTime)`
+    | `security_content_ctime(lastTime)`'
   earliest_offset: $info_min_time$
   latest_offset: $info_max_time$
 tags:
@@ -33,7 +52,8 @@ tags:
   cve:
   - CVE-2021-34527
   impact: 80
-  message: $SourceImage$ was GrantedAccess open access to $TargetImage$ on endpoint $dest$. This behavior is suspicious and related to PrintNightmare.
+  message: $SourceImage$ was GrantedAccess open access to $TargetImage$ on endpoint
+    $dest$. This behavior is suspicious and related to PrintNightmare.
   mitre_attack_id:
   - T1068
   observable:
@@ -53,17 +73,11 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - SourceImage
-  - TargetImage
-  - GrantedAccess
-  - CallTrace
-  - EventCode
   security_domain: endpoint
 tests:
 - name: True Positive Test
   attack_data:
-  - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1547.012/printnightmare/windows-sysmon.log
+  - data: 
+      https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1547.012/printnightmare/windows-sysmon.log
     source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
     sourcetype: XmlWinEventLog

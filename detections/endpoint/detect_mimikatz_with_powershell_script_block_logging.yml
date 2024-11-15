@@ -5,12 +5,25 @@ date: '2024-09-30'
 author: Michael Haag, Splunk
 status: production
 type: TTP
-description: The following analytic detects the execution of Mimikatz commands via PowerShell by leveraging PowerShell Script Block Logging (EventCode=4104). This method captures and logs the full command sent to PowerShell, allowing for the identification of suspicious activities such as Pass the Ticket, Pass the Hash, and credential dumping. This activity is significant as Mimikatz is a well-known tool used for credential theft and lateral movement. If confirmed malicious, this could lead to unauthorized access, privilege escalation, and potential compromise of sensitive information within the environment.
+description: The following analytic detects the execution of Mimikatz commands via
+  PowerShell by leveraging PowerShell Script Block Logging (EventCode=4104). This
+  method captures and logs the full command sent to PowerShell, allowing for the identification
+  of suspicious activities such as Pass the Ticket, Pass the Hash, and credential
+  dumping. This activity is significant as Mimikatz is a well-known tool used for
+  credential theft and lateral movement. If confirmed malicious, this could lead to
+  unauthorized access, privilege escalation, and potential compromise of sensitive
+  information within the environment.
 data_source:
 - Powershell Script Block Logging 4104
-search: '`powershell` EventCode=4104 ScriptBlockText IN (*mimikatz*, *-dumpcr*, *sekurlsa::pth*, *kerberos::ptt*, *kerberos::golden*) | stats count min(_time) as firstTime max(_time) as lastTime by Opcode Computer UserID EventCode ScriptBlockText | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)` | `detect_mimikatz_with_powershell_script_block_logging_filter`'
-how_to_implement: To successfully implement this analytic, you will need to enable PowerShell Script Block Logging on some or all endpoints. Additional setup here https://docs.splunk.com/Documentation/UBA/5.0.4.1/GetDataIn/AddPowerShell#Configure_module_logging_for_PowerShell.
-known_false_positives: False positives should be limited as the commands being identifies are quite specific to EventCode 4104 and Mimikatz. Filter as needed.
+search: '`powershell` EventCode=4104 ScriptBlockText IN (*mimikatz*, *-dumpcr*, *sekurlsa::pth*,
+  *kerberos::ptt*, *kerberos::golden*) | stats count min(_time) as firstTime max(_time)
+  as lastTime by Opcode Computer UserID EventCode ScriptBlockText | `security_content_ctime(firstTime)`
+  | `security_content_ctime(lastTime)` | `detect_mimikatz_with_powershell_script_block_logging_filter`'
+how_to_implement: To successfully implement this analytic, you will need to enable
+  PowerShell Script Block Logging on some or all endpoints. Additional setup here
+  https://docs.splunk.com/Documentation/UBA/5.0.4.1/GetDataIn/AddPowerShell#Configure_module_logging_for_PowerShell.
+known_false_positives: False positives should be limited as the commands being identifies
+  are quite specific to EventCode 4104 and Mimikatz. Filter as needed.
 references:
 - https://docs.splunk.com/Documentation/UBA/5.0.4.1/GetDataIn/AddPowerShell#Configure_module_logging_for_PowerShell.
 - https://blog.palantir.com/tampering-with-windows-event-tracing-background-offense-and-defense-4be7ac62ac63
@@ -23,7 +36,12 @@ drilldown_searches:
   earliest_offset: $info_min_time$
   latest_offset: $info_max_time$
 - name: View risk events for the last 7 days for - "$UserID$" and "$Computer$"
-  search: '| from datamodel Risk.All_Risk | search normalized_risk_object IN ("$UserID$", "$Computer$") starthoursago=168  | stats count min(_time) as firstTime max(_time) as lastTime values(search_name) as "Search Name" values(risk_message) as "Risk Message" values(analyticstories) as "Analytic Stories" values(annotations._all) as "Annotations" values(annotations.mitre_attack.mitre_tactic) as "ATT&CK Tactics" by normalized_risk_object | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)`'
+  search: '| from datamodel Risk.All_Risk | search normalized_risk_object IN ("$UserID$",
+    "$Computer$") starthoursago=168  | stats count min(_time) as firstTime max(_time)
+    as lastTime values(search_name) as "Search Name" values(risk_message) as "Risk
+    Message" values(analyticstories) as "Analytic Stories" values(annotations._all)
+    as "Annotations" values(annotations.mitre_attack.mitre_tactic) as "ATT&CK Tactics"
+    by normalized_risk_object | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)`'
   earliest_offset: $info_min_time$
   latest_offset: $info_max_time$
 tags:
@@ -38,7 +56,8 @@ tags:
   asset_type: Endpoint
   confidence: 100
   impact: 90
-  message: The following behavior was identified and typically related to MimiKatz being loaded within the context of PowerShell on $Computer$ by $UserID$.
+  message: The following behavior was identified and typically related to MimiKatz
+    being loaded within the context of PowerShell on $Computer$ by $UserID$.
   mitre_attack_id:
   - T1003
   - T1059.001
@@ -55,17 +74,11 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - ScriptBlockText
-  - Opcode
-  - Computer
-  - UserID
-  - EventCode
   security_domain: endpoint
 tests:
 - name: True Positive Test
   attack_data:
-  - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/powershell_script_block_logging/credaccess-powershell.log
+  - data: 
+      https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/powershell_script_block_logging/credaccess-powershell.log
     source: XmlWinEventLog:Microsoft-Windows-PowerShell/Operational
     sourcetype: XmlWinEventLog

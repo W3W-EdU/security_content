@@ -23,7 +23,8 @@ how_to_implement: You must be ingesting endpoint data and populating the Endpoin
   the past 30 days of data. You can modify the search window to build the model over
   a longer period of time, which may give you better results. You may also want to
   periodically re-run this search to rebuild the model with the latest data. More
-  information on the algorithm used in the search can be found at `https://docs.splunk.com/Documentation/MLApp/4.2.0/User/Algorithms#DensityFunction`.
+  information on the algorithm used in the search can be found at 
+  `https://docs.splunk.com/Documentation/MLApp/4.2.0/User/Algorithms#DensityFunction`.
 known_false_positives: none
 references: []
 tags:
@@ -40,12 +41,6 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - Processes.user
-  - Processes.dest
-  - Processes.process_name
-  - Processes.process
   security_domain: endpoint
 deployment:
   scheduling:

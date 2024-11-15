@@ -4,9 +4,9 @@ version: 2
 date: '2024-09-24'
 author: Jose Hernandez, Splunk
 type: Investigation
-description: 'This search returns the source, destination, and user for all successful
+description: This search returns the source, destination, and user for all successful
   remote-desktop authentications. A successful authentication after a brute-force
-  attack on a destination machine is suspicious behavior.'
+  attack on a destination machine is suspicious behavior.
 search: '| tstats `security_content_summariesonly` count min(_time) as firstTime max(_time)
   as lastTime from datamodel=Authentication where Authentication.signature_id=4624
   Authentication.app=win:remote by Authentication.src Authentication.dest Authentication.app
@@ -25,13 +25,4 @@ tags:
   - SamSam Ransomware
   product:
   - Splunk Phantom
-  required_fields:
-  - _time
-  - Authentication.signature_id
-  - Authentication.app
-  - Authentication.src
-  - Authentication.dest
-  - Authentication.user
-  - Authentication.signature
-  - Authentication.src_nt_domain
   security_domain: endpoint

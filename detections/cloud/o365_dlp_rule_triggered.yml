@@ -5,12 +5,31 @@ date: '2024-09-30'
 author: Steven Dick
 status: production
 type: Anomaly
-description: The following analytic detects when Microsoft Office 365 Data Loss Prevention (DLP) rules have been triggered. DLP rules can be configured for any number of security, regulatory, or business compliance reasons, as such this analytic will only be as accurate as the upstream DLP configuration. Detections from this analytic should be evaluated thoroughly to determine what, if any, security relevance the underlying DLP events contain.
+description: The following analytic detects when Microsoft Office 365 Data Loss Prevention
+  (DLP) rules have been triggered. DLP rules can be configured for any number of security,
+  regulatory, or business compliance reasons, as such this analytic will only be as
+  accurate as the upstream DLP configuration. Detections from this analytic should
+  be evaluated thoroughly to determine what, if any, security relevance the underlying
+  DLP events contain.
 data_source:
 - O365 Universal Audit Log
-search: '`o365_management_activity` Operation=DLPRuleMatch | eval recipient = ''ExchangeMetaData.To{}'', signature_id = ''ExchangeMetaData.UniqueID'', signature = ''PolicyDetails{}.Rules{}.RuleName'' , src_user = UserId, reason =''PolicyDetails{}.Rules{}.ConditionsMatched.SensitiveInformation{}.SensitiveInformationTypeName'', result=''PolicyDetails{}.Rules{}.Actions{}'', file_name=case(NOT match(''PolicyDetails{}.Rules{}.ConditionsMatched.SensitiveInformation{}.Location'',"Message Body"),''PolicyDetails{}.Rules{}.ConditionsMatched.SensitiveInformation{}.Location'') | stats min(_time) as firstTime max(_time) as lastTime values(signature) as signature values(file_name) as file_name values(ExchangeMetaData.Subject) AS subject values(Workload) as app values(result) as result by src_user,recipient,signature_id,reason | `o365_dlp_rule_triggered_filter` | stats count min(firstTime) as firstTime max(lastTime) as lastTime values(*) AS * by src_user,signature_id | eval action = CASE(match(result,"Halt"),"blocked",isnotnull(result),"alert",true(),"allow") |`security_content_ctime(firstTime)`  |`security_content_ctime(lastTime)`'
-how_to_implement: You must install the Splunk Microsoft Office 365 Add-on and ingest Office 365 management activity events. You must deploy DLP rules through O365 security and compliance functions.
-known_false_positives: WIll depending on accuracy of DLP rules, these can be noisy so tune appropriately.
+search: "`o365_management_activity` Operation=DLPRuleMatch | eval recipient = 'ExchangeMetaData.To{}',
+  signature_id = 'ExchangeMetaData.UniqueID', signature = 'PolicyDetails{}.Rules{}.RuleName'
+  , src_user = UserId, reason ='PolicyDetails{}.Rules{}.ConditionsMatched.SensitiveInformation{}.SensitiveInformationTypeName',
+  result='PolicyDetails{}.Rules{}.Actions{}', file_name=case(NOT match('PolicyDetails{}.Rules{}.ConditionsMatched.SensitiveInformation{}.Location',\"\
+  Message Body\"),'PolicyDetails{}.Rules{}.ConditionsMatched.SensitiveInformation{}.Location')
+  | stats min(_time) as firstTime max(_time) as lastTime values(signature) as signature
+  values(file_name) as file_name values(ExchangeMetaData.Subject) AS subject values(Workload)
+  as app values(result) as result by src_user,recipient,signature_id,reason | `o365_dlp_rule_triggered_filter`
+  | stats count min(firstTime) as firstTime max(lastTime) as lastTime values(*) AS
+  * by src_user,signature_id | eval action = CASE(match(result,\"Halt\"),\"blocked\"\
+  ,isnotnull(result),\"alert\",true(),\"allow\") |`security_content_ctime(firstTime)`\
+  \  |`security_content_ctime(lastTime)`"
+how_to_implement: You must install the Splunk Microsoft Office 365 Add-on and ingest
+  Office 365 management activity events. You must deploy DLP rules through O365 security
+  and compliance functions.
+known_false_positives: WIll depending on accuracy of DLP rules, these can be noisy
+  so tune appropriately.
 references:
 - https://learn.microsoft.com/en-us/purview/dlp-learn-about-dlp
 drilldown_searches:
@@ -19,7 +38,12 @@ drilldown_searches:
   earliest_offset: $info_min_time$
   latest_offset: $info_max_time$
 - name: View risk events for the last 7 days for - "$src_user$"
-  search: '| from datamodel Risk.All_Risk | search normalized_risk_object IN ("$src_user$") starthoursago=168  | stats count min(_time) as firstTime max(_time) as lastTime values(search_name) as "Search Name" values(risk_message) as "Risk Message" values(analyticstories) as "Analytic Stories" values(annotations._all) as "Annotations" values(annotations.mitre_attack.mitre_tactic) as "ATT&CK Tactics" by normalized_risk_object | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)`'
+  search: '| from datamodel Risk.All_Risk | search normalized_risk_object IN ("$src_user$")
+    starthoursago=168  | stats count min(_time) as firstTime max(_time) as lastTime
+    values(search_name) as "Search Name" values(risk_message) as "Risk Message" values(analyticstories)
+    as "Analytic Stories" values(annotations._all) as "Annotations" values(annotations.mitre_attack.mitre_tactic)
+    as "ATT&CK Tactics" by normalized_risk_object | `security_content_ctime(firstTime)`
+    | `security_content_ctime(lastTime)`'
   earliest_offset: $info_min_time$
   latest_offset: $info_max_time$
 tags:
@@ -45,20 +69,11 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - Operation
-  - ExchangeMetaData.To{}
-  - ExchangeMetaData.UniqueID
-  - PolicyDetails{}.Rules{}.RuleName
-  - UserId
-  - PolicyDetails{}.Rules{}.ConditionsMatched.SensitiveInformation{}.SensitiveInformationTypeName
-  - PolicyDetails{}.Rules{}.Actions{}
-  - PolicyDetails{}.Rules{}.ConditionsMatched.SensitiveInformation{}.Location
   security_domain: threat
 tests:
 - name: True Positive Test
   attack_data:
-  - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1566/o365_various_alerts/o365_various_alerts.log
+  - data: 
+      https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1566/o365_various_alerts/o365_various_alerts.log
     sourcetype: o365:management:activity
     source: o365

@@ -23,11 +23,4 @@ tags:
   - Common Phishing Frameworks
   product:
   - Splunk Phantom
-  required_fields:
-  - _time
-  - All_Certificates.SSL.ssl_subject_common_name
-  - All_Certificates.dest
-  - All_Certificates.src
-  - All_Certificates.SSL.ssl_issuer_common_name
-  - All_Certificates.SSL.ssl_hash
   security_domain: network

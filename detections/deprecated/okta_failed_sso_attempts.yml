@@ -5,7 +5,10 @@ date: '2024-10-17'
 author: Michael Haag, Rico Valdez, Splunk
 status: deprecated
 type: Anomaly
-description: '**DEPRECATION NOTE** - This search has been deprecated and replaced with this detection `Okta Unauthorized Access to Application - DM`.  The following anomaly identifies failed Okta SSO events utilizing the legacy Okta event "unauth app access attempt".'
+description: '**DEPRECATION NOTE** - This search has been deprecated and replaced
+  with this detection `Okta Unauthorized Access to Application - DM`.  The following
+  anomaly identifies failed Okta SSO events utilizing the legacy Okta event "unauth
+  app access attempt".'
 data_source: []
 search: '`okta` eventType=app.generic.unauth_app_access_attempt | stats min(_time)
   as firstTime max(_time) as lastTime values(app) as Apps count by src_user, result
@@ -36,11 +39,4 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - displayMessage
-  - app
-  - src_user
-  - result
-  - src_ip
   security_domain: access

@@ -17,8 +17,4 @@ tags:
   - SamSam Ransomware
   product:
   - Splunk Phantom
-  required_fields:
-  - _time
-  - COMPUTERNAME
-  - MESSAGE
   security_domain: endpoint

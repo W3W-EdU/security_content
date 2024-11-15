@@ -23,13 +23,4 @@ tags:
   - Command And Control
   product:
   - Splunk Phantom
-  required_fields:
-  - _time
-  - resourceId
-  - ARN
-  - relationships{}.resourceType
-  - relationships{}.name
-  - relationships{}.resourceId
-  - configuration.privateIpAddresses{}.privateIpAddress
-  - configuration.privateIpAddresses{}.association.publicIp
   security_domain: network

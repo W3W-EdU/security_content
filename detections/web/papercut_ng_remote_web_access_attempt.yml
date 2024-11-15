@@ -7,9 +7,24 @@ status: production
 type: TTP
 data_source:
 - Suricata
-description: The following analytic detects potential exploitation attempts on publicly accessible PaperCut NG servers. It identifies connections from public IP addresses to the server, specifically monitoring URI paths commonly used in proof-of-concept scripts for exploiting PaperCut NG vulnerabilities. This detection leverages web traffic data from the `Web` datamodel, focusing on specific URI paths and excluding internal IP ranges. This activity is significant as it may indicate an attempt to exploit known vulnerabilities in PaperCut NG, potentially leading to unauthorized access or control of the server. If confirmed malicious, attackers could gain administrative access, leading to data breaches or further network compromise.
-search: '| tstats count from datamodel=Web where Web.url IN ("/app?service=page/SetupCompleted", "/app", "/app?service=page/PrinterList", "/app?service=direct/1/PrinterList/selectPrinter&sp=*", "/app?service=direct/1/PrinterDetails/printerOptionsTab.tab") NOT (src IN ("10.*.*.*","172.16.*.*", "192.168.*.*", "169.254.*.*", "127.*.*.*", "fc00::*", "fd00::*", "fe80::*")) by Web.http_user_agent Web.http_method, Web.url,Web.url_length Web.src, Web.dest Web.dest_port sourcetype | `drop_dm_object_name("Web")` | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)` | `papercut_ng_remote_web_access_attempt_filter`'
-how_to_implement: To successfully implement this search you need to be ingesting information on Web traffic that include fields relavent for traffic into the `Web` datamodel.
+description: The following analytic detects potential exploitation attempts on publicly
+  accessible PaperCut NG servers. It identifies connections from public IP addresses
+  to the server, specifically monitoring URI paths commonly used in proof-of-concept
+  scripts for exploiting PaperCut NG vulnerabilities. This detection leverages web
+  traffic data from the `Web` datamodel, focusing on specific URI paths and excluding
+  internal IP ranges. This activity is significant as it may indicate an attempt to
+  exploit known vulnerabilities in PaperCut NG, potentially leading to unauthorized
+  access or control of the server. If confirmed malicious, attackers could gain administrative
+  access, leading to data breaches or further network compromise.
+search: '| tstats count from datamodel=Web where Web.url IN ("/app?service=page/SetupCompleted",
+  "/app", "/app?service=page/PrinterList", "/app?service=direct/1/PrinterList/selectPrinter&sp=*",
+  "/app?service=direct/1/PrinterDetails/printerOptionsTab.tab") NOT (src IN ("10.*.*.*","172.16.*.*",
+  "192.168.*.*", "169.254.*.*", "127.*.*.*", "fc00::*", "fd00::*", "fe80::*")) by
+  Web.http_user_agent Web.http_method, Web.url,Web.url_length Web.src, Web.dest Web.dest_port
+  sourcetype | `drop_dm_object_name("Web")` | `security_content_ctime(firstTime)`
+  | `security_content_ctime(lastTime)` | `papercut_ng_remote_web_access_attempt_filter`'
+how_to_implement: To successfully implement this search you need to be ingesting information
+  on Web traffic that include fields relavent for traffic into the `Web` datamodel.
 known_false_positives: False positives may be present, filter as needed.
 references:
 - https://www.cisa.gov/news-events/alerts/2023/05/11/cisa-and-fbi-release-joint-advisory-response-active-exploitation-papercut-vulnerability
@@ -23,7 +38,12 @@ drilldown_searches:
   earliest_offset: $info_min_time$
   latest_offset: $info_max_time$
 - name: View risk events for the last 7 days for - "$dest$"
-  search: '| from datamodel Risk.All_Risk | search normalized_risk_object IN ("$dest$") starthoursago=168  | stats count min(_time) as firstTime max(_time) as lastTime values(search_name) as "Search Name" values(risk_message) as "Risk Message" values(analyticstories) as "Analytic Stories" values(annotations._all) as "Annotations" values(annotations.mitre_attack.mitre_tactic) as "ATT&CK Tactics" by normalized_risk_object | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)`'
+  search: '| from datamodel Risk.All_Risk | search normalized_risk_object IN ("$dest$")
+    starthoursago=168  | stats count min(_time) as firstTime max(_time) as lastTime
+    values(search_name) as "Search Name" values(risk_message) as "Risk Message" values(analyticstories)
+    as "Analytic Stories" values(annotations._all) as "Annotations" values(annotations.mitre_attack.mitre_tactic)
+    as "ATT&CK Tactics" by normalized_risk_object | `security_content_ctime(firstTime)`
+    | `security_content_ctime(lastTime)`'
   earliest_offset: $info_min_time$
   latest_offset: $info_max_time$
 tags:
@@ -46,19 +66,11 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - Web.http_user_agent
-  - Web.http_method
-  - Web.url
-  - Web.url_length
-  - Web.src
-  - Web.dest
-  - sourcetype
   security_domain: network
 tests:
 - name: True Positive Test
   attack_data:
-  - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/papercut/papercutng-suricata.log
+  - data: 
+      https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/papercut/papercutng-suricata.log
     source: suricata
     sourcetype: suricata

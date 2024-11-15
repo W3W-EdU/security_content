@@ -16,11 +16,11 @@ description: The following analytic detects modifications to the Windows registr
   increasing the risk of security vulnerabilities. If confirmed malicious, this action
   could lead to the installation of harmful applications, potentially compromising
   the system and exposing sensitive information.
-search: '| tstats `security_content_summariesonly` count min(_time) as firstTime max(_time) as lastTime FROM datamodel=Endpoint.Registry 
-  WHERE (Registry.registry_path= "*\\Microsoft\\Windows Defender\\SmartScreen\\ConfigureAppInstallControl"
-  Registry.registry_value_data= "Anywhere") OR (Registry.registry_path= "*\\Microsoft\\Windows
-  Defender\\SmartScreen\\ConfigureAppInstallControlEnabled" Registry.registry_value_data=
-  "0x00000000") BY Registry.dest Registry.user Registry.registry_path
+search: '| tstats `security_content_summariesonly` count min(_time) as firstTime max(_time)
+  as lastTime FROM datamodel=Endpoint.Registry WHERE (Registry.registry_path= "*\\Microsoft\\Windows
+  Defender\\SmartScreen\\ConfigureAppInstallControl" Registry.registry_value_data=
+  "Anywhere") OR (Registry.registry_path= "*\\Microsoft\\Windows Defender\\SmartScreen\\ConfigureAppInstallControlEnabled"
+  Registry.registry_value_data= "0x00000000") BY Registry.dest Registry.user Registry.registry_path
   Registry.registry_key_name Registry.registry_value_name Registry.registry_value_data
   Registry.process_guid | `drop_dm_object_name(Registry)` | `security_content_ctime(firstTime)`
   | `security_content_ctime(lastTime)` | `windows_impair_defense_configure_app_install_control_filter`'
@@ -40,7 +40,12 @@ drilldown_searches:
   earliest_offset: $info_min_time$
   latest_offset: $info_max_time$
 - name: View risk events for the last 7 days for - "$dest$"
-  search: '| from datamodel Risk.All_Risk | search normalized_risk_object IN ("$dest$") starthoursago=168  | stats count min(_time) as firstTime max(_time) as lastTime values(search_name) as "Search Name" values(risk_message) as "Risk Message" values(analyticstories) as "Analytic Stories" values(annotations._all) as "Annotations" values(annotations.mitre_attack.mitre_tactic) as "ATT&CK Tactics" by normalized_risk_object | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)`'
+  search: '| from datamodel Risk.All_Risk | search normalized_risk_object IN ("$dest$")
+    starthoursago=168  | stats count min(_time) as firstTime max(_time) as lastTime
+    values(search_name) as "Search Name" values(risk_message) as "Risk Message" values(analyticstories)
+    as "Analytic Stories" values(annotations._all) as "Annotations" values(annotations.mitre_attack.mitre_tactic)
+    as "ATT&CK Tactics" by normalized_risk_object | `security_content_ctime(firstTime)`
+    | `security_content_ctime(lastTime)`'
   earliest_offset: $info_min_time$
   latest_offset: $info_max_time$
 tags:
@@ -50,7 +55,8 @@ tags:
   asset_type: Endpoint
   confidence: 70
   impact: 70
-  message: Define Windows Defender App Install Control registry set to disable on $dest$.
+  message: Define Windows Defender App Install Control registry set to disable on
+    $dest$.
   mitre_attack_id:
   - T1562.001
   - T1562
@@ -63,18 +69,11 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - Registry.registry_key_name
-  - Registry.registry_value_name
-  - Registry.dest
-  - Registry.user
-  - Registry.registry_path
-  - Registry.action
   security_domain: endpoint
 tests:
 - name: True Positive Test
   attack_data:
-  - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/disable-windows-security-defender-features/windefender-bypas-2-sysmon.log
+  - data: 
+      https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/disable-windows-security-defender-features/windefender-bypas-2-sysmon.log
     source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
     sourcetype: XmlWinEventLog

@@ -28,12 +28,4 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - All_Changes.object_category
-  - All_Changes.object_path
-  - All_Changes.dest
-  - All_Changes.command
-  - All_Changes.user
-  - All_Changes.object
   security_domain: endpoint

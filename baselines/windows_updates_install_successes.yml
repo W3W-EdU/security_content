@@ -22,8 +22,4 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - Updates.vendor_product
-  - Updates.status
   security_domain: endpoint

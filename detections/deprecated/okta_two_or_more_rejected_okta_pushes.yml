@@ -5,11 +5,10 @@ date: '2024-10-17'
 author: Michael Haag, Marissa Bower, Splunk
 status: deprecated
 type: TTP
-description: 
-  '**DEPRECATION NOTE** - This search has been deprecated and replaced with `Okta Multiple Failed MFA Requests For User`.
-  The following analytic identifies an account that has rejected more than
-  2 Push notifications in a 10 minute window. Modify this query for your environment
-  by upping the count or time window.'
+description: '**DEPRECATION NOTE** - This search has been deprecated and replaced
+  with `Okta Multiple Failed MFA Requests For User`. The following analytic identifies
+  an account that has rejected more than 2 Push notifications in a 10 minute window.
+  Modify this query for your environment by upping the count or time window.'
 data_source: []
 search: '`okta` outcome.reason="User rejected Okta push verify" OR (debugContext.debugData.factor="OKTA_VERIFY_PUSH"
   outcome.result=FAILURE legacyEventType="core.user.factor.attempt_fail" "target{}.detailEntry.methodTypeUsed"="Get
@@ -47,10 +46,4 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - user
-  - src_ip
-  - eventType
-  - status
   security_domain: access

@@ -32,14 +32,4 @@ tags:
   - Command And Control
   product:
   - Splunk Phantom
-  required_fields:
-  - _time
-  - Processes.user
-  - Processes.process_id
-  - Processes.process_name
-  - Processes.dest
-  - Processes.parent_process
-  - Ports.process_id
-  - Ports.src
-  - Ports.dest_port
   security_domain: endpoint

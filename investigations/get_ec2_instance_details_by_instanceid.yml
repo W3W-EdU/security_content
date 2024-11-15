@@ -28,17 +28,4 @@ tags:
   - AWS Security Hub Alerts
   product:
   - Splunk Phantom
-  required_fields:
-  - _time
-  - id
-  - ip_address
-  - tags
-  - aws_account_id
-  - placement
-  - instance_type
-  - key_name
-  - launch_time
-  - state
-  - vpc_id
-  - subnet_id
   security_domain: network

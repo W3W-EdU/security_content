@@ -16,14 +16,4 @@ tags:
   - Suspicious Okta Activity
   product:
   - Splunk Phantom
-  required_fields:
-  - _time
-  - client.geographicalContext.country
-  - client.geographicalContext.state
-  - client.geographicalContext.city
-  - user
-  - displayMessage
-  - src_ip
-  - result
-  - outcome.reason
   security_domain: network

@@ -44,8 +44,4 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - errorCode
-  - userIdentity.arn
   security_domain: endpoint

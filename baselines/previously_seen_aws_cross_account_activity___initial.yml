@@ -30,13 +30,6 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - Authentication.signature
-  - Authentication.vendor_account
-  - Authentication.user
-  - Authentication.src
-  - Authentication.user_role
   security_domain: network
 deployment:
   scheduling:

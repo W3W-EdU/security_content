@@ -18,9 +18,4 @@ tags:
   - AWS Cryptomining
   product:
   - Splunk Phantom
-  required_fields:
-  - _time
-  - signature_id
-  - dest
-  - user
   security_domain: endpoint

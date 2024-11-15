@@ -5,21 +5,20 @@ date: '2024-10-17'
 author: Michael Haag, Splunk
 status: deprecated
 type: Hunting
-description: 'Detect a renamed instance of procdump.exe dumping the lsass process.
+description: "Detect a renamed instance of procdump.exe dumping the lsass process.
   This query looks for both -mm and -ma usage. -mm will produce a mini dump file and
   -ma will write a dump file with all process memory. Both are highly suspect and
-  should be reviewed. Modify the query as needed.
-
-  During triage, confirm this is procdump.exe executing. If it is the first time a
-  Sysinternals utility has been ran, it is possible there will be a -accepteula on
-  the command line. Review other endpoint data sources for cross process (injection)
-  into lsass.exe.'
+  should be reviewed. Modify the query as needed.\nDuring triage, confirm this is
+  procdump.exe executing. If it is the first time a Sysinternals utility has been
+  ran, it is possible there will be a -accepteula on the command line. Review other
+  endpoint data sources for cross process (injection) into lsass.exe."
 data_source:
 - Sysmon EventID 1
 search: '`sysmon` OriginalFileName=procdump  process_name!=procdump*.exe  EventID=1
-  (CommandLine=*-ma* OR CommandLine=*-mm*) CommandLine=*lsass* |  stats count min(_time) as firstTime max(_time) as lastTime by dest, parent_process_name,
-  process_name, OriginalFileName, CommandLine | `security_content_ctime(firstTime)`
-  | `security_content_ctime(lastTime)` | `dump_lsass_via_procdump_rename_filter`'
+  (CommandLine=*-ma* OR CommandLine=*-mm*) CommandLine=*lsass* |  stats count min(_time)
+  as firstTime max(_time) as lastTime by dest, parent_process_name, process_name,
+  OriginalFileName, CommandLine | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)`
+  | `dump_lsass_via_procdump_rename_filter`'
 how_to_implement: To successfully implement this search you need to be ingesting information
   on process that include the name of the process responsible for the changes from
   your endpoints into the `Endpoint` datamodel in the `Processes` node.
@@ -57,12 +56,4 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - OriginalFileName
-  - process_name
-  - EventID
-  - CommandLine
-  - dest
-  - parent_process_name
   security_domain: endpoint

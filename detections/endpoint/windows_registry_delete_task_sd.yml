@@ -5,15 +5,22 @@ date: '2024-11-14'
 author: Michael Haag, Teoderick Contreras, Splunk
 status: production
 type: Anomaly
-description: The following analytic detects a process attempting to delete a scheduled task's Security Descriptor (SD) from the registry path of that task. It leverages the Endpoint.Registry data model to identify registry actions performed by the SYSTEM user, specifically targeting deletions or modifications of the SD value. This activity is significant as it may indicate an attempt to remove evidence of a scheduled task for defense evasion. If confirmed malicious, it suggests an attacker with privileged access trying to hide their tracks, potentially compromising system integrity and security. Immediate investigation is required.
+description: The following analytic detects a process attempting to delete a scheduled
+  task's Security Descriptor (SD) from the registry path of that task. It leverages
+  the Endpoint.Registry data model to identify registry actions performed by the SYSTEM
+  user, specifically targeting deletions or modifications of the SD value. This activity
+  is significant as it may indicate an attempt to remove evidence of a scheduled task
+  for defense evasion. If confirmed malicious, it suggests an attacker with privileged
+  access trying to hide their tracks, potentially compromising system integrity and
+  security. Immediate investigation is required.
 data_source:
 - Sysmon EventID 12
 - Sysmon EventID 13
-search: '| tstats `security_content_summariesonly` count min(_time) as firstTime max(_time) as lastTime FROM datamodel=Endpoint.Registry 
-  where Registry.registry_path IN ("*\\Schedule\\TaskCache\\Tree\\*") Registry.user="SYSTEM"
-  Registry.registry_value_name="SD" (Registry.action=Deleted OR Registry.action=modified)
-  by Registry.dest Registry.process_guid Registry.user Registry.registry_path
-  Registry.registry_value_name Registry.registry_key_name Registry.registry_value_data
+search: '| tstats `security_content_summariesonly` count min(_time) as firstTime max(_time)
+  as lastTime FROM datamodel=Endpoint.Registry where Registry.registry_path IN ("*\\Schedule\\TaskCache\\Tree\\*")
+  Registry.user="SYSTEM" Registry.registry_value_name="SD" (Registry.action=Deleted
+  OR Registry.action=modified) by Registry.dest Registry.process_guid Registry.user
+  Registry.registry_path Registry.registry_value_name Registry.registry_key_name Registry.registry_value_data
   Registry.status Registry.action | `drop_dm_object_name(Registry)` | `security_content_ctime(firstTime)`
   | `security_content_ctime(lastTime)` | `windows_registry_delete_task_sd_filter`'
 how_to_implement: To successfully implement this search you need to be ingesting information
@@ -34,7 +41,12 @@ drilldown_searches:
   earliest_offset: $info_min_time$
   latest_offset: $info_max_time$
 - name: View risk events for the last 7 days for - "$dest$"
-  search: '| from datamodel Risk.All_Risk | search normalized_risk_object IN ("$dest$") starthoursago=168  | stats count min(_time) as firstTime max(_time) as lastTime values(search_name) as "Search Name" values(risk_message) as "Risk Message" values(analyticstories) as "Analytic Stories" values(annotations._all) as "Annotations" values(annotations.mitre_attack.mitre_tactic) as "ATT&CK Tactics" by normalized_risk_object | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)`'
+  search: '| from datamodel Risk.All_Risk | search normalized_risk_object IN ("$dest$")
+    starthoursago=168  | stats count min(_time) as firstTime max(_time) as lastTime
+    values(search_name) as "Search Name" values(risk_message) as "Risk Message" values(analyticstories)
+    as "Analytic Stories" values(annotations._all) as "Annotations" values(annotations.mitre_attack.mitre_tactic)
+    as "ATT&CK Tactics" by normalized_risk_object | `security_content_ctime(firstTime)`
+    | `security_content_ctime(lastTime)`'
   earliest_offset: $info_min_time$
   latest_offset: $info_max_time$
 tags:
@@ -58,21 +70,11 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - Registry.registry_path
-  - Registry.registry_key_name
-  - Registry.registry_value_name
-  - Registry.dest
-  - Processes.process_id
-  - Processes.process_name
-  - Processes.process
-  - Processes.dest
-  - Processes.process_guid
   security_domain: endpoint
 tests:
 - name: True Positive Test
   attack_data:
-  - data: https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/taskschedule/sd_delete_windows-sysmon.log
+  - data: 
+      https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/taskschedule/sd_delete_windows-sysmon.log
     source: XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
     sourcetype: XmlWinEventLog

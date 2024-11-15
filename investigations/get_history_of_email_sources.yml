@@ -28,9 +28,4 @@ tags:
   - SamSam Ransomware
   product:
   - Splunk Phantom
-  required_fields:
-  - _time
-  - All_Email.dest
-  - All_Email.recipient
-  - All_Email.src
   security_domain: network

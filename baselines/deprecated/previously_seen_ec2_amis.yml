@@ -23,9 +23,4 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - eventName
-  - errorCode
-  - requestParameters.instancesSet.items{}.imageId
   security_domain: network

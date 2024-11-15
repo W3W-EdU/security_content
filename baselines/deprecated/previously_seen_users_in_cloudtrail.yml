@@ -31,9 +31,4 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - eventName
-  - userIdentity.arn
-  - src
   security_domain: network

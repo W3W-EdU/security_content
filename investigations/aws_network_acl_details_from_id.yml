@@ -20,10 +20,4 @@ tags:
   - Command And Control
   product:
   - Splunk Phantom
-  required_fields:
-  - _time
-  - id
-  - account_id
-  - vpc_id
-  - network_acl_entries{}.*
   security_domain: network

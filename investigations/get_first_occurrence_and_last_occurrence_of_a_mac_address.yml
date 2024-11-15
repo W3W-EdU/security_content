@@ -21,11 +21,4 @@ tags:
   - Asset Tracking
   product:
   - Splunk Phantom
-  required_fields:
-  - _time
-  - All_Sessions.DHCP
-  - All_Sessions.signature
-  - All_Sessions.src_mac
-  - All_Sessions.src_ip
-  - All_Sessions.user
   security_domain: network

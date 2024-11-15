@@ -26,10 +26,4 @@ tags:
   - Apache Struts Vulnerability
   product:
   - Splunk Phantom
-  required_fields:
-  - _time
-  - src_ip
-  - dest_ip
-  - cs_content_type
-  - url
   security_domain: network

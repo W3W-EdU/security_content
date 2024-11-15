@@ -23,13 +23,4 @@ tags:
   - AWS Security Hub Alerts
   product:
   - Splunk Phantom
-  required_fields:
-  - _time
-  - dest
-  - userIdentity.arn
-  - responseElements.instancesSet.items{}.instanceId
-  - responseElements.instancesSet.items{}.privateIpAddress
-  - responseElements.instancesSet.items{}.imageId
-  - responseElements.instancesSet.items{}.architecture
-  - responseElements.instancesSet.items{}.keyName
   security_domain: network

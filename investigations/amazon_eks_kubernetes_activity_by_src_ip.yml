@@ -21,12 +21,4 @@ tags:
   - Kubernetes Scanning Activity
   product:
   - Splunk Phantom
-  required_fields:
-  - _time
-  - sourceIPs{}
-  - user.username
-  - requestURI
-  - verb
-  - userAgent
-  - annotations.authorization.k8s.io/decision
   security_domain: network

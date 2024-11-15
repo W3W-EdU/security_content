@@ -19,7 +19,4 @@ tags:
   - Web Fraud Detection
   product:
   - Splunk Phantom
-  required_fields:
-  - _time
-  - src_user
   security_domain: network
