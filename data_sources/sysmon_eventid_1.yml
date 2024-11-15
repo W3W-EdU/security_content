@@ -125,7 +125,7 @@ field_mappings:
     Hashes: Processes.process_hash
     ParentProcessGuid: Processes.parent_process_guid
     ParentProcessId: Processes.parent_process_id
-    ParentImage: Processes.parent_process_name
+    ParentImage|endswith: Processes.parent_process_name
     ParentCommandLine: Processes.parent_process
     Computer: Processes.dest
     OriginalFileName: Processes.original_file_name
