@@ -45,9 +45,6 @@ tags:
   - Winter Vivern
   asset_type: Endpoint
   confidence: 70
-  context:
-  - Source:Endpoint
-  - Stage:Collection
   impact: 70
   message: A PowerShell script was identified possibly performing screen captures
     on $Computer$.

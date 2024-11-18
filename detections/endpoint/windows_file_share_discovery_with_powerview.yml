@@ -49,9 +49,6 @@ tags:
   - Active Directory Discovery
   asset_type: Endpoint
   confidence: 80
-  context:
-  - Source:Endpoint
-  - Stage:Privilege Escalation
   impact: 60
   message: Invoke-ShareFinder commandlet was executed on $Computer$
   mitre_attack_id:

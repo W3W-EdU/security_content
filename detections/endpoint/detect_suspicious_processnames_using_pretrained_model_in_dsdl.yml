@@ -42,9 +42,6 @@ tags:
   - Suspicious Command-Line Executions
   asset_type: Endpoint
   confidence: 90
-  context:
-  - Source:Endpoint
-  - Stage:Execution
   impact: 50
   message: The process $process$ is running from an unusual place by $user$ on $dest$
     with a processname that appears to be randomly generated.
