@@ -1,7 +1,7 @@
 name: Detect MSHTA Url in Command Line
 id: 9b3af1e6-5b68-11eb-ae93-0242ac130002
-version: 5
-date: '2024-09-30'
+version: 6
+date: '2024-11-20'
 author: Michael Haag, Splunk
 status: production
 type: TTP
@@ -17,6 +17,8 @@ references:
 - https://github.com/redcanaryco/AtomicTestHarnesses
 - https://redcanary.com/blog/introducing-atomictestharnesses/
 - https://docs.microsoft.com/en-us/windows/win32/search/-search-3x-wds-extidx-prot-implementing
+- https://denwp.com/dissecting-lumma-malware/
+- https://www.mcafee.com/blogs/other-blogs/mcafee-labs/behind-the-captcha-a-clever-gateway-of-malware/
 drilldown_searches:
 - name: View the detection results for - "$user$" and "$dest$"
   search: '%original_detection_search% | search  user = "$user$" dest = "$dest$"'
@@ -30,6 +32,7 @@ tags:
   analytic_story:
   - Suspicious MSHTA Activity
   - Living Off The Land
+  - Lumma Stealer
   asset_type: Endpoint
   confidence: 100
   impact: 80
