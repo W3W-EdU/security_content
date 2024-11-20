@@ -79,24 +79,6 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - entityType
-  - filePath
-  - processCommandLine
-  - ipAddress
-  - registryKey
-  - url
-  - fileName
-  - risk_score
-  - firstTime
-  - lastTime
-  - src
-  - severity
-  - annotations.mitre_attack.mitre_technique_id
-  - signature
-  - user
-  risk_score: 81
   security_domain: endpoint
   manual_test: We are dynamically creating the risk_score field based on the severity of the alert in the SPL and that supersedes the risk score set in the detection. Setting these to manual test since otherwise we fail integration testing. The detection is also failing on unit-testing as some of the fields set in the observables are empty. 
 tests:
