@@ -1,6 +1,6 @@
 name: Powershell Processing Stream Of Data
 id: 0d718b52-c9f1-11eb-bc61-acde48001122
-version: 4
+version: 5
 date: '2024-09-30'
 author: Teoderick Contreras, Splunk
 status: production
@@ -37,6 +37,7 @@ tags:
   - IcedID
   - MoonPeak
   - Braodo Stealer
+  - PXA Stealer
   asset_type: Endpoint
   confidence: 80
   impact: 50
