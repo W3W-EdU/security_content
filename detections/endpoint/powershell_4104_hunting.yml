@@ -1,6 +1,6 @@
 name: PowerShell 4104 Hunting
 id: d6f2b006-0041-11ec-8885-acde48001122
-version: 6
+version: 7
 date: '2024-10-17'
 author: Michael Haag, Splunk
 status: production
@@ -32,6 +32,7 @@ tags:
   - Data Destruction
   - CISA AA24-241A
   - Braodo Stealer
+  - Lumma Stealer
   asset_type: Endpoint
   confidence: 100
   impact: 80

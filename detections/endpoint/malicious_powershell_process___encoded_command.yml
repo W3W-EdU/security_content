@@ -1,6 +1,6 @@
 name: Malicious PowerShell Process - Encoded Command
 id: c4db14d9-7909-48b4-a054-aa14d89dbb19
-version: 10
+version: 11
 date: '2024-10-17'
 author: David Dorsey, Michael Haag, Splunk, SirDuckly, GitHub Community
 status: production
@@ -32,10 +32,11 @@ tags:
   - Sandworm Tools
   - Data Destruction
   - Volt Typhoon
+  - Lumma Stealer
   asset_type: Endpoint
   confidence: 50
   impact: 70
-  message: Powershell.exe running potentially malicious encodede commands on $dest$
+  message: Powershell.exe running potentially malicious encoded commands on $dest$
   mitre_attack_id:
   - T1027
   observable:
