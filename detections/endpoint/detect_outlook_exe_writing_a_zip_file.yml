@@ -1,6 +1,6 @@
 name: Detect Outlook exe writing a zip file
 id: a51bfe1a-94f0-4822-b1e4-16ae10145893
-version: 6
+version: 7
 date: '2024-10-17'
 author: Bhavin Patel, Splunk
 status: experimental
@@ -17,6 +17,7 @@ tags:
   - Spearphishing Attachments
   - Amadey
   - Remcos
+  - PXA Stealer
   asset_type: Endpoint
   confidence: 50
   impact: 50

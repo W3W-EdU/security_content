@@ -1,6 +1,6 @@
 name: Any Powershell DownloadFile
 id: 1a93b7ea-7af7-11eb-adb5-acde48001122
-version: 6
+version: 7
 date: '2024-09-30'
 author: Michael Haag, Splunk
 status: production
@@ -36,6 +36,7 @@ tags:
   - Log4Shell CVE-2021-44228
   - Phemedrone Stealer
   - Braodo Stealer
+  - PXA Stealer
   asset_type: Endpoint
   confidence: 70
   cve:
