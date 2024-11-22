@@ -102,7 +102,7 @@ field_mappings:
     ProcessGuid: Registry.process_guid
     ProcessId: Registry.process_id
     TargetObject: Registry.registry_path
-    Details: Registry.registry_value_data
+    Details|in: Registry.registry_value_data
     action: Registry.action
     TargetObject|startswith: Registry.registry_key_name
     TargetObject|endswith: Registry.registry_value_name
