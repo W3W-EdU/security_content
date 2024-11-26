@@ -96,6 +96,7 @@ field_mappings:
   mapping:
     CommandLine: Processes.process
     ImageFileName: Processes.process_path
+    ImageFileName|endswith: Processes.process_name
     ParentBaseFileName: Processes.parent_process_name
     ParentProcessId: Processes.parent_process_id
     RawProcessId: Processes.process_id
