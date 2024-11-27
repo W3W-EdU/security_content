@@ -3,7 +3,7 @@ id: 14e3a089-cc23-4f4d-a770-26e44a31fbac
 version: 1
 date: '2024-11-13'
 author: Michael Haag, Nasreddine Bencherchali, Splunk
-data_sources:
+data_source:
 - Sysmon Event ID 22
 type: Hunting
 status: production
@@ -32,17 +32,6 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - process_name
-  - process_guid
-  - Computer
-  - query
-  - answer
-  - QueryResults
-  - QueryStatus
-  - dest
-  risk_score: 70
   security_domain: endpoint
 tests:
 - name: True Positive Test

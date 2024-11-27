@@ -3,7 +3,7 @@ id: a15aa1ab-2b79-467f-8201-65e0f32d5b1a
 version: 1
 date: '2024-11-08'
 author: Nasreddine Bencherchali, Michael Haag, Splunk
-data_sources:
+data_source:
 - Sysmon Event ID 11
 - Sysmon Event ID 13
 type: Anomaly
@@ -52,16 +52,6 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - _time
-  - Registry.dest
-  - Registry.registry_value_data 
-  - Registry.action
-  - Registry.process_guid
-  - Registry.process_id
-  - Registry.registry_key_name
-  - Registry.user
-  risk_score: 80
   security_domain: endpoint
   cve: []
 tests:

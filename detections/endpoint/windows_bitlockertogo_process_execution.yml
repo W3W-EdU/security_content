@@ -3,7 +3,7 @@ id: 68cbc9e9-2882-46f2-b636-3b5080589d58
 version: 1
 date: '2024-11-13'
 author: Michael Haag, Nasreddine Bencherchali, Splunk
-data_sources:
+data_source:
 - Sysmon Event ID 1
 - Windows Event Log Security 4688
 type: Hunting
@@ -36,15 +36,6 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - Processes.process_name
-  - Processes.dest
-  - Processes.user
-  - Processes.parent_process_name
-  - Processes.process
-  - Processes.process_id
-  - Processes.parent_process_id
-  risk_score: 70
   security_domain: endpoint
 tests:
 - name: True Positive Test
