@@ -1,7 +1,7 @@
 name: WBAdmin Delete System Backups
 id: cd5aed7e-5cea-11eb-ae93-0242ac130002
-version: 3
-date: '2024-09-30'
+version: 4
+date: '2024-11-26'
 author: Michael Haag, Splunk
 status: production
 type: TTP
@@ -10,7 +10,7 @@ data_source:
 - Sysmon EventID 1
 - Windows Event Log Security 4688
 - CrowdStrike ProcessRollup2
-search: '| tstats `security_content_summariesonly` count min(_time) as firstTime max(_time) as lastTime from datamodel=Endpoint.Processes where Processes.process_name=wbadmin.exe Processes.process="*delete*" AND (Processes.process="*catalog*" OR Processes.process="*systemstatebackup*") by Processes.process_name Processes.process Processes.parent_process_name Processes.dest Processes.user | `drop_dm_object_name(Processes)` | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)`| `wbadmin_delete_system_backups_filter`'
+search: '| tstats `security_content_summariesonly` count min(_time) as firstTime max(_time) as lastTime from datamodel=Endpoint.Processes where `process_wbadmin` AND Processes.process="*delete*" AND (Processes.process="*catalog*" OR Processes.process="*backup*") by Processes.process_name Processes.process Processes.parent_process_name Processes.dest Processes.user | `drop_dm_object_name(Processes)` | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)`| `wbadmin_delete_system_backups_filter`'
 how_to_implement: The detection is based on data that originates from Endpoint Detection and Response (EDR) agents. These agents are designed to provide security-related telemetry from the endpoints where the agent is installed. To implement this search, you must ingest logs that contain the process GUID, process name, and parent process. Additionally, you must ingest complete command-line executions. These logs must be processed using the appropriate Splunk Technology Add-ons that are specific to the EDR product. The logs must also be mapped to the `Processes` node of the `Endpoint` data model. Use the Splunk Common Information Model (CIM) to normalize the field names and speed up the data modeling process.
 known_false_positives: Administrators may modify the boot configuration.
 references:
@@ -18,6 +18,7 @@ references:
 - https://thedfirreport.com/2020/10/08/ryuks-return/
 - https://attack.mitre.org/techniques/T1490/
 - https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/wbadmin
+- https://www.welivesecurity.com/2019/04/30/buhtrap-backdoor-ransomware-advertising-platform/
 drilldown_searches:
 - name: View the detection results for - "$dest$"
   search: '%original_detection_search% | search  dest = "$dest$"'
