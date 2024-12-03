@@ -1,7 +1,7 @@
 name: Suspicious Process DNS Query Known Abuse Web Services
 id: 3cf0dc36-484d-11ec-a6bc-acde48001122
-version: 6
-date: '2024-09-30'
+version: 7
+date: '2024-11-28'
 author: Teoderick Contreras, Splunk
 status: production
 type: TTP
@@ -31,6 +31,7 @@ tags:
   - Phemedrone Stealer
   - Snake Keylogger
   - PXA Stealer
+  - Meduza Stealer
   asset_type: Endpoint
   confidence: 80
   impact: 80

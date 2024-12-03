@@ -1,7 +1,7 @@
 name: Windows Access Token Manipulation SeDebugPrivilege
 id: 6ece9ed0-5f92-4315-889d-48560472b188
-version: 4
-date: '2024-09-30'
+version: 5
+date: '2024-11-28'
 author: Teoderick Contreras, Splunk
 status: production
 type: Anomaly
@@ -34,6 +34,7 @@ tags:
   - CISA AA23-347A
   - PlugX
   - ValleyRAT
+  - Meduza Stealer
   asset_type: Endpoint
   confidence: 60
   impact: 60
