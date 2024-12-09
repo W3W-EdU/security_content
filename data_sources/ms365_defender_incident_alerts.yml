@@ -9,7 +9,7 @@ sourcetype: ms365:defender:incident:alerts
 supported_TA:
 - name: Splunk Add-on for Microsoft Security
   url: https://splunkbase.splunk.com/app/6207
-  version: 2.4.0
+  version: 2.4.1
 fields:
 - actorName
 - alertId
@@ -124,111 +124,60 @@ fields:
 - _sourcetype
 - _subsecond
 - _time
-example_log: |
-  {
-    "alertId": "da638001130101730338_582949328",
-    "providerAlertId": "da638001130101730338_582949328",
-    "incidentId": 486,
-    "serviceSource": "MicrosoftDefenderForEndpoint",
-    "creationTime": "2022-09-30T05:36:50.1732198Z",
-    "lastUpdatedTime": "2022-11-19T01:35:42.7033333Z",
-    "resolvedTime": "2022-10-01T01:36:00.5066667Z",
-    "firstActivity": "2022-09-30T05:06:43.8196597Z",
-    "lastActivity": "2022-09-30T05:06:43.8196597Z",
-    "title": "Suspicious URL clicked",
-    "description": "A user opened a potentially malicious URL. This alert was triggered based on a Microsoft Defender for Office 365 alert.",
-    "category": "InitialAccess",
-    "status": "Resolved",
-    "severity": "High",
-    "investigationId": null,
-    "investigationState": "UnsupportedAlertType",
-    "classification": "TruePositive",
-    "determination": "SecurityTesting",
-    "detectionSource": "MTP",
-    "detectorId": "359b36eb-337c-4f1c-b280-8c5e08f9c4a0",
-    "assignedTo": "msftadmin@metal.m365dpoc.com",
-    "actorName": null,
-    "threatFamilyName": null,
-    "mitreTechniques": [
-      "T1566.002"
-    ],
-    "devices": [
-      {
-        "mdatpDeviceId": "c7e147cb0eb3534a4dcea5acb8e61c933713b145",
-        "aadDeviceId": null,
-        "deviceDnsName": "metal-win10v.metal.m365dpoc.com",
-        "osPlatform": "Windows10",
-        "version": "1809",
-        "osProcessor": "x64",
-        "osBuild": 17763,
-        "healthStatus": "Active",
-        "riskScore": "High",
-        "rbacGroupName": "Full Auto Clients",
-        "firstSeen": "2022-08-08T08:51:02.455Z",
-        "tags": [
-          "Full auto"
-        ],
-        "defenderAvStatus": "Updated",
-        "onboardingStatus": "Onboarded",
-        "vmMetadata": {
-          "vmId": "17881b39-b03f-4a2c-9b56-078be1330bd0",
-          "cloudProvider": "Unknown",
-          "resourceId": "/subscriptions/29e73d07-8740-4164-a257-592a19a7b77c/resourceGroups/MSDXV2/providers/Microsoft.Compute/virtualMachines/MSDXV2-Win10V",
-          "subscriptionId": "29e73d07-8740-4164-a257-592a19a7b77c"
-        },
-        "loggedOnUsers": [
-          {
-            "accountName": "hetfield",
-            "domainName": "MSDXV2"
-          }
-        ]
-      }
-    ],
-    "entities": [
-      {
-        "entityType": "Process",
-        "evidenceCreationTime": "2022-09-30T05:36:50.2133333Z",
-        "verdict": "Suspicious",
-        "remediationStatus": "None",
-        "sha1": "6cbce4a295c163791b60fc23d285e6d84f28ee4c",
-        "sha256": "de96a6e69944335375dc1ac238336066889d9ffc7d73628ef4fe1b1b160ab32c",
-        "fileName": "powershell.exe",
-        "filePath": "",
-        "processId": 7068,
-        "processCommandLine": "powershell.exe  -command \"                                                            $Process = New-Object System.Diagnostics.Process;                                                            $Process.StartInfo.FileName = 'https://nam12.safelinks.protection.outlook.com/?url=http%3A%2F%2Fgcajebahdi.corporatelogon.xyz%2Fab%2Fjnkmbkkdnlgedc&data=05%7C01%7Chetfield%40metal.m365dpoc.com%7Cca409616a82145bd6a5f08daa2a10255%7C1a49212958c8401191cd245285f5345c%7C0%7C0%7C638001109710345383%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=FyEjRS5qOd2SkJELlueibuxLFMYNjL7fz8EbuOAvFwg%3D&reserved=0';                                                            $Process.StartInfo.UseShellExecute = $true;                                                            $Process.Start() | Out-Null;                                                            \"                                                        ",
-        "processCreationTime": "2022-09-30T05:06:43.3390523Z",
-        "parentProcessId": 7116,
-        "parentProcessCreationTime": "2022-09-30T05:06:43.3100364Z",
-        "accountName": "hetfield",
-        "userSid": "S-1-5-21-2300221942-1987151257-321556088-1104"
-      },
-      {
-        "entityType": "File",
-        "evidenceCreationTime": "2022-09-30T05:36:50.2133333Z",
-        "verdict": "Suspicious",
-        "remediationStatus": "None",
-        "sha1": "6cbce4a295c163791b60fc23d285e6d84f28ee4c",
-        "sha256": "de96a6e69944335375dc1ac238336066889d9ffc7d73628ef4fe1b1b160ab32c",
-        "fileName": "powershell.exe",
-        "filePath": ""
-      },
-      {
-        "entityType": "User",
-        "evidenceCreationTime": "2022-09-30T05:36:50.2133333Z",
-        "verdict": "Suspicious",
-        "remediationStatus": "None",
-        "accountName": "hetfield",
-        "domainName": "metal.m365dpoc",
-        "userSid": "S-1-5-21-2300221942-1987151257-321556088-1104",
-        "aadUserId": "e848b07a-87af-4448-9979-09f0b809c8d4",
-        "userPrincipalName": "daftpunk"
-      },
-      {
-        "entityType": "Url",
-        "evidenceCreationTime": "2022-09-30T05:36:50.2133333Z",
-        "verdict": "Suspicious",
-        "remediationStatus": "None",
-        "url": "http://gcajebahdi.corporatelogon.xyz/ab/jnkmbkkdnlgedc"
-      }
-    ]
-  }
+example_log: "{\n  \"alertId\": \"da638001130101730338_582949328\",\n  \"providerAlertId\"\
+  : \"da638001130101730338_582949328\",\n  \"incidentId\": 486,\n  \"serviceSource\"\
+  : \"MicrosoftDefenderForEndpoint\",\n  \"creationTime\": \"2022-09-30T05:36:50.1732198Z\"\
+  ,\n  \"lastUpdatedTime\": \"2022-11-19T01:35:42.7033333Z\",\n  \"resolvedTime\"\
+  : \"2022-10-01T01:36:00.5066667Z\",\n  \"firstActivity\": \"2022-09-30T05:06:43.8196597Z\"\
+  ,\n  \"lastActivity\": \"2022-09-30T05:06:43.8196597Z\",\n  \"title\": \"Suspicious\
+  \ URL clicked\",\n  \"description\": \"A user opened a potentially malicious URL.\
+  \ This alert was triggered based on a Microsoft Defender for Office 365 alert.\"\
+  ,\n  \"category\": \"InitialAccess\",\n  \"status\": \"Resolved\",\n  \"severity\"\
+  : \"High\",\n  \"investigationId\": null,\n  \"investigationState\": \"UnsupportedAlertType\"\
+  ,\n  \"classification\": \"TruePositive\",\n  \"determination\": \"SecurityTesting\"\
+  ,\n  \"detectionSource\": \"MTP\",\n  \"detectorId\": \"359b36eb-337c-4f1c-b280-8c5e08f9c4a0\"\
+  ,\n  \"assignedTo\": \"msftadmin@metal.m365dpoc.com\",\n  \"actorName\": null,\n\
+  \  \"threatFamilyName\": null,\n  \"mitreTechniques\": [\n    \"T1566.002\"\n  ],\n\
+  \  \"devices\": [\n    {\n      \"mdatpDeviceId\": \"c7e147cb0eb3534a4dcea5acb8e61c933713b145\"\
+  ,\n      \"aadDeviceId\": null,\n      \"deviceDnsName\": \"metal-win10v.metal.m365dpoc.com\"\
+  ,\n      \"osPlatform\": \"Windows10\",\n      \"version\": \"1809\",\n      \"\
+  osProcessor\": \"x64\",\n      \"osBuild\": 17763,\n      \"healthStatus\": \"Active\"\
+  ,\n      \"riskScore\": \"High\",\n      \"rbacGroupName\": \"Full Auto Clients\"\
+  ,\n      \"firstSeen\": \"2022-08-08T08:51:02.455Z\",\n      \"tags\": [\n     \
+  \   \"Full auto\"\n      ],\n      \"defenderAvStatus\": \"Updated\",\n      \"\
+  onboardingStatus\": \"Onboarded\",\n      \"vmMetadata\": {\n        \"vmId\": \"\
+  17881b39-b03f-4a2c-9b56-078be1330bd0\",\n        \"cloudProvider\": \"Unknown\"\
+  ,\n        \"resourceId\": \"/subscriptions/29e73d07-8740-4164-a257-592a19a7b77c/resourceGroups/MSDXV2/providers/Microsoft.Compute/virtualMachines/MSDXV2-Win10V\"\
+  ,\n        \"subscriptionId\": \"29e73d07-8740-4164-a257-592a19a7b77c\"\n      },\n\
+  \      \"loggedOnUsers\": [\n        {\n          \"accountName\": \"hetfield\"\
+  ,\n          \"domainName\": \"MSDXV2\"\n        }\n      ]\n    }\n  ],\n  \"entities\"\
+  : [\n    {\n      \"entityType\": \"Process\",\n      \"evidenceCreationTime\":\
+  \ \"2022-09-30T05:36:50.2133333Z\",\n      \"verdict\": \"Suspicious\",\n      \"\
+  remediationStatus\": \"None\",\n      \"sha1\": \"6cbce4a295c163791b60fc23d285e6d84f28ee4c\"\
+  ,\n      \"sha256\": \"de96a6e69944335375dc1ac238336066889d9ffc7d73628ef4fe1b1b160ab32c\"\
+  ,\n      \"fileName\": \"powershell.exe\",\n      \"filePath\": \"\",\n      \"\
+  processId\": 7068,\n      \"processCommandLine\": \"powershell.exe  -command \\\"\
+  \                                                            $Process = New-Object\
+  \ System.Diagnostics.Process;                                                  \
+  \          $Process.StartInfo.FileName = 'https://nam12.safelinks.protection.outlook.com/?url=http%3A%2F%2Fgcajebahdi.corporatelogon.xyz%2Fab%2Fjnkmbkkdnlgedc&data=05%7C01%7Chetfield%40metal.m365dpoc.com%7Cca409616a82145bd6a5f08daa2a10255%7C1a49212958c8401191cd245285f5345c%7C0%7C0%7C638001109710345383%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=FyEjRS5qOd2SkJELlueibuxLFMYNjL7fz8EbuOAvFwg%3D&reserved=0';\
+  \                                                            $Process.StartInfo.UseShellExecute\
+  \ = $true;                                                            $Process.Start()\
+  \ | Out-Null;                                                            \\\"  \
+  \                                                      \",\n      \"processCreationTime\"\
+  : \"2022-09-30T05:06:43.3390523Z\",\n      \"parentProcessId\": 7116,\n      \"\
+  parentProcessCreationTime\": \"2022-09-30T05:06:43.3100364Z\",\n      \"accountName\"\
+  : \"hetfield\",\n      \"userSid\": \"S-1-5-21-2300221942-1987151257-321556088-1104\"\
+  \n    },\n    {\n      \"entityType\": \"File\",\n      \"evidenceCreationTime\"\
+  : \"2022-09-30T05:36:50.2133333Z\",\n      \"verdict\": \"Suspicious\",\n      \"\
+  remediationStatus\": \"None\",\n      \"sha1\": \"6cbce4a295c163791b60fc23d285e6d84f28ee4c\"\
+  ,\n      \"sha256\": \"de96a6e69944335375dc1ac238336066889d9ffc7d73628ef4fe1b1b160ab32c\"\
+  ,\n      \"fileName\": \"powershell.exe\",\n      \"filePath\": \"\"\n    },\n \
+  \   {\n      \"entityType\": \"User\",\n      \"evidenceCreationTime\": \"2022-09-30T05:36:50.2133333Z\"\
+  ,\n      \"verdict\": \"Suspicious\",\n      \"remediationStatus\": \"None\",\n\
+  \      \"accountName\": \"hetfield\",\n      \"domainName\": \"metal.m365dpoc\"\
+  ,\n      \"userSid\": \"S-1-5-21-2300221942-1987151257-321556088-1104\",\n     \
+  \ \"aadUserId\": \"e848b07a-87af-4448-9979-09f0b809c8d4\",\n      \"userPrincipalName\"\
+  : \"daftpunk\"\n    },\n    {\n      \"entityType\": \"Url\",\n      \"evidenceCreationTime\"\
+  : \"2022-09-30T05:36:50.2133333Z\",\n      \"verdict\": \"Suspicious\",\n      \"\
+  remediationStatus\": \"None\",\n      \"url\": \"http://gcajebahdi.corporatelogon.xyz/ab/jnkmbkkdnlgedc\"\
+  \n    }\n  ]\n}"

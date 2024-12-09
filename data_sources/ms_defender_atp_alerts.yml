@@ -9,7 +9,7 @@ sourcetype: ms:defender:atp:alerts
 supported_TA:
 - name: Splunk Add-on for Microsoft Security
   url: https://splunkbase.splunk.com/app/6207
-  version: 2.4.0
+  version: 2.4.1
 fields:
 - column
 - accountName
@@ -121,302 +121,152 @@ fields:
 - user
 - user_name
 - _time
-example_log: |
-  {
-  "id": "da47dc5671-e560-4229-984b-457564996b31_1",
-  "incidentId": 989,
-  "investigationId": null,
-  "assignedTo": null,
-  "severity": "High",
-  "status": "New",
-  "classification": null,
-  "determination": null,
-  "investigationState": "UnsupportedAlertType",
-  "detectionSource": "WindowsDefenderAtp",
-  "detectorId": "9c3a70ec-e18a-4f92-865a-530f73130b7c",
-  "category": "LateralMovement",
-  "threatFamilyName": null,
-  "title": "Ongoing hands-on-keyboard attack via Impacket toolkit",
-  "description": "Suspicious execution of a command via Impacket was observed on this device. This tool connects to other hosts to explore network shares and execute commands. Attackers might be attempting to move laterally across the network using this tool. This usage of Impacket has often been observed in hands-on-keyboard attacks, where ransomware and other payloads are installed on target devices.",
-  "alertCreationTime": "2023-01-24T05:33:37.3245808Z",
-  "firstEventTime": "2023-01-24T05:31:07.5276179Z",
-  "lastEventTime": "2023-01-24T13:02:50.7831636Z",
-  "lastUpdateTime": "2023-01-24T13:07:13.3233333Z",
-  "resolvedTime": null,
-  "machineId": "302293d9f276eae65553e5042156bce93cbc7148",
-  "computerDnsName": "diytestmachine",
-  "rbacGroupName": "UnassignedGroup",
-  "aadTenantId": "1a492129-58c8-4011-91cd-245285f5345c",
-  "threatName": null,
-  "mitreTechniques": [
-    "T1021.002",
-    "T1047",
-    "T1059.003"
-  ],
-  "relatedUser": {
-    "userName": "User1",
-    "domainName": "DIYTESTMACHINE"
-  },
-  "loggedOnUsers": [
-    {
-      "accountName": "administrator1",
-      "domainName": "DIYTESTMACHINE"
-    }
-  ],
-  "comments": [],
-  "evidence": [
-    {
-      "entityType": "Process",
-      "evidenceCreationTime": "2023-01-24T05:45:51.6833333Z",
-      "sha1": "3ea7cc066317ac45f963c2227c4c7c50aa16eb7c",
-      "sha256": "2198a7b58bccb758036b969ddae6cc2ece07565e2659a7c541a313a0492231a3",
-      "fileName": "WmiPrvSE.exe",
-      "filePath": "C:\\Windows\\System32\\wbem",
-      "processId": 4476,
-      "processCommandLine": "wmiprvse.exe -secured -Embedding",
-      "processCreationTime": "2023-01-24T05:43:32.4631151Z",
-      "parentProcessId": 896,
-      "parentProcessCreationTime": "2023-01-24T04:44:17.1940386Z",
-      "parentProcessFileName": "svchost.exe",
-      "parentProcessFilePath": "C:\\Windows\\System32",
-      "ipAddress": null,
-      "url": null,
-      "registryKey": null,
-      "registryHive": null,
-      "registryValueType": null,
-      "registryValue": null,
-      "registryValueName": null,
-      "accountName": "NETWORK SERVICE",
-      "domainName": "NT AUTHORITY",
-      "userSid": "S-1-5-20",
-      "aadUserId": null,
-      "userPrincipalName": null,
-      "detectionStatus": "Detected"
-    },
-    {
-      "entityType": "User",
-      "evidenceCreationTime": "2023-01-24T05:33:37.4166667Z",
-      "sha1": null,
-      "sha256": null,
-      "fileName": null,
-      "filePath": null,
-      "processId": null,
-      "processCommandLine": null,
-      "processCreationTime": null,
-      "parentProcessId": null,
-      "parentProcessCreationTime": null,
-      "parentProcessFileName": null,
-      "parentProcessFilePath": null,
-      "ipAddress": null,
-      "url": null,
-      "registryKey": null,
-      "registryHive": null,
-      "registryValueType": null,
-      "registryValue": null,
-      "registryValueName": null,
-      "accountName": "User1",
-      "domainName": "DIYTESTMACHINE",
-      "userSid": "S-1-5-21-4215714199-1288013905-3478400915-1002",
-      "aadUserId": null,
-      "userPrincipalName": null,
-      "detectionStatus": null
-    },
-    {
-      "entityType": "Process",
-      "evidenceCreationTime": "2023-01-24T05:33:37.4166667Z",
-      "sha1": "3ea7cc066317ac45f963c2227c4c7c50aa16eb7c",
-      "sha256": "2198a7b58bccb758036b969ddae6cc2ece07565e2659a7c541a313a0492231a3",
-      "fileName": "WmiPrvSE.exe",
-      "filePath": "C:\\Windows\\System32\\wbem",
-      "processId": 7824,
-      "processCommandLine": "wmiprvse.exe -secured -Embedding",
-      "processCreationTime": "2023-01-24T05:30:50.8649791Z",
-      "parentProcessId": 896,
-      "parentProcessCreationTime": "2023-01-24T04:44:17.1940386Z",
-      "parentProcessFileName": "svchost.exe",
-      "parentProcessFilePath": "C:\\Windows\\System32",
-      "ipAddress": null,
-      "url": null,
-      "registryKey": null,
-      "registryHive": null,
-      "registryValueType": null,
-      "registryValue": null,
-      "registryValueName": null,
-      "accountName": "NETWORK SERVICE",
-      "domainName": "NT AUTHORITY",
-      "userSid": "S-1-5-20",
-      "aadUserId": null,
-      "userPrincipalName": null,
-      "detectionStatus": "Detected"
-    },
-    {
-      "entityType": "Process",
-      "evidenceCreationTime": "2023-01-24T13:07:13.2233333Z",
-      "sha1": "f1efb0fddc156e4c61c5f78a54700e4e7984d55d",
-      "sha256": "b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450",
-      "fileName": "cmd.exe",
-      "filePath": "C:\\Windows\\System32",
-      "processId": 5500,
-      "processCommandLine": "cmd.exe /Q /c powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\administrator1\\Desktop\\SharedFolder\\payload.ps1\" 1> \\\\127.0.0.1\\SharedFolder\\__1674565222.7012053 2>&1",
-      "processCreationTime": "2023-01-24T13:02:50.4661885Z",
-      "parentProcessId": 756,
-      "parentProcessCreationTime": "2023-01-24T13:00:35.0107475Z",
-      "parentProcessFileName": "WmiPrvSE.exe",
-      "parentProcessFilePath": "C:\\Windows\\System32\\wbem",
-      "ipAddress": null,
-      "url": null,
-      "registryKey": null,
-      "registryHive": null,
-      "registryValueType": null,
-      "registryValue": null,
-      "registryValueName": null,
-      "accountName": "User1",
-      "domainName": "DIYTESTMACHINE",
-      "userSid": "S-1-5-21-4215714199-1288013905-3478400915-1002",
-      "aadUserId": null,
-      "userPrincipalName": null,
-      "detectionStatus": "Detected"
-    },
-    {
-      "entityType": "Process",
-      "evidenceCreationTime": "2023-01-24T05:33:37.4166667Z",
-      "sha1": "f1efb0fddc156e4c61c5f78a54700e4e7984d55d",
-      "sha256": "b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450",
-      "fileName": "cmd.exe",
-      "filePath": "C:\\Windows\\System32",
-      "processId": 8964,
-      "processCommandLine": "cmd.exe /Q /c powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\administrator1\\Desktop\\SharedFolder\\payload.ps1\" 1> \\\\127.0.0.1\\SharedFolder\\__1674538248.357367 2>&1",
-      "processCreationTime": "2023-01-24T05:31:04.0743902Z",
-      "parentProcessId": 7824,
-      "parentProcessCreationTime": "2023-01-24T05:30:50.8649791Z",
-      "parentProcessFileName": "WmiPrvSE.exe",
-      "parentProcessFilePath": "C:\\Windows\\System32\\wbem",
-      "ipAddress": null,
-      "url": null,
-      "registryKey": null,
-      "registryHive": null,
-      "registryValueType": null,
-      "registryValue": null,
-      "registryValueName": null,
-      "accountName": "User1",
-      "domainName": "DIYTESTMACHINE",
-      "userSid": "S-1-5-21-4215714199-1288013905-3478400915-1002",
-      "aadUserId": null,
-      "userPrincipalName": null,
-      "detectionStatus": "Detected"
-    },
-    {
-      "entityType": "Process",
-      "evidenceCreationTime": "2023-01-24T05:39:47.1733333Z",
-      "sha1": "f1efb0fddc156e4c61c5f78a54700e4e7984d55d",
-      "sha256": "b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450",
-      "fileName": "cmd.exe",
-      "filePath": "C:\\Windows\\System32",
-      "processId": 884,
-      "processCommandLine": "cmd.exe /Q /c powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\administrator1\\Desktop\\SharedFolder\\payload.ps1\" 1> \\\\127.0.0.1\\SharedFolder\\__1674538583.8648584 2>&1",
-      "processCreationTime": "2023-01-24T05:36:38.826505Z",
-      "parentProcessId": 7736,
-      "parentProcessCreationTime": "2023-01-24T05:36:26.0524655Z",
-      "parentProcessFileName": "WmiPrvSE.exe",
-      "parentProcessFilePath": "C:\\Windows\\System32\\wbem",
-      "ipAddress": null,
-      "url": null,
-      "registryKey": null,
-      "registryHive": null,
-      "registryValueType": null,
-      "registryValue": null,
-      "registryValueName": null,
-      "accountName": "User1",
-      "domainName": "DIYTESTMACHINE",
-      "userSid": "S-1-5-21-4215714199-1288013905-3478400915-1002",
-      "aadUserId": null,
-      "userPrincipalName": null,
-      "detectionStatus": "Detected"
-    },
-    {
-      "entityType": "Process",
-      "evidenceCreationTime": "2023-01-24T13:07:13.2233333Z",
-      "sha1": "3ea7cc066317ac45f963c2227c4c7c50aa16eb7c",
-      "sha256": "2198a7b58bccb758036b969ddae6cc2ece07565e2659a7c541a313a0492231a3",
-      "fileName": "WmiPrvSE.exe",
-      "filePath": "C:\\Windows\\System32\\wbem",
-      "processId": 756,
-      "processCommandLine": "wmiprvse.exe -secured -Embedding",
-      "processCreationTime": "2023-01-24T13:00:35.0107475Z",
-      "parentProcessId": 908,
-      "parentProcessCreationTime": "2023-01-24T08:20:44.6877667Z",
-      "parentProcessFileName": "svchost.exe",
-      "parentProcessFilePath": "C:\\Windows\\System32",
-      "ipAddress": null,
-      "url": null,
-      "registryKey": null,
-      "registryHive": null,
-      "registryValueType": null,
-      "registryValue": null,
-      "registryValueName": null,
-      "accountName": "NETWORK SERVICE",
-      "domainName": "NT AUTHORITY",
-      "userSid": "S-1-5-20",
-      "aadUserId": null,
-      "userPrincipalName": null,
-      "detectionStatus": "Detected"
-    },
-    {
-      "entityType": "Process",
-      "evidenceCreationTime": "2023-01-24T05:45:51.6833333Z",
-      "sha1": "f1efb0fddc156e4c61c5f78a54700e4e7984d55d",
-      "sha256": "b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450",
-      "fileName": "cmd.exe",
-      "filePath": "C:\\Windows\\System32",
-      "processId": 1140,
-      "processCommandLine": "cmd.exe /Q /c powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\administrator1\\Desktop\\SharedFolder\\payload.ps1\" 1> \\\\127.0.0.1\\SharedFolder\\__1674538878.1586335 2>&1",
-      "processCreationTime": "2023-01-24T05:43:49.9375398Z",
-      "parentProcessId": 4476,
-      "parentProcessCreationTime": "2023-01-24T05:43:32.4631151Z",
-      "parentProcessFileName": "WmiPrvSE.exe",
-      "parentProcessFilePath": "C:\\Windows\\System32\\wbem",
-      "ipAddress": null,
-      "url": null,
-      "registryKey": null,
-      "registryHive": null,
-      "registryValueType": null,
-      "registryValue": null,
-      "registryValueName": null,
-      "accountName": "User1",
-      "domainName": "DIYTESTMACHINE",
-      "userSid": "S-1-5-21-4215714199-1288013905-3478400915-1002",
-      "aadUserId": null,
-      "userPrincipalName": null,
-      "detectionStatus": "Detected"
-    },
-    {
-      "entityType": "Process",
-      "evidenceCreationTime": "2023-01-24T05:39:47.1733333Z",
-      "sha1": "3ea7cc066317ac45f963c2227c4c7c50aa16eb7c",
-      "sha256": "2198a7b58bccb758036b969ddae6cc2ece07565e2659a7c541a313a0492231a3",
-      "fileName": "WmiPrvSE.exe",
-      "filePath": "C:\\Windows\\System32\\wbem",
-      "processId": 7736,
-      "processCommandLine": "wmiprvse.exe -secured -Embedding",
-      "processCreationTime": "2023-01-24T05:36:26.0524655Z",
-      "parentProcessId": 896,
-      "parentProcessCreationTime": "2023-01-24T04:44:17.1940386Z",
-      "parentProcessFileName": "svchost.exe",
-      "parentProcessFilePath": "C:\\Windows\\System32",
-      "ipAddress": null,
-      "url": null,
-      "registryKey": null,
-      "registryHive": null,
-      "registryValueType": null,
-      "registryValue": null,
-      "registryValueName": null,
-      "accountName": "NETWORK SERVICE",
-      "domainName": "NT AUTHORITY",
-      "userSid": "S-1-5-20",
-      "aadUserId": null,
-      "userPrincipalName": null,
-      "detectionStatus": "Detected"
-    }
-  ],
-  "domains": []
-  }
+example_log: "{\n\"id\": \"da47dc5671-e560-4229-984b-457564996b31_1\",\n\"incidentId\"\
+  : 989,\n\"investigationId\": null,\n\"assignedTo\": null,\n\"severity\": \"High\"\
+  ,\n\"status\": \"New\",\n\"classification\": null,\n\"determination\": null,\n\"\
+  investigationState\": \"UnsupportedAlertType\",\n\"detectionSource\": \"WindowsDefenderAtp\"\
+  ,\n\"detectorId\": \"9c3a70ec-e18a-4f92-865a-530f73130b7c\",\n\"category\": \"LateralMovement\"\
+  ,\n\"threatFamilyName\": null,\n\"title\": \"Ongoing hands-on-keyboard attack via\
+  \ Impacket toolkit\",\n\"description\": \"Suspicious execution of a command via\
+  \ Impacket was observed on this device. This tool connects to other hosts to explore\
+  \ network shares and execute commands. Attackers might be attempting to move laterally\
+  \ across the network using this tool. This usage of Impacket has often been observed\
+  \ in hands-on-keyboard attacks, where ransomware and other payloads are installed\
+  \ on target devices.\",\n\"alertCreationTime\": \"2023-01-24T05:33:37.3245808Z\"\
+  ,\n\"firstEventTime\": \"2023-01-24T05:31:07.5276179Z\",\n\"lastEventTime\": \"\
+  2023-01-24T13:02:50.7831636Z\",\n\"lastUpdateTime\": \"2023-01-24T13:07:13.3233333Z\"\
+  ,\n\"resolvedTime\": null,\n\"machineId\": \"302293d9f276eae65553e5042156bce93cbc7148\"\
+  ,\n\"computerDnsName\": \"diytestmachine\",\n\"rbacGroupName\": \"UnassignedGroup\"\
+  ,\n\"aadTenantId\": \"1a492129-58c8-4011-91cd-245285f5345c\",\n\"threatName\": null,\n\
+  \"mitreTechniques\": [\n  \"T1021.002\",\n  \"T1047\",\n  \"T1059.003\"\n],\n\"\
+  relatedUser\": {\n  \"userName\": \"User1\",\n  \"domainName\": \"DIYTESTMACHINE\"\
+  \n},\n\"loggedOnUsers\": [\n  {\n    \"accountName\": \"administrator1\",\n    \"\
+  domainName\": \"DIYTESTMACHINE\"\n  }\n],\n\"comments\": [],\n\"evidence\": [\n\
+  \  {\n    \"entityType\": \"Process\",\n    \"evidenceCreationTime\": \"2023-01-24T05:45:51.6833333Z\"\
+  ,\n    \"sha1\": \"3ea7cc066317ac45f963c2227c4c7c50aa16eb7c\",\n    \"sha256\":\
+  \ \"2198a7b58bccb758036b969ddae6cc2ece07565e2659a7c541a313a0492231a3\",\n    \"\
+  fileName\": \"WmiPrvSE.exe\",\n    \"filePath\": \"C:\\\\Windows\\\\System32\\\\\
+  wbem\",\n    \"processId\": 4476,\n    \"processCommandLine\": \"wmiprvse.exe -secured\
+  \ -Embedding\",\n    \"processCreationTime\": \"2023-01-24T05:43:32.4631151Z\",\n\
+  \    \"parentProcessId\": 896,\n    \"parentProcessCreationTime\": \"2023-01-24T04:44:17.1940386Z\"\
+  ,\n    \"parentProcessFileName\": \"svchost.exe\",\n    \"parentProcessFilePath\"\
+  : \"C:\\\\Windows\\\\System32\",\n    \"ipAddress\": null,\n    \"url\": null,\n\
+  \    \"registryKey\": null,\n    \"registryHive\": null,\n    \"registryValueType\"\
+  : null,\n    \"registryValue\": null,\n    \"registryValueName\": null,\n    \"\
+  accountName\": \"NETWORK SERVICE\",\n    \"domainName\": \"NT AUTHORITY\",\n   \
+  \ \"userSid\": \"S-1-5-20\",\n    \"aadUserId\": null,\n    \"userPrincipalName\"\
+  : null,\n    \"detectionStatus\": \"Detected\"\n  },\n  {\n    \"entityType\": \"\
+  User\",\n    \"evidenceCreationTime\": \"2023-01-24T05:33:37.4166667Z\",\n    \"\
+  sha1\": null,\n    \"sha256\": null,\n    \"fileName\": null,\n    \"filePath\"\
+  : null,\n    \"processId\": null,\n    \"processCommandLine\": null,\n    \"processCreationTime\"\
+  : null,\n    \"parentProcessId\": null,\n    \"parentProcessCreationTime\": null,\n\
+  \    \"parentProcessFileName\": null,\n    \"parentProcessFilePath\": null,\n  \
+  \  \"ipAddress\": null,\n    \"url\": null,\n    \"registryKey\": null,\n    \"\
+  registryHive\": null,\n    \"registryValueType\": null,\n    \"registryValue\":\
+  \ null,\n    \"registryValueName\": null,\n    \"accountName\": \"User1\",\n   \
+  \ \"domainName\": \"DIYTESTMACHINE\",\n    \"userSid\": \"S-1-5-21-4215714199-1288013905-3478400915-1002\"\
+  ,\n    \"aadUserId\": null,\n    \"userPrincipalName\": null,\n    \"detectionStatus\"\
+  : null\n  },\n  {\n    \"entityType\": \"Process\",\n    \"evidenceCreationTime\"\
+  : \"2023-01-24T05:33:37.4166667Z\",\n    \"sha1\": \"3ea7cc066317ac45f963c2227c4c7c50aa16eb7c\"\
+  ,\n    \"sha256\": \"2198a7b58bccb758036b969ddae6cc2ece07565e2659a7c541a313a0492231a3\"\
+  ,\n    \"fileName\": \"WmiPrvSE.exe\",\n    \"filePath\": \"C:\\\\Windows\\\\System32\\\
+  \\wbem\",\n    \"processId\": 7824,\n    \"processCommandLine\": \"wmiprvse.exe\
+  \ -secured -Embedding\",\n    \"processCreationTime\": \"2023-01-24T05:30:50.8649791Z\"\
+  ,\n    \"parentProcessId\": 896,\n    \"parentProcessCreationTime\": \"2023-01-24T04:44:17.1940386Z\"\
+  ,\n    \"parentProcessFileName\": \"svchost.exe\",\n    \"parentProcessFilePath\"\
+  : \"C:\\\\Windows\\\\System32\",\n    \"ipAddress\": null,\n    \"url\": null,\n\
+  \    \"registryKey\": null,\n    \"registryHive\": null,\n    \"registryValueType\"\
+  : null,\n    \"registryValue\": null,\n    \"registryValueName\": null,\n    \"\
+  accountName\": \"NETWORK SERVICE\",\n    \"domainName\": \"NT AUTHORITY\",\n   \
+  \ \"userSid\": \"S-1-5-20\",\n    \"aadUserId\": null,\n    \"userPrincipalName\"\
+  : null,\n    \"detectionStatus\": \"Detected\"\n  },\n  {\n    \"entityType\": \"\
+  Process\",\n    \"evidenceCreationTime\": \"2023-01-24T13:07:13.2233333Z\",\n  \
+  \  \"sha1\": \"f1efb0fddc156e4c61c5f78a54700e4e7984d55d\",\n    \"sha256\": \"b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450\"\
+  ,\n    \"fileName\": \"cmd.exe\",\n    \"filePath\": \"C:\\\\Windows\\\\System32\"\
+  ,\n    \"processId\": 5500,\n    \"processCommandLine\": \"cmd.exe /Q /c powershell\
+  \ -NoProfile -ExecutionPolicy Bypass -File \\\"C:\\\\Users\\\\administrator1\\\\\
+  Desktop\\\\SharedFolder\\\\payload.ps1\\\" 1> \\\\\\\\127.0.0.1\\\\SharedFolder\\\
+  \\__1674565222.7012053 2>&1\",\n    \"processCreationTime\": \"2023-01-24T13:02:50.4661885Z\"\
+  ,\n    \"parentProcessId\": 756,\n    \"parentProcessCreationTime\": \"2023-01-24T13:00:35.0107475Z\"\
+  ,\n    \"parentProcessFileName\": \"WmiPrvSE.exe\",\n    \"parentProcessFilePath\"\
+  : \"C:\\\\Windows\\\\System32\\\\wbem\",\n    \"ipAddress\": null,\n    \"url\"\
+  : null,\n    \"registryKey\": null,\n    \"registryHive\": null,\n    \"registryValueType\"\
+  : null,\n    \"registryValue\": null,\n    \"registryValueName\": null,\n    \"\
+  accountName\": \"User1\",\n    \"domainName\": \"DIYTESTMACHINE\",\n    \"userSid\"\
+  : \"S-1-5-21-4215714199-1288013905-3478400915-1002\",\n    \"aadUserId\": null,\n\
+  \    \"userPrincipalName\": null,\n    \"detectionStatus\": \"Detected\"\n  },\n\
+  \  {\n    \"entityType\": \"Process\",\n    \"evidenceCreationTime\": \"2023-01-24T05:33:37.4166667Z\"\
+  ,\n    \"sha1\": \"f1efb0fddc156e4c61c5f78a54700e4e7984d55d\",\n    \"sha256\":\
+  \ \"b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450\",\n    \"\
+  fileName\": \"cmd.exe\",\n    \"filePath\": \"C:\\\\Windows\\\\System32\",\n   \
+  \ \"processId\": 8964,\n    \"processCommandLine\": \"cmd.exe /Q /c powershell -NoProfile\
+  \ -ExecutionPolicy Bypass -File \\\"C:\\\\Users\\\\administrator1\\\\Desktop\\\\\
+  SharedFolder\\\\payload.ps1\\\" 1> \\\\\\\\127.0.0.1\\\\SharedFolder\\\\__1674538248.357367\
+  \ 2>&1\",\n    \"processCreationTime\": \"2023-01-24T05:31:04.0743902Z\",\n    \"\
+  parentProcessId\": 7824,\n    \"parentProcessCreationTime\": \"2023-01-24T05:30:50.8649791Z\"\
+  ,\n    \"parentProcessFileName\": \"WmiPrvSE.exe\",\n    \"parentProcessFilePath\"\
+  : \"C:\\\\Windows\\\\System32\\\\wbem\",\n    \"ipAddress\": null,\n    \"url\"\
+  : null,\n    \"registryKey\": null,\n    \"registryHive\": null,\n    \"registryValueType\"\
+  : null,\n    \"registryValue\": null,\n    \"registryValueName\": null,\n    \"\
+  accountName\": \"User1\",\n    \"domainName\": \"DIYTESTMACHINE\",\n    \"userSid\"\
+  : \"S-1-5-21-4215714199-1288013905-3478400915-1002\",\n    \"aadUserId\": null,\n\
+  \    \"userPrincipalName\": null,\n    \"detectionStatus\": \"Detected\"\n  },\n\
+  \  {\n    \"entityType\": \"Process\",\n    \"evidenceCreationTime\": \"2023-01-24T05:39:47.1733333Z\"\
+  ,\n    \"sha1\": \"f1efb0fddc156e4c61c5f78a54700e4e7984d55d\",\n    \"sha256\":\
+  \ \"b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450\",\n    \"\
+  fileName\": \"cmd.exe\",\n    \"filePath\": \"C:\\\\Windows\\\\System32\",\n   \
+  \ \"processId\": 884,\n    \"processCommandLine\": \"cmd.exe /Q /c powershell -NoProfile\
+  \ -ExecutionPolicy Bypass -File \\\"C:\\\\Users\\\\administrator1\\\\Desktop\\\\\
+  SharedFolder\\\\payload.ps1\\\" 1> \\\\\\\\127.0.0.1\\\\SharedFolder\\\\__1674538583.8648584\
+  \ 2>&1\",\n    \"processCreationTime\": \"2023-01-24T05:36:38.826505Z\",\n    \"\
+  parentProcessId\": 7736,\n    \"parentProcessCreationTime\": \"2023-01-24T05:36:26.0524655Z\"\
+  ,\n    \"parentProcessFileName\": \"WmiPrvSE.exe\",\n    \"parentProcessFilePath\"\
+  : \"C:\\\\Windows\\\\System32\\\\wbem\",\n    \"ipAddress\": null,\n    \"url\"\
+  : null,\n    \"registryKey\": null,\n    \"registryHive\": null,\n    \"registryValueType\"\
+  : null,\n    \"registryValue\": null,\n    \"registryValueName\": null,\n    \"\
+  accountName\": \"User1\",\n    \"domainName\": \"DIYTESTMACHINE\",\n    \"userSid\"\
+  : \"S-1-5-21-4215714199-1288013905-3478400915-1002\",\n    \"aadUserId\": null,\n\
+  \    \"userPrincipalName\": null,\n    \"detectionStatus\": \"Detected\"\n  },\n\
+  \  {\n    \"entityType\": \"Process\",\n    \"evidenceCreationTime\": \"2023-01-24T13:07:13.2233333Z\"\
+  ,\n    \"sha1\": \"3ea7cc066317ac45f963c2227c4c7c50aa16eb7c\",\n    \"sha256\":\
+  \ \"2198a7b58bccb758036b969ddae6cc2ece07565e2659a7c541a313a0492231a3\",\n    \"\
+  fileName\": \"WmiPrvSE.exe\",\n    \"filePath\": \"C:\\\\Windows\\\\System32\\\\\
+  wbem\",\n    \"processId\": 756,\n    \"processCommandLine\": \"wmiprvse.exe -secured\
+  \ -Embedding\",\n    \"processCreationTime\": \"2023-01-24T13:00:35.0107475Z\",\n\
+  \    \"parentProcessId\": 908,\n    \"parentProcessCreationTime\": \"2023-01-24T08:20:44.6877667Z\"\
+  ,\n    \"parentProcessFileName\": \"svchost.exe\",\n    \"parentProcessFilePath\"\
+  : \"C:\\\\Windows\\\\System32\",\n    \"ipAddress\": null,\n    \"url\": null,\n\
+  \    \"registryKey\": null,\n    \"registryHive\": null,\n    \"registryValueType\"\
+  : null,\n    \"registryValue\": null,\n    \"registryValueName\": null,\n    \"\
+  accountName\": \"NETWORK SERVICE\",\n    \"domainName\": \"NT AUTHORITY\",\n   \
+  \ \"userSid\": \"S-1-5-20\",\n    \"aadUserId\": null,\n    \"userPrincipalName\"\
+  : null,\n    \"detectionStatus\": \"Detected\"\n  },\n  {\n    \"entityType\": \"\
+  Process\",\n    \"evidenceCreationTime\": \"2023-01-24T05:45:51.6833333Z\",\n  \
+  \  \"sha1\": \"f1efb0fddc156e4c61c5f78a54700e4e7984d55d\",\n    \"sha256\": \"b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450\"\
+  ,\n    \"fileName\": \"cmd.exe\",\n    \"filePath\": \"C:\\\\Windows\\\\System32\"\
+  ,\n    \"processId\": 1140,\n    \"processCommandLine\": \"cmd.exe /Q /c powershell\
+  \ -NoProfile -ExecutionPolicy Bypass -File \\\"C:\\\\Users\\\\administrator1\\\\\
+  Desktop\\\\SharedFolder\\\\payload.ps1\\\" 1> \\\\\\\\127.0.0.1\\\\SharedFolder\\\
+  \\__1674538878.1586335 2>&1\",\n    \"processCreationTime\": \"2023-01-24T05:43:49.9375398Z\"\
+  ,\n    \"parentProcessId\": 4476,\n    \"parentProcessCreationTime\": \"2023-01-24T05:43:32.4631151Z\"\
+  ,\n    \"parentProcessFileName\": \"WmiPrvSE.exe\",\n    \"parentProcessFilePath\"\
+  : \"C:\\\\Windows\\\\System32\\\\wbem\",\n    \"ipAddress\": null,\n    \"url\"\
+  : null,\n    \"registryKey\": null,\n    \"registryHive\": null,\n    \"registryValueType\"\
+  : null,\n    \"registryValue\": null,\n    \"registryValueName\": null,\n    \"\
+  accountName\": \"User1\",\n    \"domainName\": \"DIYTESTMACHINE\",\n    \"userSid\"\
+  : \"S-1-5-21-4215714199-1288013905-3478400915-1002\",\n    \"aadUserId\": null,\n\
+  \    \"userPrincipalName\": null,\n    \"detectionStatus\": \"Detected\"\n  },\n\
+  \  {\n    \"entityType\": \"Process\",\n    \"evidenceCreationTime\": \"2023-01-24T05:39:47.1733333Z\"\
+  ,\n    \"sha1\": \"3ea7cc066317ac45f963c2227c4c7c50aa16eb7c\",\n    \"sha256\":\
+  \ \"2198a7b58bccb758036b969ddae6cc2ece07565e2659a7c541a313a0492231a3\",\n    \"\
+  fileName\": \"WmiPrvSE.exe\",\n    \"filePath\": \"C:\\\\Windows\\\\System32\\\\\
+  wbem\",\n    \"processId\": 7736,\n    \"processCommandLine\": \"wmiprvse.exe -secured\
+  \ -Embedding\",\n    \"processCreationTime\": \"2023-01-24T05:36:26.0524655Z\",\n\
+  \    \"parentProcessId\": 896,\n    \"parentProcessCreationTime\": \"2023-01-24T04:44:17.1940386Z\"\
+  ,\n    \"parentProcessFileName\": \"svchost.exe\",\n    \"parentProcessFilePath\"\
+  : \"C:\\\\Windows\\\\System32\",\n    \"ipAddress\": null,\n    \"url\": null,\n\
+  \    \"registryKey\": null,\n    \"registryHive\": null,\n    \"registryValueType\"\
+  : null,\n    \"registryValue\": null,\n    \"registryValueName\": null,\n    \"\
+  accountName\": \"NETWORK SERVICE\",\n    \"domainName\": \"NT AUTHORITY\",\n   \
+  \ \"userSid\": \"S-1-5-20\",\n    \"aadUserId\": null,\n    \"userPrincipalName\"\
+  : null,\n    \"detectionStatus\": \"Detected\"\n  }\n],\n\"domains\": []\n}"
