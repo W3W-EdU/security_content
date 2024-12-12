@@ -1,7 +1,7 @@
 name: Office Application Spawn rundll32 process
 id: 958751e4-9c5f-11eb-b103-acde48001122
-version: 6
-date: '2024-09-30'
+version: '7'
+date: '2024-11-28'
 author: Teoderick Contreras, Splunk
 status: production
 type: TTP
@@ -57,10 +57,11 @@ drilldown_searches:
 tags:
   analytic_story:
   - Spearphishing Attachments
-  - Trickbot
   - IcedID
   - AgentTesla
+  - Compromised Windows Host
   - NjRAT
+  - Trickbot
   asset_type: Endpoint
   confidence: 90
   impact: 70

@@ -1,7 +1,7 @@
 name: Detect Regsvcs Spawning a Process
 id: bc477b57-5c21-4ab6-9c33-668772e7f114
-version: 5
-date: '2024-09-30'
+version: '6'
+date: '2024-11-28'
 author: Michael Haag, Splunk
 status: production
 type: TTP
@@ -58,6 +58,7 @@ tags:
   analytic_story:
   - Suspicious Regsvcs Regasm Activity
   - Living Off The Land
+  - Compromised Windows Host
   asset_type: Endpoint
   confidence: 80
   impact: 80

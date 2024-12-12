@@ -1,7 +1,7 @@
 name: Winword Spawning Cmd
 id: 6fcbaedc-a37b-11eb-956b-acde48001122
-version: 5
-date: '2024-09-30'
+version: '6'
+date: '2024-11-28'
 author: Michael Haag, Splunk
 status: production
 type: TTP
@@ -53,8 +53,9 @@ drilldown_searches:
 tags:
   analytic_story:
   - Spearphishing Attachments
-  - DarkCrystal RAT
+  - Compromised Windows Host
   - CVE-2023-21716 Word RTF Heap Corruption
+  - DarkCrystal RAT
   asset_type: Endpoint
   confidence: 100
   impact: 70

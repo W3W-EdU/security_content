@@ -1,7 +1,7 @@
 name: Windows KrbRelayUp Service Creation
 id: e40ef542-8241-4419-9af4-6324582ea60a
-version: 4
-date: '2024-09-30'
+version: '5'
+date: '2024-11-28'
 author: Michael Haag, Splunk
 status: production
 type: TTP
@@ -40,6 +40,7 @@ drilldown_searches:
 tags:
   analytic_story:
   - Local Privilege Escalation With KrbRelayUp
+  - Compromised Windows Host
   asset_type: Endpoint
   confidence: 80
   impact: 80

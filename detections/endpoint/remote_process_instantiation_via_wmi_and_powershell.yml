@@ -1,7 +1,7 @@
 name: Remote Process Instantiation via WMI and PowerShell
 id: 112638b4-4634-11ec-b9ab-3e22fbd008af
-version: 3
-date: '2024-09-30'
+version: '4'
+date: '2024-11-28'
 author: Mauricio Velazco, Splunk
 status: production
 type: TTP
@@ -54,6 +54,7 @@ drilldown_searches:
 tags:
   analytic_story:
   - Active Directory Lateral Movement
+  - Compromised Windows Host
   asset_type: Endpoint
   confidence: 70
   impact: 90

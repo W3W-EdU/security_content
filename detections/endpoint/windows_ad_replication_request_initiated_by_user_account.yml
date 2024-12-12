@@ -1,7 +1,7 @@
 name: Windows AD Replication Request Initiated by User Account
 id: 51307514-1236-49f6-8686-d46d93cc2821
-version: 4
-date: '2024-09-30'
+version: '5'
+date: '2024-11-28'
 author: Dean Luxton
 type: TTP
 status: production
@@ -57,6 +57,7 @@ drilldown_searches:
   latest_offset: $info_max_time$
 tags:
   analytic_story:
+  - Compromised Windows Host
   - Sneaky Active Directory Persistence Tricks
   - Credential Dumping
   asset_type: Endpoint

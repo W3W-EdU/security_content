@@ -1,7 +1,7 @@
 name: Winhlp32 Spawning a Process
 id: d17dae9e-2618-11ec-b9f5-acde48001122
-version: 4
-date: '2024-09-30'
+version: '5'
+date: '2024-11-28'
 author: Michael Haag, Splunk
 status: production
 type: TTP
@@ -55,6 +55,7 @@ drilldown_searches:
 tags:
   analytic_story:
   - Remcos
+  - Compromised Windows Host
   asset_type: Endpoint
   confidence: 100
   impact: 80

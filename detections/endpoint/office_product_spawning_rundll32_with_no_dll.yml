@@ -1,7 +1,7 @@
 name: Office Product Spawning Rundll32 with no DLL
 id: c661f6be-a38c-11eb-be57-acde48001122
-version: 7
-date: '2024-09-30'
+version: '8'
+date: '2024-11-28'
 author: Michael Haag, Splunk
 status: production
 type: TTP
@@ -58,6 +58,7 @@ tags:
   analytic_story:
   - Spearphishing Attachments
   - CVE-2023-36884 Office and Windows HTML RCE Vulnerability
+  - Compromised Windows Host
   asset_type: Endpoint
   confidence: 90
   impact: 70

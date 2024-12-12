@@ -1,7 +1,7 @@
 name: Control Loading from World Writable Directory
 id: 10423ac4-10c9-11ec-8dc4-acde48001122
-version: 4
-date: '2024-09-30'
+version: '5'
+date: '2024-11-28'
 author: Michael Haag, Splunk
 status: production
 type: TTP
@@ -60,6 +60,7 @@ tags:
   analytic_story:
   - Microsoft MSHTML Remote Code Execution CVE-2021-40444
   - Living Off The Land
+  - Compromised Windows Host
   asset_type: Endpoint
   confidence: 100
   cve:

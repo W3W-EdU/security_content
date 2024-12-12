@@ -1,7 +1,7 @@
 name: Windows Office Product Spawning MSDT
 id: 127eba64-c981-40bf-8589-1830638864a7
-version: 7
-date: '2024-09-30'
+version: '8'
+date: '2024-11-28'
 author: Michael Haag, Teoderick Contreras, Splunk
 status: production
 type: TTP
@@ -59,6 +59,7 @@ drilldown_searches:
 tags:
   analytic_story:
   - Spearphishing Attachments
+  - Compromised Windows Host
   - Microsoft Support Diagnostic Tool Vulnerability CVE-2022-30190
   asset_type: Endpoint
   confidence: 100

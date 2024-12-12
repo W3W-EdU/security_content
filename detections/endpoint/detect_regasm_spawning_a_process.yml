@@ -1,7 +1,7 @@
 name: Detect Regasm Spawning a Process
 id: 72170ec5-f7d2-42f5-aefb-2b8be6aad15f
-version: 6
-date: '2024-09-30'
+version: '7'
+date: '2024-11-28'
 author: Michael Haag, Splunk
 status: production
 type: TTP
@@ -59,9 +59,10 @@ tags:
   analytic_story:
   - Suspicious Regsvcs Regasm Activity
   - Living Off The Land
+  - Handala Wiper
+  - Compromised Windows Host
   - DarkGate Malware
   - Snake Keylogger
-  - Handala Wiper
   asset_type: Endpoint
   confidence: 80
   impact: 80

@@ -1,7 +1,7 @@
 name: SLUI Spawning a Process
 id: 879c4330-b3e0-11eb-b1b1-acde48001122
-version: 3
-date: '2024-09-30'
+version: '4'
+date: '2024-11-28'
 author: Michael Haag, Splunk
 status: production
 type: TTP
@@ -55,6 +55,7 @@ drilldown_searches:
 tags:
   analytic_story:
   - DarkSide Ransomware
+  - Compromised Windows Host
   - Windows Defense Evasion Tactics
   asset_type: Endpoint
   confidence: 90

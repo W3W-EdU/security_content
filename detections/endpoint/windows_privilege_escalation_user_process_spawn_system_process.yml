@@ -1,7 +1,7 @@
 name: Windows Privilege Escalation User Process Spawn System Process
 id: c9687a28-39ad-43c6-8bcf-eaf061ba0cbe
-version: 3
-date: '2024-09-30'
+version: '4'
+date: '2024-11-28'
 author: Steven Dick
 status: production
 type: TTP
@@ -62,6 +62,7 @@ drilldown_searches:
 tags:
   analytic_story:
   - Windows Privilege Escalation
+  - Compromised Windows Host
   - BlackSuit Ransomware
   asset_type: Endpoint
   confidence: 80

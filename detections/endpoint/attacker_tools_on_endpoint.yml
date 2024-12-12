@@ -1,7 +1,7 @@
 name: Attacker Tools On Endpoint
 id: a51bfe1a-94f0-48cc-b4e4-16a110145893
-version: 5
-date: '2024-09-30'
+version: '6'
+date: '2024-11-28'
 author: Bhavin Patel, Splunk
 status: production
 type: TTP
@@ -52,11 +52,12 @@ drilldown_searches:
   latest_offset: $info_max_time$
 tags:
   analytic_story:
-  - Monitor for Unauthorized Software
   - XMRig
-  - SamSam Ransomware
+  - Monitor for Unauthorized Software
   - Unusual Processes
+  - SamSam Ransomware
   - CISA AA22-264A
+  - Compromised Windows Host
   asset_type: Endpoint
   confidence: 80
   impact: 80

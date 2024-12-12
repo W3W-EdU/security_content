@@ -6,6 +6,7 @@ author: Teoderick Contreras, Splunk
 description: Data source object for Linux Auditd Service Stop Type
 source: /var/log/audit/audit.log
 sourcetype: linux:audit
+configuration: https://github.com/Neo23x0/auditd/blob/master/audit.rules
 supported_TA:
 - name: Splunk Add-on for Unix and Linux
   url: https://splunkbase.splunk.com/app/833

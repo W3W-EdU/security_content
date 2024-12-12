@@ -1,7 +1,7 @@
 name: Detect Exchange Web Shell
 id: 8c14eeee-2af1-4a4b-bda8-228da0f4862a
-version: 7
-date: '2024-09-30'
+version: '8'
+date: '2024-11-28'
 author: Michael Haag, Shannon Davis, David Dorsey, Splunk
 status: production
 type: TTP
@@ -55,9 +55,10 @@ drilldown_searches:
 tags:
   analytic_story:
   - ProxyNotShell
-  - ProxyShell
   - CISA AA22-257A
   - HAFNIUM Group
+  - ProxyShell
+  - Compromised Windows Host
   - BlackByte Ransomware
   asset_type: Endpoint
   confidence: 90

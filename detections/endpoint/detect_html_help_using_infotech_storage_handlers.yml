@@ -1,7 +1,7 @@
 name: Detect HTML Help Using InfoTech Storage Handlers
 id: 0b2eefa5-5508-450d-b970-3dd2fb761aec
-version: 5
-date: '2024-09-30'
+version: '6'
+date: '2024-11-28'
 author: Michael Haag, Splunk
 status: production
 type: TTP
@@ -59,6 +59,7 @@ tags:
   analytic_story:
   - Suspicious Compiled HTML Activity
   - Living Off The Land
+  - Compromised Windows Host
   asset_type: Endpoint
   confidence: 90
   impact: 80

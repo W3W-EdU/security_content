@@ -1,7 +1,7 @@
 name: Executable File Written in Administrative SMB Share
 id: f63c34fe-a435-11eb-935a-acde48001122
-version: 5
-date: '2024-09-30'
+version: '6'
+date: '2024-11-28'
 author: Teoderick Contreras, Mauricio Velazco, Splunk
 status: production
 type: TTP
@@ -49,14 +49,15 @@ drilldown_searches:
 tags:
   analytic_story:
   - Active Directory Lateral Movement
-  - Prestige Ransomware
-  - Graceful Wipe Out Attack
-  - Industroyer2
+  - BlackSuit Ransomware
   - IcedID
+  - Prestige Ransomware
+  - Industroyer2
   - Data Destruction
+  - Graceful Wipe Out Attack
+  - Compromised Windows Host
   - Hermetic Wiper
   - Trickbot
-  - BlackSuit Ransomware
   asset_type: Endpoint
   confidence: 100
   impact: 70

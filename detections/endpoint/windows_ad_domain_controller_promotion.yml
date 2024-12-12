@@ -1,7 +1,7 @@
 name: Windows AD Domain Controller Promotion
 id: e633a0ef-2a6e-4ed7-b925-5ff999e5d1f0
-version: 3
-date: '2024-09-30'
+version: '4'
+date: '2024-11-28'
 author: Dean Luxton
 type: TTP
 status: production
@@ -48,6 +48,7 @@ drilldown_searches:
   latest_offset: $info_max_time$
 tags:
   analytic_story:
+  - Compromised Windows Host
   - Sneaky Active Directory Persistence Tricks
   asset_type: Endpoint
   confidence: 100

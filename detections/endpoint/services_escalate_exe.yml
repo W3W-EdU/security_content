@@ -1,7 +1,7 @@
 name: Services Escalate Exe
 id: c448488c-b7ec-11eb-8253-acde48001122
-version: 4
-date: '2024-09-30'
+version: '5'
+date: '2024-11-28'
 author: Michael Haag, Splunk
 status: production
 type: TTP
@@ -54,10 +54,11 @@ drilldown_searches:
   latest_offset: $info_max_time$
 tags:
   analytic_story:
-  - BlackByte Ransomware
-  - Cobalt Strike
   - Graceful Wipe Out Attack
+  - Cobalt Strike
   - CISA AA23-347A
+  - Compromised Windows Host
+  - BlackByte Ransomware
   asset_type: Endpoint
   confidence: 95
   impact: 80

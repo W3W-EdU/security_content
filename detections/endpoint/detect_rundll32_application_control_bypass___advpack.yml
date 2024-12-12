@@ -1,7 +1,7 @@
 name: Detect Rundll32 Application Control Bypass - advpack
 id: 4aefadfe-9abd-4bf8-b3fd-867e9ef95bf8
-version: 5
-date: '2024-09-30'
+version: '6'
+date: '2024-11-28'
 author: Michael Haag, Splunk
 status: production
 type: TTP
@@ -58,6 +58,7 @@ tags:
   analytic_story:
   - Suspicious Rundll32 Activity
   - Living Off The Land
+  - Compromised Windows Host
   asset_type: Endpoint
   confidence: 100
   impact: 80

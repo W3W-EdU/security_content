@@ -1,7 +1,7 @@
 name: Malicious Powershell Executed As A Service
 id: 8e204dfd-cae0-4ea8-a61d-e972a1ff2ff8
-version: 5
-date: '2024-09-30'
+version: '6'
+date: '2024-11-28'
 author: Ryan Becwar
 status: production
 type: TTP
@@ -46,8 +46,9 @@ drilldown_searches:
   latest_offset: $info_max_time$
 tags:
   analytic_story:
-  - Malicious PowerShell
+  - Compromised Windows Host
   - Rhysida Ransomware
+  - Malicious PowerShell
   asset_type: Endpoint
   confidence: 80
   impact: 90

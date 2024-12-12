@@ -1,7 +1,7 @@
 name: Windows Service Create with Tscon
 id: c13b3d74-6b63-4db5-a841-4206f0370077
-version: 4
-date: '2024-09-30'
+version: '5'
+date: '2024-11-28'
 author: Michael Haag, Splunk
 type: TTP
 status: production
@@ -63,6 +63,7 @@ drilldown_searches:
 tags:
   analytic_story:
   - Active Directory Lateral Movement
+  - Compromised Windows Host
   asset_type: Endpoint
   confidence: 80
   impact: 80

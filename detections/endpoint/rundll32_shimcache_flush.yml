@@ -1,7 +1,7 @@
 name: Rundll32 Shimcache Flush
 id: a913718a-25b6-11ec-96d3-acde48001122
-version: 3
-date: '2024-09-30'
+version: '4'
+date: '2024-11-28'
 author: Teoderick Contreras, Splunk
 status: production
 type: TTP
@@ -52,6 +52,7 @@ tags:
   analytic_story:
   - Unusual Processes
   - Living Off The Land
+  - Compromised Windows Host
   asset_type: Endpoint
   confidence: 100
   impact: 80

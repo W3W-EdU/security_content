@@ -1,7 +1,7 @@
 name: Windows Hidden Schedule Task Settings
 id: 0b730470-5fe8-4b13-93a7-fe0ad014d0cc
-version: 3
-date: '2024-09-30'
+version: '4'
+date: '2024-11-28'
 author: Teoderick Contreras, Splunk
 status: production
 type: TTP
@@ -43,10 +43,11 @@ drilldown_searches:
 tags:
   analytic_story:
   - CISA AA22-257A
-  - Active Directory Discovery
   - Industroyer2
   - Data Destruction
   - Scheduled Tasks
+  - Compromised Windows Host
+  - Active Directory Discovery
   asset_type: Endpoint
   confidence: 80
   impact: 80

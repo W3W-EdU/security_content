@@ -1,7 +1,7 @@
 name: Detect HTML Help URL in Command Line
 id: 8c5835b9-39d9-438b-817c-95f14c69a31e
-version: 5
-date: '2024-09-30'
+version: '6'
+date: '2024-11-28'
 author: Michael Haag, Splunk
 status: production
 type: TTP
@@ -58,6 +58,7 @@ tags:
   analytic_story:
   - Suspicious Compiled HTML Activity
   - Living Off The Land
+  - Compromised Windows Host
   asset_type: Endpoint
   confidence: 100
   impact: 90

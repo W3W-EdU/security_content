@@ -1,7 +1,7 @@
 name: Office Spawning Control
 id: 053e027c-10c7-11ec-8437-acde48001122
-version: 7
-date: '2024-09-30'
+version: '8'
+date: '2024-11-28'
 author: Michael Haag, Splunk
 status: production
 type: TTP
@@ -60,6 +60,7 @@ tags:
   analytic_story:
   - Spearphishing Attachments
   - Microsoft MSHTML Remote Code Execution CVE-2021-40444
+  - Compromised Windows Host
   asset_type: Endpoint
   confidence: 100
   cve:

@@ -1,7 +1,7 @@
 name: Batch File Write to System32
 id: 503d17cb-9eab-4cf8-a20e-01d5c6987ae3
-version: 6
-date: '2024-09-30'
+version: '7'
+date: '2024-11-28'
 author: Steven Dick, Michael Haag, Rico Valdez, Splunk
 status: production
 type: TTP
@@ -55,6 +55,7 @@ drilldown_searches:
 tags:
   analytic_story:
   - SamSam Ransomware
+  - Compromised Windows Host
   asset_type: Endpoint
   confidence: 90
   impact: 70

@@ -1,7 +1,7 @@
 name: Office Application Spawn Regsvr32 process
 id: 2d9fc90c-f11f-11eb-9300-acde48001122
-version: 6
-date: '2024-09-30'
+version: '7'
+date: '2024-11-28'
 author: Teoderick Contreras, Splunk
 status: production
 type: TTP
@@ -57,6 +57,7 @@ drilldown_searches:
 tags:
   analytic_story:
   - IcedID
+  - Compromised Windows Host
   - Qakbot
   asset_type: Endpoint
   confidence: 90

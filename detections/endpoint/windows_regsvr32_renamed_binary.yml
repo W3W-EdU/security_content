@@ -1,7 +1,7 @@
 name: Windows Regsvr32 Renamed Binary
 id: 7349a9e9-3cf6-4171-bb0c-75607a8dcd1a
-version: 3
-date: '2024-09-30'
+version: '4'
+date: '2024-11-28'
 author: Teoderick Contreras, Splunk
 status: production
 type: TTP
@@ -51,6 +51,7 @@ drilldown_searches:
 tags:
   analytic_story:
   - Qakbot
+  - Compromised Windows Host
   asset_type: Endpoint
   confidence: 80
   impact: 80

@@ -1,7 +1,7 @@
 name: Enumerate Users Local Group Using Telegram
 id: fcd74532-ae54-11eb-a5ab-acde48001122
-version: 5
-date: '2024-09-30'
+version: '6'
+date: '2024-11-28'
 author: Teoderick Contreras, Splunk
 status: production
 type: TTP
@@ -43,6 +43,7 @@ drilldown_searches:
 tags:
   analytic_story:
   - XMRig
+  - Compromised Windows Host
   asset_type: Endpoint
   confidence: 100
   impact: 80

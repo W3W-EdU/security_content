@@ -1,7 +1,7 @@
 name: Impacket Lateral Movement smbexec CommandLine Parameters
 id: bb3c1bac-6bdf-4aa0-8dc9-068b8b712a76
-version: 3
-date: '2024-09-30'
+version: '4'
+date: '2024-11-28'
 author: Michael Haag, Splunk
 status: production
 type: TTP
@@ -63,14 +63,15 @@ drilldown_searches:
   latest_offset: $info_max_time$
 tags:
   analytic_story:
-  - Active Directory Lateral Movement
-  - CISA AA22-277A
   - WhisperGate
-  - Prestige Ransomware
+  - Active Directory Lateral Movement
   - Volt Typhoon
-  - Graceful Wipe Out Attack
+  - Prestige Ransomware
   - Industroyer2
   - Data Destruction
+  - Graceful Wipe Out Attack
+  - Compromised Windows Host
+  - CISA AA22-277A
   asset_type: Endpoint
   atomic_guid: []
   confidence: 70

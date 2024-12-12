@@ -1,7 +1,7 @@
 name: Remote Process Instantiation via DCOM and PowerShell
 id: d4f42098-4680-11ec-ad07-3e22fbd008af
-version: 4
-date: '2024-09-30'
+version: '5'
+date: '2024-11-28'
 author: Mauricio Velazco, Splunk
 status: production
 type: TTP
@@ -55,6 +55,7 @@ drilldown_searches:
 tags:
   analytic_story:
   - Active Directory Lateral Movement
+  - Compromised Windows Host
   asset_type: Endpoint
   confidence: 70
   impact: 90

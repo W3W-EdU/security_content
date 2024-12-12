@@ -1,7 +1,7 @@
 name: Dump LSASS via procdump
 id: 3742ebfe-64c2-11eb-ae93-0242ac130002
-version: 6
-date: '2024-09-30'
+version: '7'
+date: '2024-11-28'
 author: Michael Haag, Splunk
 status: production
 type: TTP
@@ -54,9 +54,10 @@ drilldown_searches:
   latest_offset: $info_max_time$
 tags:
   analytic_story:
-  - Credential Dumping
-  - HAFNIUM Group
   - CISA AA22-257A
+  - HAFNIUM Group
+  - Compromised Windows Host
+  - Credential Dumping
   asset_type: Endpoint
   confidence: 100
   impact: 80

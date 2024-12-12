@@ -1,7 +1,7 @@
 name: Windows PaperCut NG Spawn Shell
 id: a602d9a2-aaea-45f8-bf0f-d851168d61ca
-version: 4
-date: '2024-09-30'
+version: '5'
+date: '2024-11-28'
 author: Michael Haag, Splunk
 status: production
 type: TTP
@@ -54,6 +54,7 @@ drilldown_searches:
 tags:
   analytic_story:
   - PaperCut MF NG Vulnerability
+  - Compromised Windows Host
   asset_type: Endpoint
   atomic_guid: []
   confidence: 90

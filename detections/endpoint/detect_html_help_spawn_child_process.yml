@@ -1,7 +1,7 @@
 name: Detect HTML Help Spawn Child Process
 id: 723716de-ee55-4cd4-9759-c44e7e55ba4b
-version: 5
-date: '2024-09-30'
+version: '6'
+date: '2024-11-28'
 author: Michael Haag, Splunk
 status: production
 type: TTP
@@ -57,8 +57,9 @@ drilldown_searches:
 tags:
   analytic_story:
   - Suspicious Compiled HTML Activity
-  - Living Off The Land
   - AgentTesla
+  - Living Off The Land
+  - Compromised Windows Host
   asset_type: Endpoint
   confidence: 100
   impact: 80

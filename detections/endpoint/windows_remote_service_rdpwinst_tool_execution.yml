@@ -1,7 +1,7 @@
 name: Windows Remote Service Rdpwinst Tool Execution
 id: c8127f87-c7c9-4036-89ed-8fe4b30e678c
-version: 3
-date: '2024-09-30'
+version: '4'
+date: '2024-11-28'
 author: Teoderick Contreras, Splunk
 status: production
 type: TTP
@@ -54,6 +54,7 @@ drilldown_searches:
 tags:
   analytic_story:
   - Azorult
+  - Compromised Windows Host
   asset_type: Endpoint
   confidence: 90
   impact: 90

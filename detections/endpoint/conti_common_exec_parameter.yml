@@ -1,7 +1,7 @@
 name: Conti Common Exec parameter
 id: 624919bc-c382-11eb-adcc-acde48001122
-version: 4
-date: '2024-09-30'
+version: '5'
+date: '2024-11-28'
 author: Teoderick Contreras, Splunk
 status: production
 type: TTP
@@ -54,6 +54,7 @@ drilldown_searches:
 tags:
   analytic_story:
   - Ransomware
+  - Compromised Windows Host
   asset_type: Endpoint
   confidence: 80
   impact: 80
