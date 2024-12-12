@@ -82,14 +82,6 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - process_guid
-  - process_name
-  - process
-  - parent_process_name
-  - parent_process
-  - user
-  risk_score: 42
   security_domain: endpoint
   cve: []
 tests:

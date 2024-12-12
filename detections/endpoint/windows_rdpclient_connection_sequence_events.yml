@@ -44,13 +44,6 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  required_fields:
-  - host
-  - source
-  - LogName
-  - EventCode
-  - category
-  risk_score: 7
   security_domain: endpoint
   cve: []
 tests:
